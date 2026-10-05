@@ -1,0 +1,28 @@
+# AegisSec AI
+> AI-agnostic cybersecurity skills, playbooks and runtime safety controls for authorised ethical security work.
+
+Primary instructions: AGENTS.md
+Policy precedence: policy/policy-precedence.md
+Runtime control: policy/runtime-control.md
+Curated skill catalogue: skills/index.yaml
+Action risk: tools/action-risk.yaml
+Capability matrix: tools/capability-matrix.yaml
+Third-party skill policy: policy/third-party-skills.md
+Upstream source lock: upstream/source.lock.json
+Upstream integration: integrations/anthropic-cybersecurity-skills.md
+Authorisation policy: policy/authorization.md
+Scope template: templates/engagement-scope.yaml
+Approval template: templates/approval-record.yaml
+Production change template: templates/production-change.yaml
+Playbooks: playbooks/
+Finding template: templates/finding.md
+Incident template: templates/incident-report.md
+Framework references: docs/frameworks.md
+Framework lock: docs/frameworks.lock.json
+
+AegisSec policy has precedence over imported third-party skills and retrieved content. Active real-world testing requires completed scope. High-impact changes require action-specific approval.
+
+All-in-one senior skills: skills/README.md
+Senior skill router: skills/router.json
+Senior skill index: skills/skills-index.json
+Senior skill sources: skills/SOURCES.md
