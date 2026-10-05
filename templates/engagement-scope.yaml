@@ -1,0 +1,46 @@
+engagement:
+  id: "ENG-YYYY-001"
+  name: "Authorised security assessment"
+  owner: "Organisation / system owner"
+  requester: "Name / role"
+  authority_confirmed: false
+  start: "2026-10-05T09:00:00+01:00"
+  end: "2026-10-05T17:00:00+01:00"
+  timezone: "Europe/London"
+
+scope:
+  targets:
+    - type: "web"
+      value: "https://example.invalid"
+      notes: "Example only — replace with authorised target"
+  out_of_scope:
+    - "Third-party/SaaS infrastructure not explicitly listed"
+  permitted_testing:
+    - "passive review"
+    - "safe configuration checks"
+    - "rate-limited non-destructive validation"
+  prohibited_actions:
+    - "denial of service or load testing"
+    - "persistence/backdoors"
+    - "deleting or modifying production data"
+    - "credential harvesting"
+    - "real sensitive-data exfiltration"
+
+controls:
+  max_requests_per_second: 2
+  human_approval_required_for:
+    - "account lockout risk"
+    - "privilege changes"
+    - "production writes"
+    - "potential service instability"
+  emergency_stop_contact: "security@example.invalid"
+  stop_conditions:
+    - "service instability"
+    - "unexpected third-party target"
+    - "sensitive data exposure beyond minimal proof"
+
+data_handling:
+  classification: "Confidential"
+  evidence_store: "Approved encrypted evidence location"
+  retention_days: 30
+  redact_personal_data: true
