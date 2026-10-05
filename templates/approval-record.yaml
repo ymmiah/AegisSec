@@ -1,0 +1,14 @@
+approval:
+  id: APR-YYYY-NNN
+  requested_by: ''
+  approved_by: ''
+  approved_at: ''
+  expires_at: ''
+  action: ''
+  exact_targets: []
+  parameters: {}
+  expected_effect: ''
+  risk: low|medium|high|critical
+  rollback: ''
+  constraints: []
+  evidence_reference: ''
