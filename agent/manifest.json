@@ -1,0 +1,75 @@
+{
+  "name": "AegisSec AI",
+  "version": "1.0.0",
+  "type": "cybersecurity-skill-workspace",
+  "updated": "2026-10-05",
+  "canonical_instructions": "AGENTS.md",
+  "skill_index": "skills/index.yaml",
+  "curated_skill_count": 115,
+  "optional_upstream": {
+    "repository": "mukul975/Anthropic-Cybersecurity-Skills",
+    "reported_skill_count": 818,
+    "source_lock": "upstream/source.lock.json",
+    "policy": "policy/third-party-skills.md"
+  },
+  "scope_template": "templates/engagement-scope.yaml",
+  "router": "agent/router.md",
+  "task_schema": "agent/task.schema.json",
+  "output_schema": "agent/output.schema.json",
+  "framework_baseline": "docs/frameworks.lock.json",
+  "modes": [
+    "DEFENSIVE",
+    "ASSESSMENT",
+    "LAB",
+    "PROHIBITED"
+  ],
+  "roles": [
+    "security-lead",
+    "red-team-lead",
+    "soc-analyst",
+    "detection-engineer",
+    "incident-commander",
+    "dfir-analyst",
+    "appsec-engineer",
+    "devsecops-security",
+    "cloud-security",
+    "threat-intelligence",
+    "ai-security",
+    "grc",
+    "purple-team",
+    "forward-deployed-security-engineer",
+    "identity-security-engineer",
+    "security-platform-engineer",
+    "data-security-engineer"
+  ],
+  "runtime_control": "policy/runtime-control.yaml",
+  "capability_matrix": "tools/capability-matrix.yaml",
+  "approval_schema": "schemas/approval.schema.json",
+  "evidence_schema": "schemas/evidence.schema.json",
+  "senior_skill_count": 64,
+  "senior_skill_index": "skills/skills-index.json",
+  "senior_router": "skills/router.json",
+  "senior_sources": "skills/SOURCES.md",
+  "workspace_type": "cybersecurity-and-senior-engineering-skill-workspace",
+  "brand_assets": {
+    "icon": "docs/assets/brand/aegissec-icon.jpg",
+    "lockup": "docs/assets/brand/aegissec-lockup.jpg",
+    "hero": "docs/assets/brand/aegissec-hero.jpg",
+    "site": "docs/index.html"
+  },
+  "vulnerability_intelligence": {
+    "config": "config/vulnerability-intelligence.yaml",
+    "cli": "scripts/vuln_intel.py",
+    "schema": "schemas/vulnerability-intelligence.schema.json",
+    "docs": "docs/vulnerability-intelligence.md",
+    "sources": [
+      "OSV",
+      "GitHub Advisory Database",
+      "NVD",
+      "CISA KEV",
+      "FIRST EPSS"
+    ]
+  },
+  "release_channel": "stable",
+  "release_name": "AegisSec AI v1"
+}
