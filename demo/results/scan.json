@@ -1,0 +1,5042 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-05T12:12:36.056259+00:00",
+  "engine": "AegisSec Vulnerability Intelligence",
+  "component_count": 5,
+  "finding_count": 37,
+  "sources": {
+    "osv": true,
+    "github_advisory": true,
+    "nvd": true,
+    "cisa_kev": true,
+    "epss": true
+  },
+  "warnings": [],
+  "findings": [
+    {
+      "id": "CVE-2021-44228",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-44228"
+        ],
+        "ghsa": [
+          "GHSA-JFH8-C2JP-5V3Q",
+          "GHSA-jfh8-c2jp-5v3q"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Remote code injection in Log4j",
+      "published": "2021-12-10T00:40:56Z",
+      "modified": "2025-10-22T19:37:02.616807Z",
+      "fixed_versions": [
+        "2.15.0",
+        "2.3.1",
+        "2.12.2",
+        "1.9.2",
+        "1.10.8",
+        "1.11.10",
+        "2.0.11"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+        "https://github.com/apache/logging-log4j2/pull/608",
+        "https://github.com/github/advisory-database/pull/5501",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf",
+        "https://packetstormsecurity.com/files/165673/UniFi-Network-Application-Unauthenticated-Log4Shell-Remote-Code-Execution.html",
+        "https://packetstormsecurity.com/files/167794/Open-Xchange-App-Suite-7.10.x-Cross-Site-Scripting-Command-Injection.html",
+        "https://packetstormsecurity.com/files/167917/MobileIron-Log4Shell-Remote-Command-Execution.html",
+        "https://packetstormsecurity.com/files/171626/AD-Manager-Plus-7122-Remote-Code-Execution.html",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://seclists.org/fulldisclosure/2022/Dec/2",
+        "https://seclists.org/fulldisclosure/2022/Jul/11",
+        "https://seclists.org/fulldisclosure/2022/Mar/23",
+        "https://security.netapp.com/advisory/ntap-20211210-0007",
+        "https://support.apple.com/kb/HT213189",
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://twitter.com/kurtseifried/status/1469345530182455296",
+        "https://www.bentley.com/en/common-vulnerability-exposure/be-2022-0001",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-44228",
+        "https://www.debian.org/security/2021/dsa-5020",
+        "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html",
+        "https://www.kb.cert.org/vuls/id/930724",
+        "https://www.nu11secur1ty.com/2021/12/cve-2021-44228.html",
+        "https://www.oracle.com/security-alerts/alert-cve-2021-44228.html",
+        "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf",
+        "https://github.com/advisories/GHSA-7rjr-3q55-vv33",
+        "https://github.com/apache/logging-log4j2",
+        "https://github.com/cisagov/log4j-affected-db",
+        "https://github.com/cisagov/log4j-affected-db/blob/develop/SOFTWARE-LIST.md",
+        "https://github.com/nu11secur1ty/CVE-mitre/tree/main/CVE-2021-44228",
+        "https://github.com/tangxiaofeng7/apache-log4j-poc",
+        "https://issues.apache.org/jira/browse/LOG4J2-3198",
+        "https://issues.apache.org/jira/browse/LOG4J2-3201",
+        "https://issues.apache.org/jira/browse/LOG4J2-3214",
+        "https://issues.apache.org/jira/browse/LOG4J2-3221",
+        "https://lists.debian.org/debian-lts-announce/2021/12/msg00007.html",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM",
+        "https://logging.apache.org/log4j/2.x/changes-report.html#a2.15.0",
+        "https://logging.apache.org/log4j/2.x/manual/lookups.html#JndiLookup",
+        "https://logging.apache.org/log4j/2.x/manual/migration.html",
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2",
+        "http://packetstormsecurity.com/files/165225/Apache-Log4j2-2.14.1-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/165260/VMware-Security-Advisory-2021-0028.html",
+        "http://packetstormsecurity.com/files/165261/Apache-Log4j2-2.14.1-Information-Disclosure.html",
+        "http://packetstormsecurity.com/files/165270/Apache-Log4j2-2.14.1-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/165281/Log4j2-Log4Shell-Regexes.html",
+        "http://packetstormsecurity.com/files/165282/Log4j-Payload-Generator.html",
+        "http://packetstormsecurity.com/files/165306/L4sh-Log4j-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/165307/Log4j-Remote-Code-Execution-Word-Bypassing.html",
+        "http://packetstormsecurity.com/files/165311/log4j-scan-Extensive-Scanner.html",
+        "http://packetstormsecurity.com/files/165371/VMware-Security-Advisory-2021-0028.4.html",
+        "http://packetstormsecurity.com/files/165532/Log4Shell-HTTP-Header-Injection.html",
+        "http://packetstormsecurity.com/files/165642/VMware-vCenter-Server-Unauthenticated-Log4Shell-JNDI-Injection-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/165673/UniFi-Network-Application-Unauthenticated-Log4Shell-Remote-Code-Execution.html",
+        "http://packetstormsecurity.com/files/167794/Open-Xchange-App-Suite-7.10.x-Cross-Site-Scripting-Command-Injection.html",
+        "http://packetstormsecurity.com/files/167917/MobileIron-Log4Shell-Remote-Command-Execution.html",
+        "http://packetstormsecurity.com/files/171626/AD-Manager-Plus-7122-Remote-Code-Execution.html",
+        "http://seclists.org/fulldisclosure/2022/Dec/2",
+        "http://seclists.org/fulldisclosure/2022/Jul/11",
+        "http://seclists.org/fulldisclosure/2022/Mar/23",
+        "http://www.openwall.com/lists/oss-security/2021/12/10/1",
+        "http://www.openwall.com/lists/oss-security/2021/12/10/2",
+        "http://www.openwall.com/lists/oss-security/2021/12/10/3",
+        "http://www.openwall.com/lists/oss-security/2021/12/13/1",
+        "http://www.openwall.com/lists/oss-security/2021/12/13/2",
+        "http://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "http://www.openwall.com/lists/oss-security/2021/12/15/3"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 10.0,
+        "severity_label": "critical",
+        "epss": 0.99999,
+        "epss_percentile": 1.0,
+        "cisa_kev": true,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-jfh8-c2jp-5v3q",
+            "url": "https://osv.dev/vulnerability/GHSA-jfh8-c2jp-5v3q"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "cisa_kev": {
+            "date_added": "2021-12-10",
+            "due_date": "2021-12-24",
+            "known_ransomware_campaign_use": "Known",
+            "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+            "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-jfh8-c2jp-5v3q",
+            "html_url": "https://github.com/advisories/GHSA-jfh8-c2jp-5v3q",
+            "published_at": "2021-12-10T00:40:56Z",
+            "updated_at": "2025-10-22T19:13:26Z"
+          },
+          "nvd": {
+            "id": "CVE-2021-44228",
+            "published": "2021-12-10T10:15:09.143",
+            "last_modified": "2026-08-11T19:33:44.513",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+          }
+        }
+      },
+      "assessment": {
+        "score": 92.5,
+        "priority": "P0",
+        "confidence": "high",
+        "factors": {
+          "cvss": 1.0,
+          "epss": 0.99999,
+          "kev": 1.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "CISA KEV: known exploited vulnerability",
+          "High EPSS probability (100.0%)",
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "security-lead",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.15.0",
+        "target_versions": [
+          "2.15.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2021-45046",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-45046"
+        ],
+        "ghsa": [
+          "GHSA-7RJR-3Q55-VV33",
+          "GHSA-7rjr-3q55-vv33"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Incomplete fix for Apache Log4j vulnerability",
+      "published": "2021-12-14T18:01:28Z",
+      "modified": "2026-10-02T20:30:05.438504645Z",
+      "fixed_versions": [
+        "2.16.0",
+        "2.12.2",
+        "1.9.2",
+        "1.10.8",
+        "1.11.11",
+        "2.0.12",
+        "2.3.1"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-45046",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "https://www.oracle.com/security-alerts/alert-cve-2021-44228.html",
+        "https://www.openwall.com/lists/oss-security/2021/12/18/1",
+        "https://www.openwall.com/lists/oss-security/2021/12/15/3",
+        "https://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "https://www.kb.cert.org/vuls/id/930724",
+        "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html",
+        "https://www.debian.org/security/2021/dsa-5022",
+        "https://www.cve.org/CVERecord?id=CVE-2021-44228",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2021-45046",
+        "https://security.gentoo.org/glsa/202310-16",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032",
+        "https://logging.apache.org/security.html#CVE-2021-45046",
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY",
+        "https://github.com/apache/logging-log4j2/compare/rel/2.3...rel/2.3.1",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 9.8,
+        "severity_label": "critical",
+        "epss": 0.99977,
+        "epss_percentile": 0.9998,
+        "cisa_kev": true,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-7rjr-3q55-vv33",
+            "url": "https://osv.dev/vulnerability/GHSA-7rjr-3q55-vv33"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "cisa_kev": {
+            "date_added": "2023-05-01",
+            "due_date": "2023-05-22",
+            "known_ransomware_campaign_use": "Known",
+            "required_action": "Apply updates per vendor instructions.",
+            "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-7rjr-3q55-vv33",
+            "html_url": "https://github.com/advisories/GHSA-7rjr-3q55-vv33",
+            "published_at": "2021-12-14T18:01:28Z",
+            "updated_at": "2026-10-02T20:21:54Z"
+          },
+          "nvd": {
+            "id": "CVE-2021-45046",
+            "published": "2021-12-14T19:15:07.733",
+            "last_modified": "2026-06-17T04:13:05.570",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+          }
+        }
+      },
+      "assessment": {
+        "score": 92.1,
+        "priority": "P0",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.9800000000000001,
+          "epss": 0.99977,
+          "kev": 1.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "CISA KEV: known exploited vulnerability",
+          "High EPSS probability (100.0%)",
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "security-lead",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.16.0",
+        "target_versions": [
+          "2.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2021-45105",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-45105"
+        ],
+        "ghsa": [
+          "GHSA-P6XC-XR62-6R2G",
+          "GHSA-p6xc-xr62-6r2g"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion",
+      "published": "2021-12-18T18:00:07Z",
+      "modified": "2026-06-09T10:30:14.432177927Z",
+      "fixed_versions": [
+        "2.12.3",
+        "2.17.0",
+        "2.3.1",
+        "1.9.2",
+        "1.10.9",
+        "1.11.12",
+        "2.0.13"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-45105",
+        "https://www.zerodayinitiative.com/advisories/ZDI-21-1541",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "https://www.kb.cert.org/vuls/id/930724",
+        "https://www.debian.org/security/2021/dsa-5024",
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://security.netapp.com/advisory/ntap-20211218-0001",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032",
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY",
+        "https://lists.debian.org/debian-lts-announce/2021/12/msg00017.html",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-501673.pdf",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf",
+        "http://www.openwall.com/lists/oss-security/2021/12/19/1"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.6,
+        "severity_label": "high",
+        "epss": 0.99999,
+        "epss_percentile": 0.99991,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-p6xc-xr62-6r2g",
+            "url": "https://osv.dev/vulnerability/GHSA-p6xc-xr62-6r2g"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-p6xc-xr62-6r2g",
+            "html_url": "https://github.com/advisories/GHSA-p6xc-xr62-6r2g",
+            "published_at": "2021-12-18T18:00:07Z",
+            "updated_at": "2026-06-09T10:26:53Z"
+          },
+          "nvd": {
+            "id": "CVE-2021-45105",
+            "published": "2021-12-18T12:15:07.433",
+            "last_modified": "2026-08-25T16:28:27.310",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45105"
+          }
+        }
+      },
+      "assessment": {
+        "score": 70.0,
+        "priority": "P1",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.86,
+          "epss": 0.99999,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "High EPSS probability (100.0%)",
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "security-lead",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.17.0",
+        "target_versions": [
+          "2.17.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2021-44832",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-44832"
+        ],
+        "ghsa": [
+          "GHSA-8489-44MV-GGJ8",
+          "GHSA-8489-44mv-ggj8"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Improper Input Validation and Injection in Apache Log4j2",
+      "published": "2022-01-04T16:14:20Z",
+      "modified": "2026-06-09T10:45:14.253296471Z",
+      "fixed_versions": [
+        "2.3.2",
+        "2.12.4",
+        "2.17.1",
+        "1.9.2",
+        "1.10.9",
+        "1.11.13",
+        "2.0.14"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-44832",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf",
+        "https://github.com/apache/logging-log4j2",
+        "https://issues.apache.org/jira/browse/LOG4J2-3293",
+        "https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143",
+        "https://lists.debian.org/debian-lts-announce/2021/12/msg00036.html",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA",
+        "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA",
+        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://security.netapp.com/advisory/ntap-20220104-0001",
+        "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd",
+        "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "http://www.openwall.com/lists/oss-security/2021/12/28/1"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.6,
+        "severity_label": "medium",
+        "epss": 0.97906,
+        "epss_percentile": 0.99908,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-8489-44mv-ggj8",
+            "url": "https://osv.dev/vulnerability/GHSA-8489-44mv-ggj8"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-8489-44mv-ggj8",
+            "html_url": "https://github.com/advisories/GHSA-8489-44mv-ggj8",
+            "published_at": "2022-01-04T16:14:20Z",
+            "updated_at": "2026-06-09T10:31:59Z"
+          },
+          "nvd": {
+            "id": "CVE-2021-44832",
+            "published": "2021-12-28T20:15:08.400",
+            "last_modified": "2026-06-17T04:12:52.013",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44832"
+          }
+        }
+      },
+      "assessment": {
+        "score": 70.0,
+        "priority": "P1",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.6599999999999999,
+          "epss": 0.97906,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "High EPSS probability (97.9%)",
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "security-lead",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.17.1",
+        "target_versions": [
+          "2.17.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2021-23337",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-23337",
+          "CVE-2026-4800"
+        ],
+        "ghsa": [
+          "GHSA-35JH-R3H4-6JHM",
+          "GHSA-R5FR-RJXR-66JC",
+          "GHSA-35jh-r3h4-6jhm",
+          "GHSA-r5fr-rjxr-66jc"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Command Injection in lodash",
+      "published": "2021-05-06T16:05:51Z",
+      "modified": "2026-09-10T03:49:04.067984836Z",
+      "fixed_versions": [
+        "4.17.21",
+        "4.18.0"
+      ],
+      "references": [
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+        "https://cna.openjsf.org/security-advisories.html",
+        "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+        "https://github.com/lodash/lodash",
+        "https://github.com/lodash/lodash/blob/ddfd9b11a0126db2302cb70ec9973b66baec0975/lodash.js#L14851",
+        "https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c",
+        "https://github.com/lodash/lodash/security/advisories/GHSA-r5fr-rjxr-66jc",
+        "https://github.com/rubysec/ruby-advisory-db/blob/master/gems/lodash-rails/CVE-2021-23337.yml",
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-23337",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-4800",
+        "https://security.netapp.com/advisory/ntap-20210312-0006",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074930",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074928",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074929",
+        "https://snyk.io/vuln/SNYK-JS-LODASH-1040724",
+        "https://www.oracle.com//security-alerts/cpujul2021.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "https://www.oracle.com/security-alerts/cpuoct2021.html"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.1,
+        "severity_label": "high",
+        "epss": 0.21333,
+        "epss_percentile": 0.97538,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-35jh-r3h4-6jhm",
+            "url": "https://osv.dev/vulnerability/GHSA-35jh-r3h4-6jhm"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-r5fr-rjxr-66jc",
+            "html_url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
+            "published_at": "2026-04-01T23:51:12Z",
+            "updated_at": "2026-04-01T23:51:13Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-4800",
+            "published": "2026-03-31T20:16:29.660",
+            "last_modified": "2026-09-10T13:20:23.210",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4800"
+          }
+        }
+      },
+      "assessment": {
+        "score": 53.0,
+        "priority": "P2",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8099999999999999,
+          "epss": 0.21333,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "4.17.21",
+        "target_versions": [
+          "4.17.21",
+          "4.18.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2021-3749",
+      "identifiers": {
+        "cve": [
+          "CVE-2021-3749"
+        ],
+        "ghsa": [
+          "GHSA-CPH5-M8F7-6C5X",
+          "GHSA-cph5-m8f7-6c5x"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+      "published": "2021-09-01T18:23:02Z",
+      "modified": "2026-09-10T03:49:08.788547249Z",
+      "fixed_versions": [
+        "0.21.2"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2021-3749",
+        "https://github.com/axios/axios/commit/5b457116e31db0e88fede6c428e969e87f290929",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "https://www.npmjs.com/package/axios",
+        "https://lists.apache.org/thread.html/rfc5c478053ff808671aef170f3d9fc9d05cc1fab8fb64431edc66103@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/rfa094029c959da0f7c8cd7dc9c4e59d21b03457bf0cedf6c93e1bb0a@%3Cdev.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/rc263bfc5b53afcb7e849605478d73f5556eb0c00d1f912084e407289@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/ra15d63c54dc6474b29f72ae4324bcb03038758545b3ab800845de7a1@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r74d0b359408fff31f87445261f0ee13bdfcac7d66f6b8e846face321@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r7324ecc35b8027a51cb6ed629490fcd3b2d7cf01c424746ed5744bf1@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r4bf1b32983f50be00f9752214c1b53738b621be1c2b0dbd68c7f2391@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r3ae6d2654f92c5851bdb73b35e96b0e4e3da39f28ac7a1b15ae3aab8@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r216f0fd0a3833856d6a6a1fada488cadba45f447d87010024328ccf2@%3Ccommits.druid.apache.org%3E",
+        "https://lists.apache.org/thread.html/r075d464dce95cd13c03ff9384658edcccd5ab2983b82bfc72b62bb10@%3Ccommits.druid.apache.org%3E",
+        "https://huntr.dev/bounties/1e8f07fc-c384-4ff9-8498-0690de2e8c31",
+        "https://github.com/axios/axios",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.08515,
+        "epss_percentile": 0.94895,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-cph5-m8f7-6c5x",
+            "url": "https://osv.dev/vulnerability/GHSA-cph5-m8f7-6c5x"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-cph5-m8f7-6c5x",
+            "html_url": "https://github.com/advisories/GHSA-cph5-m8f7-6c5x",
+            "published_at": "2021-09-01T18:23:02Z",
+            "updated_at": "2025-02-12T05:10:46Z"
+          },
+          "nvd": {
+            "id": "CVE-2021-3749",
+            "published": "2021-08-31T11:15:07.890",
+            "last_modified": "2026-06-17T04:05:41.550",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3749"
+          }
+        }
+      },
+      "assessment": {
+        "score": 50.2,
+        "priority": "P2",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.08515,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.21.2",
+        "target_versions": [
+          "0.21.2"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44492",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44492"
+        ],
+        "ghsa": [
+          "GHSA-PJWM-PJ3P-43MV",
+          "GHSA-pjwm-pj3p-43mv"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+      "published": "2026-05-29T15:59:30Z",
+      "modified": "2026-09-10T03:51:06.693575938Z",
+      "fixed_versions": [
+        "1.16.0",
+        "0.32.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pjwm-pj3p-43mv",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44492",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62718",
+        "https://access.redhat.com/errata/RHSA-2026:36611",
+        "https://access.redhat.com/errata/RHSA-2026:36754",
+        "https://access.redhat.com/errata/RHSA-2026:36820",
+        "https://access.redhat.com/errata/RHSA-2026:36882",
+        "https://access.redhat.com/errata/RHSA-2026:36883",
+        "https://access.redhat.com/errata/RHSA-2026:40119",
+        "https://access.redhat.com/errata/RHSA-2026:40138",
+        "https://access.redhat.com/errata/RHSA-2026:40262",
+        "https://access.redhat.com/errata/RHSA-2026:41031",
+        "https://access.redhat.com/errata/RHSA-2026:41055",
+        "https://access.redhat.com/errata/RHSA-2026:41064",
+        "https://access.redhat.com/errata/RHSA-2026:41066",
+        "https://access.redhat.com/security/cve/CVE-2026-44492",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2487938",
+        "https://github.com/axios/axios",
+        "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-44492.json",
+        "https://access.redhat.com/errata/RHSA-2026:20889",
+        "https://access.redhat.com/errata/RHSA-2026:20938",
+        "https://access.redhat.com/errata/RHSA-2026:26234",
+        "https://access.redhat.com/errata/RHSA-2026:27044",
+        "https://access.redhat.com/errata/RHSA-2026:27063",
+        "https://access.redhat.com/errata/RHSA-2026:28964",
+        "https://access.redhat.com/errata/RHSA-2026:29082",
+        "https://access.redhat.com/errata/RHSA-2026:29197",
+        "https://access.redhat.com/errata/RHSA-2026:30650",
+        "https://access.redhat.com/errata/RHSA-2026:30651",
+        "https://access.redhat.com/errata/RHSA-2026:33005",
+        "https://access.redhat.com/errata/RHSA-2026:33155",
+        "https://access.redhat.com/errata/RHSA-2026:33160",
+        "https://access.redhat.com/errata/RHSA-2026:33163",
+        "https://access.redhat.com/errata/RHSA-2026:33173",
+        "https://access.redhat.com/errata/RHSA-2026:33183",
+        "https://access.redhat.com/errata/RHSA-2026:33574",
+        "https://access.redhat.com/errata/RHSA-2026:34766",
+        "https://access.redhat.com/errata/RHSA-2026:36108"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.6,
+        "severity_label": "high",
+        "epss": 0.00783,
+        "epss_percentile": 0.54487,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pjwm-pj3p-43mv",
+            "url": "https://osv.dev/vulnerability/GHSA-pjwm-pj3p-43mv"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-pjwm-pj3p-43mv",
+            "html_url": "https://github.com/advisories/GHSA-pjwm-pj3p-43mv",
+            "published_at": "2026-05-29T15:59:30Z",
+            "updated_at": "2026-07-20T12:34:08Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44492",
+            "published": "2026-06-11T17:16:33.167",
+            "last_modified": "2026-09-11T13:18:07.357",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44492"
+          }
+        }
+      },
+      "assessment": {
+        "score": 49.9,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.86,
+          "epss": 0.00783,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.32.0",
+        "target_versions": [
+          "0.32.0",
+          "1.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44487",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44487"
+        ],
+        "ghsa": [
+          "GHSA-P92Q-9VQR-4J8V",
+          "GHSA-p92q-9vqr-4j8v"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+      "published": "2026-06-04T14:19:53Z",
+      "modified": "2026-09-10T03:51:09.218790313Z",
+      "fixed_versions": [
+        "1.16.0",
+        "0.32.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-p92q-9vqr-4j8v",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44487",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.32.0",
+        "https://github.com/axios/axios/releases/tag/v1.16.0"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.2,
+        "severity_label": "high",
+        "epss": 0.0076,
+        "epss_percentile": 0.53714,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-p92q-9vqr-4j8v",
+            "url": "https://osv.dev/vulnerability/GHSA-p92q-9vqr-4j8v"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-p92q-9vqr-4j8v",
+            "html_url": "https://github.com/advisories/GHSA-p92q-9vqr-4j8v",
+            "published_at": "2026-06-04T14:19:53Z",
+            "updated_at": "2026-06-12T19:24:48Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44487",
+            "published": "2026-06-11T17:16:32.607",
+            "last_modified": "2026-09-11T13:18:06.053",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44487"
+          }
+        }
+      },
+      "assessment": {
+        "score": 49.1,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.82,
+          "epss": 0.0076,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.32.0",
+        "target_versions": [
+          "0.32.0",
+          "1.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-25639",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-25639"
+        ],
+        "ghsa": [
+          "GHSA-43FC-JF86-J433",
+          "GHSA-43fc-jf86-j433"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+      "published": "2026-02-09T17:46:14Z",
+      "modified": "2026-09-10T03:50:34.100599628Z",
+      "fixed_versions": [
+        "1.13.5",
+        "0.30.3"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-43fc-jf86-j433",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-25639",
+        "https://github.com/axios/axios/pull/7369",
+        "https://github.com/axios/axios/pull/7388",
+        "https://github.com/axios/axios/commit/28c721588c7a77e7503d0a434e016f852c597b57",
+        "https://github.com/axios/axios/commit/d7ff1409c68168d3057fc3891f911b2b92616f9e",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.30.3",
+        "https://github.com/axios/axios/releases/tag/v1.13.5"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.01804,
+        "epss_percentile": 0.77792,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-43fc-jf86-j433",
+            "url": "https://osv.dev/vulnerability/GHSA-43fc-jf86-j433"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-43fc-jf86-j433",
+            "html_url": "https://github.com/advisories/GHSA-43fc-jf86-j433",
+            "published_at": "2026-02-09T17:46:14Z",
+            "updated_at": "2026-05-08T13:46:55Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-25639",
+            "published": "2026-02-09T21:15:49.010",
+            "last_modified": "2026-09-10T13:17:46.000",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25639"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.9,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.01804,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.30.3",
+        "target_versions": [
+          "0.30.3",
+          "1.13.5"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2022-23539",
+      "identifiers": {
+        "cve": [
+          "CVE-2022-23539"
+        ],
+        "ghsa": [
+          "GHSA-8CF7-32GW-WR33",
+          "GHSA-8cf7-32gw-wr33"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+      "published": "2022-12-22T03:32:22Z",
+      "modified": "2024-06-24T21:23:38Z",
+      "fixed_versions": [
+        "9.0.0"
+      ],
+      "references": [
+        "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-8cf7-32gw-wr33",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-23539",
+        "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3",
+        "https://github.com/auth0/node-jsonwebtoken",
+        "https://security.netapp.com/advisory/ntap-20240621-0007"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.1,
+        "severity_label": "high",
+        "epss": 0.00501,
+        "epss_percentile": 0.40733,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-8cf7-32gw-wr33",
+            "url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-8cf7-32gw-wr33",
+            "html_url": "https://github.com/advisories/GHSA-8cf7-32gw-wr33",
+            "published_at": "2022-12-22T03:32:22Z",
+            "updated_at": "2024-06-24T21:23:39Z"
+          },
+          "nvd": {
+            "id": "CVE-2022-23539",
+            "published": "2022-12-23T00:15:12.347",
+            "last_modified": "2026-06-17T04:30:19.143",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.8,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8099999999999999,
+          "epss": 0.00501,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "9.0.0",
+        "target_versions": [
+          "9.0.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44496",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44496"
+        ],
+        "ghsa": [
+          "GHSA-HFXV-24RG-XRQF",
+          "GHSA-hfxv-24rg-xrqf"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+      "published": "2026-06-04T14:24:06Z",
+      "modified": "2026-09-10T03:50:49.732285826Z",
+      "fixed_versions": [
+        "1.16.0",
+        "0.32.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-hfxv-24rg-xrqf",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.32.0",
+        "https://github.com/axios/axios/releases/tag/v1.16.0"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.00966,
+        "epss_percentile": 0.60382,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-hfxv-24rg-xrqf",
+            "url": "https://osv.dev/vulnerability/GHSA-hfxv-24rg-xrqf"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-hfxv-24rg-xrqf",
+            "html_url": "https://github.com/advisories/GHSA-hfxv-24rg-xrqf",
+            "published_at": "2026-06-04T14:24:06Z",
+            "updated_at": "2026-06-11T10:03:25Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44496",
+            "published": "2026-06-11T17:16:33.590",
+            "last_modified": "2026-09-11T13:18:09.287",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44496"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.00966,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.32.0",
+        "target_versions": [
+          "0.32.0",
+          "1.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44495",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44495"
+        ],
+        "ghsa": [
+          "GHSA-3G43-6GMG-66JW",
+          "GHSA-3g43-6gmg-66jw"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+      "published": "2026-05-29T16:07:31Z",
+      "modified": "2026-09-10T03:51:04.440180855Z",
+      "fixed_versions": [
+        "1.15.2",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-3g43-6gmg-66jw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44495",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.01041,
+        "epss_percentile": 0.62797,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3g43-6gmg-66jw",
+            "url": "https://osv.dev/vulnerability/GHSA-3g43-6gmg-66jw"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-3g43-6gmg-66jw",
+            "html_url": "https://github.com/advisories/GHSA-3g43-6gmg-66jw",
+            "published_at": "2026-05-29T16:07:31Z",
+            "updated_at": "2026-06-12T19:25:16Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44495",
+            "published": "2026-06-11T17:16:33.450",
+            "last_modified": "2026-09-11T13:18:08.610",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44495"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.01041,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.2"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44486",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44486"
+        ],
+        "ghsa": [
+          "GHSA-J5F8-GRM9-P9FC",
+          "GHSA-j5f8-grm9-p9fc"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+      "published": "2026-06-04T14:15:01Z",
+      "modified": "2026-09-10T03:50:50.017253448Z",
+      "fixed_versions": [
+        "1.16.0",
+        "0.32.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-j5f8-grm9-p9fc",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44486",
+        "https://github.com/axios/axios/pull/10794",
+        "https://github.com/axios/axios/commit/afca61a070728e717203c2bc21e7b589b59b858b",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.32.0",
+        "https://github.com/axios/axios/releases/tag/v1.16.0"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.0076,
+        "epss_percentile": 0.53714,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-j5f8-grm9-p9fc",
+            "url": "https://osv.dev/vulnerability/GHSA-j5f8-grm9-p9fc"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-j5f8-grm9-p9fc",
+            "html_url": "https://github.com/advisories/GHSA-j5f8-grm9-p9fc",
+            "published_at": "2026-06-04T14:15:01Z",
+            "updated_at": "2026-06-12T19:24:46Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44486",
+            "published": "2026-06-11T17:16:32.450",
+            "last_modified": "2026-09-11T13:18:05.413",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44486"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.0076,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.32.0",
+        "target_versions": [
+          "0.32.0",
+          "1.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42033",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42033"
+        ],
+        "ghsa": [
+          "GHSA-PF86-5X62-JRWF",
+          "GHSA-pf86-5x62-jrwf"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+      "published": "2026-05-05T00:26:29Z",
+      "modified": "2026-09-10T03:51:06.658921258Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pf86-5x62-jrwf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42033",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.00924,
+        "epss_percentile": 0.59068,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pf86-5x62-jrwf",
+            "url": "https://osv.dev/vulnerability/GHSA-pf86-5x62-jrwf"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-pf86-5x62-jrwf",
+            "html_url": "https://github.com/advisories/GHSA-pf86-5x62-jrwf",
+            "published_at": "2026-05-05T00:26:29Z",
+            "updated_at": "2026-05-05T00:26:30Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42033",
+            "published": "2026-04-24T18:16:29.993",
+            "last_modified": "2026-09-10T13:20:03.087",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42033"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.00924,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2025-27152",
+      "identifiers": {
+        "cve": [
+          "CVE-2025-27152"
+        ],
+        "ghsa": [
+          "GHSA-JR5F-V2JV-69X6",
+          "GHSA-jr5f-v2jv-69x6"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+      "published": "2025-03-07T15:16:00Z",
+      "modified": "2026-09-10T03:50:56.787685282Z",
+      "fixed_versions": [
+        "1.8.2",
+        "0.30.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-jr5f-v2jv-69x6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27152",
+        "https://github.com/axios/axios/issues/6463",
+        "https://github.com/axios/axios/pull/6829",
+        "https://github.com/axios/axios/commit/02c3c69ced0f8fd86407c23203835892313d7fde",
+        "https://github.com/axios/axios/commit/fb8eec214ce7744b5ca787f2c3b8339b2f54b00f",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v1.8.2"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.00792,
+        "epss_percentile": 0.54798,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-jr5f-v2jv-69x6",
+            "url": "https://osv.dev/vulnerability/GHSA-jr5f-v2jv-69x6"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-jr5f-v2jv-69x6",
+            "html_url": "https://github.com/advisories/GHSA-jr5f-v2jv-69x6",
+            "published_at": "2025-03-07T15:16:00Z",
+            "updated_at": "2025-11-27T08:44:29Z"
+          },
+          "nvd": {
+            "id": "CVE-2025-27152",
+            "published": "2025-03-07T16:15:38.773",
+            "last_modified": "2026-06-17T09:03:06.570",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27152"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.00792,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.30.0",
+        "target_versions": [
+          "0.30.0",
+          "1.8.2"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42043",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42043"
+        ],
+        "ghsa": [
+          "GHSA-PMWG-CVHR-8VH7",
+          "GHSA-pmwg-cvhr-8vh7"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+      "published": "2026-05-05T00:20:58Z",
+      "modified": "2026-09-10T03:51:06.691311805Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-pmwg-cvhr-8vh7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42043",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.00579,
+        "epss_percentile": 0.45723,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pmwg-cvhr-8vh7",
+            "url": "https://osv.dev/vulnerability/GHSA-pmwg-cvhr-8vh7"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-pmwg-cvhr-8vh7",
+            "html_url": "https://github.com/advisories/GHSA-pmwg-cvhr-8vh7",
+            "published_at": "2026-05-05T00:20:58Z",
+            "updated_at": "2026-05-05T00:20:58Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42043",
+            "published": "2026-04-24T18:16:31.457",
+            "last_modified": "2026-09-10T13:20:04.973",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42043"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.00579,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42035",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42035"
+        ],
+        "ghsa": [
+          "GHSA-6CHQ-WFR3-2HJ9",
+          "GHSA-6chq-wfr3-2hj9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Header Injection via Prototype Pollution",
+      "published": "2026-05-05T00:25:47Z",
+      "modified": "2026-09-10T03:51:04.772235088Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-6chq-wfr3-2hj9",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42035",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 8.0,
+        "severity_label": "high",
+        "epss": 0.00381,
+        "epss_percentile": 0.29712,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-6chq-wfr3-2hj9",
+            "url": "https://osv.dev/vulnerability/GHSA-6chq-wfr3-2hj9"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-6chq-wfr3-2hj9",
+            "html_url": "https://github.com/advisories/GHSA-6chq-wfr3-2hj9",
+            "published_at": "2026-05-05T00:25:47Z",
+            "updated_at": "2026-05-05T00:25:48Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42035",
+            "published": "2026-04-24T18:16:30.273",
+            "last_modified": "2026-06-17T10:47:20.660",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42035"
+          }
+        }
+      },
+      "assessment": {
+        "score": 48.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.8,
+          "epss": 0.00381,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2025-13465",
+      "identifiers": {
+        "cve": [
+          "CVE-2025-13465",
+          "CVE-2026-2950"
+        ],
+        "ghsa": [
+          "GHSA-F23M-R3PF-42RH",
+          "GHSA-XXJR-MMJV-4GPG",
+          "GHSA-xxjr-mmjv-4gpg",
+          "GHSA-f23m-r3pf-42rh"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+      "published": "2026-04-01T23:50:27Z",
+      "modified": "2026-09-10T03:50:44.050013812Z",
+      "fixed_versions": [
+        "4.17.23",
+        "4.18.0"
+      ],
+      "references": [
+        "https://cert-portal.siemens.com/productcert/html/ssa-253495.html",
+        "https://github.com/lodash/lodash",
+        "https://github.com/lodash/lodash/commit/edadd452146f7e4bad4ea684e955708931d84d81",
+        "https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh",
+        "https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-13465",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-2950"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.9,
+        "severity_label": "medium",
+        "epss": 0.0185,
+        "epss_percentile": 0.78368,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-f23m-r3pf-42rh",
+            "url": "https://osv.dev/vulnerability/GHSA-f23m-r3pf-42rh"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-f23m-r3pf-42rh",
+            "html_url": "https://github.com/advisories/GHSA-f23m-r3pf-42rh",
+            "published_at": "2026-04-01T23:50:27Z",
+            "updated_at": "2026-04-01T23:50:28Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-2950",
+            "published": "2026-03-31T20:16:26.207",
+            "last_modified": "2026-07-24T20:10:00.147",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2950"
+          }
+        }
+      },
+      "assessment": {
+        "score": 46.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.6900000000000001,
+          "epss": 0.0185,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "4.17.23",
+        "target_versions": [
+          "4.17.23",
+          "4.18.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42039",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42039"
+        ],
+        "ghsa": [
+          "GHSA-62HF-57XW-28J9",
+          "GHSA-62hf-57xw-28j9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+      "published": "2026-05-05T00:34:32Z",
+      "modified": "2026-09-10T03:50:45.703789635Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-62hf-57xw-28j9",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42039",
+        "https://github.com/axios/axios/commit/85132ffba1a77609ea5d101c8a413dea7174932f",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v1.15.1"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.9,
+        "severity_label": "medium",
+        "epss": 0.00966,
+        "epss_percentile": 0.60382,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-62hf-57xw-28j9",
+            "url": "https://osv.dev/vulnerability/GHSA-62hf-57xw-28j9"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-62hf-57xw-28j9",
+            "html_url": "https://github.com/advisories/GHSA-62hf-57xw-28j9",
+            "published_at": "2026-05-05T00:34:32Z",
+            "updated_at": "2026-06-08T15:54:29Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42039",
+            "published": "2026-04-24T18:16:30.827",
+            "last_modified": "2026-09-10T13:20:03.880",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42039"
+          }
+        }
+      },
+      "assessment": {
+        "score": 46.5,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.6900000000000001,
+          "epss": 0.00966,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-34480",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-34480"
+        ],
+        "ghsa": [
+          "GHSA-3PXV-7CMR-FJR4",
+          "GHSA-3pxv-7cmr-fjr4"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Apache Log4j Core: Silent log event loss in XmlLayout due to unescaped XML 1.0 forbidden characters",
+      "published": "2026-04-10T18:31:17Z",
+      "modified": "2026-09-10T03:50:42.492278990Z",
+      "fixed_versions": [
+        "2.25.4"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34480",
+        "https://github.com/apache/logging-log4j2/pull/4077",
+        "https://github.com/apache/logging-log4j2",
+        "https://lists.apache.org/thread/5x0hcnng0chhghp6jgjdp3qmbbhfjzhb",
+        "https://logging.apache.org/cyclonedx/vdr.xml",
+        "https://logging.apache.org/log4j/2.x/manual/layouts.html#XmlLayout",
+        "https://logging.apache.org/security.html#CVE-2026-34480",
+        "http://www.openwall.com/lists/oss-security/2026/04/10/9"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.9,
+        "severity_label": "medium",
+        "epss": 0.01187,
+        "epss_percentile": 0.66795,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3pxv-7cmr-fjr4",
+            "url": "https://osv.dev/vulnerability/GHSA-3pxv-7cmr-fjr4"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-3pxv-7cmr-fjr4",
+            "html_url": "https://github.com/advisories/GHSA-3pxv-7cmr-fjr4",
+            "published_at": "2026-04-10T18:31:17Z",
+            "updated_at": "2026-04-13T23:57:23Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-34480",
+            "published": "2026-04-10T16:16:31.463",
+            "last_modified": "2026-06-17T10:39:07.087",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34480"
+          }
+        }
+      },
+      "assessment": {
+        "score": 46.5,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.6900000000000001,
+          "epss": 0.01187,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.25.4",
+        "target_versions": [
+          "2.25.4"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42038",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42038"
+        ],
+        "ghsa": [
+          "GHSA-M7PR-HJQH-92CM",
+          "GHSA-m7pr-hjqh-92cm"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+      "published": "2026-05-05T00:40:17Z",
+      "modified": "2026-09-10T03:51:06.293033204Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-m7pr-hjqh-92cm",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42038",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.8,
+        "severity_label": "medium",
+        "epss": 0.00381,
+        "epss_percentile": 0.29734,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-m7pr-hjqh-92cm",
+            "url": "https://osv.dev/vulnerability/GHSA-m7pr-hjqh-92cm"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-m7pr-hjqh-92cm",
+            "html_url": "https://github.com/advisories/GHSA-m7pr-hjqh-92cm",
+            "published_at": "2026-05-05T00:40:17Z",
+            "updated_at": "2026-05-05T00:40:18Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42038",
+            "published": "2026-04-24T18:16:30.680",
+            "last_modified": "2026-06-17T10:47:20.980",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42038"
+          }
+        }
+      },
+      "assessment": {
+        "score": 46.2,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.6799999999999999,
+          "epss": 0.00381,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2023-45857",
+      "identifiers": {
+        "cve": [
+          "CVE-2023-45857"
+        ],
+        "ghsa": [
+          "GHSA-WF5P-G6VW-RHXX",
+          "GHSA-wf5p-g6vw-rhxx"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios Cross-Site Request Forgery Vulnerability",
+      "published": "2023-11-08T21:30:37Z",
+      "modified": "2026-09-10T03:49:47.742398623Z",
+      "fixed_versions": [
+        "1.6.0",
+        "0.28.0"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2023-45857",
+        "https://github.com/axios/axios/issues/6006",
+        "https://github.com/axios/axios/issues/6022",
+        "https://github.com/axios/axios/pull/6028",
+        "https://github.com/axios/axios/pull/6091",
+        "https://github.com/axios/axios/commit/2755df562b9c194fba6d8b609a383443f6a6e967",
+        "https://github.com/axios/axios/commit/96ee232bd3ee4de2e657333d4d2191cd389e14d0",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.28.0",
+        "https://github.com/axios/axios/releases/tag/v1.6.0",
+        "https://security.netapp.com/advisory/ntap-20240621-0006",
+        "https://security.snyk.io/vuln/SNYK-JS-AXIOS-6032459"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.5,
+        "severity_label": "medium",
+        "epss": 0.00556,
+        "epss_percentile": 0.44434,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-wf5p-g6vw-rhxx",
+            "url": "https://osv.dev/vulnerability/GHSA-wf5p-g6vw-rhxx"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-wf5p-g6vw-rhxx",
+            "html_url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+            "published_at": "2023-11-08T21:30:37Z",
+            "updated_at": "2024-06-21T21:33:58Z"
+          },
+          "nvd": {
+            "id": "CVE-2023-45857",
+            "published": "2023-11-08T21:15:08.550",
+            "last_modified": "2026-06-17T06:29:40.133",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45857"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.65,
+          "epss": 0.00556,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.28.0",
+        "target_versions": [
+          "0.28.0",
+          "1.6.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2022-23540",
+      "identifiers": {
+        "cve": [
+          "CVE-2022-23540"
+        ],
+        "ghsa": [
+          "GHSA-QWPH-4952-7XR6",
+          "GHSA-qwph-4952-7xr6"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+      "published": "2022-12-22T03:32:59Z",
+      "modified": "2025-02-13T18:33:13Z",
+      "fixed_versions": [
+        "9.0.0"
+      ],
+      "references": [
+        "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-qwph-4952-7xr6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-23540",
+        "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3",
+        "https://github.com/auth0/node-jsonwebtoken",
+        "https://security.netapp.com/advisory/ntap-20240621-0007"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.4,
+        "severity_label": "medium",
+        "epss": 0.00546,
+        "epss_percentile": 0.43839,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-qwph-4952-7xr6",
+            "url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-qwph-4952-7xr6",
+            "html_url": "https://github.com/advisories/GHSA-qwph-4952-7xr6",
+            "published_at": "2022-12-22T03:32:59Z",
+            "updated_at": "2025-02-13T18:33:13Z"
+          },
+          "nvd": {
+            "id": "CVE-2022-23540",
+            "published": "2022-12-22T19:15:08.967",
+            "last_modified": "2026-06-17T04:30:19.267",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.4,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.64,
+          "epss": 0.00546,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "9.0.0",
+        "target_versions": [
+          "9.0.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2025-68161",
+      "identifiers": {
+        "cve": [
+          "CVE-2025-68161"
+        ],
+        "ghsa": [
+          "GHSA-VC5P-V9HR-52MJ",
+          "GHSA-vc5p-v9hr-52mj"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Apache Log4j does not verify the TLS hostname in its Socket Appender",
+      "published": "2025-12-18T21:31:44Z",
+      "modified": "2026-09-10T03:50:32.126499218Z",
+      "fixed_versions": [
+        "2.25.3"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68161",
+        "https://github.com/apache/logging-log4j2/pull/4002",
+        "https://github.com/apache/logging-log4j2/commit/3b93748497e1adbbd027fda8a5e7268ec5d0d578",
+        "https://github.com/apache/logging-log4j2",
+        "https://lists.apache.org/thread/xr33kyxq3sl67lwb61ggvm1fzc8k7dvx",
+        "https://logging.apache.org/cyclonedx/vdr.xml",
+        "https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName",
+        "https://logging.apache.org/log4j/2.x/manual/systemproperties.html#log4j2.sslVerifyHostName",
+        "https://logging.apache.org/security.html#CVE-2025-68161",
+        "http://www.openwall.com/lists/oss-security/2025/12/18/1"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.3,
+        "severity_label": "medium",
+        "epss": 0.00767,
+        "epss_percentile": 0.53959,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-vc5p-v9hr-52mj",
+            "url": "https://osv.dev/vulnerability/GHSA-vc5p-v9hr-52mj"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-vc5p-v9hr-52mj",
+            "html_url": "https://github.com/advisories/GHSA-vc5p-v9hr-52mj",
+            "published_at": "2025-12-18T21:31:44Z",
+            "updated_at": "2025-12-19T22:08:03Z"
+          },
+          "nvd": {
+            "id": "CVE-2025-68161",
+            "published": "2025-12-18T21:15:57.960",
+            "last_modified": "2026-06-17T09:58:39.580",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68161"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.3,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.63,
+          "epss": 0.00767,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.25.3",
+        "target_versions": [
+          "2.25.3"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2025-62718",
+      "identifiers": {
+        "cve": [
+          "CVE-2025-62718"
+        ],
+        "ghsa": [
+          "GHSA-3P68-RC4W-QGX5",
+          "GHSA-3p68-rc4w-qgx5"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+      "published": "2026-04-09T17:32:19Z",
+      "modified": "2026-09-10T03:50:42.452672741Z",
+      "fixed_versions": [
+        "1.15.0",
+        "0.31.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-3p68-rc4w-qgx5",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62718",
+        "https://github.com/axios/axios/pull/10661",
+        "https://github.com/axios/axios/pull/10688",
+        "https://github.com/axios/axios/commit/03cdfc99e8db32a390e12128208b6778492cee9c",
+        "https://github.com/axios/axios/commit/fb3befb6daac6cad26b2e54094d0f2d9e47f24df",
+        "https://datatracker.ietf.org/doc/html/rfc1034#section-3.1",
+        "https://datatracker.ietf.org/doc/html/rfc3986#section-3.2.2",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.31.0",
+        "https://github.com/axios/axios/releases/tag/v1.15.0"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.3,
+        "severity_label": "medium",
+        "epss": 0.01186,
+        "epss_percentile": 0.66782,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3p68-rc4w-qgx5",
+            "url": "https://osv.dev/vulnerability/GHSA-3p68-rc4w-qgx5"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-3p68-rc4w-qgx5",
+            "html_url": "https://github.com/advisories/GHSA-3p68-rc4w-qgx5",
+            "published_at": "2026-04-09T17:32:19Z",
+            "updated_at": "2026-04-16T18:44:34Z"
+          },
+          "nvd": {
+            "id": "CVE-2025-62718",
+            "published": "2026-04-09T15:16:08.650",
+            "last_modified": "2026-09-10T13:17:26.047",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62718"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.3,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.63,
+          "epss": 0.01186,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.0",
+        "target_versions": [
+          "0.31.0",
+          "1.15.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-67319",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-67319"
+        ],
+        "ghsa": [
+          "GHSA-7Q8Q-RJ6J-MHJQ",
+          "GHSA-7q8q-rj6j-mhjq"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Nested axios option objects can consume polluted prototype values",
+      "published": "2026-07-20T22:37:31Z",
+      "modified": "2026-09-10T03:51:10.872027953Z",
+      "fixed_versions": [
+        "0.33.0",
+        "1.18.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-7q8q-rj6j-mhjq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67319",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69123",
+        "https://github.com/axios/axios/pull/11000",
+        "https://github.com/axios/axios/pull/11001",
+        "https://github.com/axios/axios/commit/1417285c69344bbcc6420a021f67dee0c6fedb2d",
+        "https://github.com/axios/axios/commit/32fc489632377d214db55bfa4e2c48486a7d7ce2",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.33.0",
+        "https://github.com/axios/axios/releases/tag/v1.18.0",
+        "https://www.vulncheck.com/advisories/axios-before-prototype-pollution-via-nested-option-objects"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.3,
+        "severity_label": "medium",
+        "epss": 0.00318,
+        "epss_percentile": 0.22494,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-7q8q-rj6j-mhjq",
+            "url": "https://osv.dev/vulnerability/GHSA-7q8q-rj6j-mhjq"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-7q8q-rj6j-mhjq",
+            "html_url": "https://github.com/advisories/GHSA-7q8q-rj6j-mhjq",
+            "published_at": "2026-07-20T22:37:31Z",
+            "updated_at": "2026-09-01T18:41:48Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-67319",
+            "published": "2026-08-01T13:17:02.080",
+            "last_modified": "2026-09-01T15:39:26.203",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67319"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.2,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.63,
+          "epss": 0.00318,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.33.0",
+        "target_versions": [
+          "0.33.0",
+          "1.18.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-67316",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-67316"
+        ],
+        "ghsa": [
+          "GHSA-MMX7-HFXF-JPPX",
+          "GHSA-mmx7-hfxf-jppx"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Prototype pollution gadgets can alter axios request construction",
+      "published": "2026-07-20T22:25:07Z",
+      "modified": "2026-09-10T03:50:52.753640421Z",
+      "fixed_versions": [
+        "1.18.0",
+        "0.33.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-mmx7-hfxf-jppx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67316",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-68944",
+        "https://github.com/axios/axios/pull/11000",
+        "https://github.com/axios/axios/pull/11001",
+        "https://github.com/axios/axios/commit/1417285c69344bbcc6420a021f67dee0c6fedb2d",
+        "https://github.com/axios/axios/commit/32fc489632377d214db55bfa4e2c48486a7d7ce2",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.33.0",
+        "https://github.com/axios/axios/releases/tag/v1.18.0",
+        "https://www.vulncheck.com/advisories/axios-before-prototype-pollution-via-bodyless-methods"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.3,
+        "severity_label": "medium",
+        "epss": 0.00424,
+        "epss_percentile": 0.34473,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-mmx7-hfxf-jppx",
+            "url": "https://osv.dev/vulnerability/GHSA-mmx7-hfxf-jppx"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-mmx7-hfxf-jppx",
+            "html_url": "https://github.com/advisories/GHSA-mmx7-hfxf-jppx",
+            "published_at": "2026-07-20T22:25:07Z",
+            "updated_at": "2026-08-31T19:51:33Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-67316",
+            "published": "2026-08-01T13:17:01.673",
+            "last_modified": "2026-09-01T15:40:01.880",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67316"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.2,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.63,
+          "epss": 0.00424,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.33.0",
+        "target_versions": [
+          "0.33.0",
+          "1.18.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-34477",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-34477"
+        ],
+        "ghsa": [
+          "GHSA-6HG6-V5C8-FPHQ",
+          "GHSA-6hg6-v5c8-fphq"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Apache Log4j Core: `verifyHostName` attribute silently ignored in TLS configuration",
+      "published": "2026-04-10T18:31:17Z",
+      "modified": "2026-09-10T03:50:43.570169134Z",
+      "fixed_versions": [
+        "2.25.4"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34477",
+        "https://github.com/apache/logging-log4j2/pull/4075",
+        "https://github.com/apache/logging-log4j2",
+        "https://lists.apache.org/thread/lkx8cl46t2bvkcwfcb2pd43ygc097lq4",
+        "https://logging.apache.org/cyclonedx/vdr.xml",
+        "https://logging.apache.org/log4j/2.x/manual/appenders/network.html#SslConfiguration-attr-verifyHostName",
+        "https://logging.apache.org/security.html#CVE-2026-34477"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 6.3,
+        "severity_label": "medium",
+        "epss": 0.00502,
+        "epss_percentile": 0.40806,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-6hg6-v5c8-fphq",
+            "url": "https://osv.dev/vulnerability/GHSA-6hg6-v5c8-fphq"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-6hg6-v5c8-fphq",
+            "html_url": "https://github.com/advisories/GHSA-6hg6-v5c8-fphq",
+            "published_at": "2026-04-10T18:31:17Z",
+            "updated_at": "2026-04-14T00:11:56Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-34477",
+            "published": "2026-04-10T16:16:30.843",
+            "last_modified": "2026-06-17T10:39:06.643",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34477"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.2,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.63,
+          "epss": 0.00502,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "2.25.4",
+        "target_versions": [
+          "2.25.4"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2020-28500",
+      "identifiers": {
+        "cve": [
+          "CVE-2020-28500"
+        ],
+        "ghsa": [
+          "GHSA-29MW-WPGM-HMR9",
+          "GHSA-29mw-wpgm-hmr9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+      "published": "2022-01-06T20:30:46Z",
+      "modified": "2025-09-29T21:12:31.102523Z",
+      "fixed_versions": [
+        "4.17.21"
+      ],
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2020-28500",
+        "https://github.com/github/advisory-database/pull/6139",
+        "https://github.com/lodash/lodash/pull/5065",
+        "https://github.com/lodash/lodash/pull/5065/commits/02906b8191d3c100c193fe6f7b27d1c40f200bb7",
+        "https://github.com/lodash/lodash/commit/c4847ebe7d14540bb28a8b932a9ce1b9ecbfee1a",
+        "https://www.oracle.com/security-alerts/cpuoct2021.html",
+        "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "https://www.oracle.com//security-alerts/cpujul2021.html",
+        "https://snyk.io/vuln/SNYK-JS-LODASH-1018905",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074893",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074895",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074892",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074894",
+        "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074896",
+        "https://security.netapp.com/advisory/ntap-20210312-0006",
+        "https://github.com/rubysec/ruby-advisory-db/blob/master/gems/lodash-rails/CVE-2020-28500.yml",
+        "https://github.com/lodash/lodash/blob/npm/trimEnd.js%23L8",
+        "https://github.com/lodash/lodash",
+        "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.07336,
+        "epss_percentile": 0.94217,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-29mw-wpgm-hmr9",
+            "url": "https://osv.dev/vulnerability/GHSA-29mw-wpgm-hmr9"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-29mw-wpgm-hmr9",
+            "html_url": "https://github.com/advisories/GHSA-29mw-wpgm-hmr9",
+            "published_at": "2022-01-06T20:30:46Z",
+            "updated_at": "2025-09-29T20:19:46Z"
+          },
+          "nvd": {
+            "id": "CVE-2020-28500",
+            "published": "2021-02-15T11:15:12.397",
+            "last_modified": "2026-06-17T03:10:32.757",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28500"
+          }
+        }
+      },
+      "assessment": {
+        "score": 45.0,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.07336,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "4.17.21",
+        "target_versions": [
+          "4.17.21"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-40175",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-40175"
+        ],
+        "ghsa": [
+          "GHSA-FVCV-3M26-PCQX",
+          "GHSA-fvcv-3m26-pcqx"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+      "published": "2026-04-10T19:47:16Z",
+      "modified": "2026-09-10T03:50:44.273401032Z",
+      "fixed_versions": [
+        "1.15.0",
+        "0.31.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-fvcv-3m26-pcqx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-40175",
+        "https://github.com/axios/axios/pull/10660",
+        "https://github.com/axios/axios/pull/10660#issuecomment-4224168081",
+        "https://github.com/axios/axios/pull/10688",
+        "https://github.com/axios/axios/commit/03cdfc99e8db32a390e12128208b6778492cee9c",
+        "https://github.com/axios/axios/commit/363185461b90b1b78845dc8a99a1f103d9b122a1",
+        "https://cert-portal.siemens.com/productcert/html/ssa-876049.html",
+        "https://github.com/axios/axios",
+        "https://github.com/axios/axios/releases/tag/v0.31.0",
+        "https://github.com/axios/axios/releases/tag/v1.15.0"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.01307,
+        "epss_percentile": 0.69587,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-fvcv-3m26-pcqx",
+            "url": "https://osv.dev/vulnerability/GHSA-fvcv-3m26-pcqx"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-fvcv-3m26-pcqx",
+            "html_url": "https://github.com/advisories/GHSA-fvcv-3m26-pcqx",
+            "published_at": "2026-04-10T19:47:16Z",
+            "updated_at": "2026-05-20T00:25:28Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-40175",
+            "published": "2026-04-10T20:16:22.800",
+            "last_modified": "2026-09-09T13:19:49.597",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40175"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.8,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.01307,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.0",
+        "target_versions": [
+          "0.31.0",
+          "1.15.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42041",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42041"
+        ],
+        "ghsa": [
+          "GHSA-W9J2-PVGH-6H63",
+          "GHSA-w9j2-pvgh-6h63"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+      "published": "2026-05-05T00:21:39Z",
+      "modified": "2026-09-10T03:50:47.772907977Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-w9j2-pvgh-6h63",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42041",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.0081,
+        "epss_percentile": 0.55446,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-w9j2-pvgh-6h63",
+            "url": "https://osv.dev/vulnerability/GHSA-w9j2-pvgh-6h63"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-w9j2-pvgh-6h63",
+            "html_url": "https://github.com/advisories/GHSA-w9j2-pvgh-6h63",
+            "published_at": "2026-05-05T00:21:39Z",
+            "updated_at": "2026-05-05T00:21:40Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42041",
+            "published": "2026-04-24T18:16:31.133",
+            "last_modified": "2026-09-10T13:20:04.420",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42041"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.0081,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2022-23541",
+      "identifiers": {
+        "cve": [
+          "CVE-2022-23541"
+        ],
+        "ghsa": [
+          "GHSA-HJRF-2M68-5959",
+          "GHSA-hjrf-2m68-5959"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+      "published": "2022-12-22T03:33:19Z",
+      "modified": "2024-06-24T21:24:06Z",
+      "fixed_versions": [
+        "9.0.0"
+      ],
+      "references": [
+        "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-hjrf-2m68-5959",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-23541",
+        "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3",
+        "https://github.com/auth0/node-jsonwebtoken",
+        "https://github.com/auth0/node-jsonwebtoken/releases/tag/v9.0.0",
+        "https://security.netapp.com/advisory/ntap-20240621-0007"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.00774,
+        "epss_percentile": 0.54198,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-hjrf-2m68-5959",
+            "url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-hjrf-2m68-5959",
+            "html_url": "https://github.com/advisories/GHSA-hjrf-2m68-5959",
+            "published_at": "2022-12-22T03:33:19Z",
+            "updated_at": "2024-06-24T21:24:07Z"
+          },
+          "nvd": {
+            "id": "CVE-2022-23541",
+            "published": "2022-12-22T18:15:09.390",
+            "last_modified": "2026-06-17T04:30:19.393",
+            "vuln_status": "Modified",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.7,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.00774,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "9.0.0",
+        "target_versions": [
+          "9.0.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-44490",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-44490"
+        ],
+        "ghsa": [
+          "GHSA-898C-Q2CR-XWHG",
+          "GHSA-898c-q2cr-xwhg"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+      "published": "2026-05-29T15:54:57Z",
+      "modified": "2026-09-10T03:51:04.811379218Z",
+      "fixed_versions": [
+        "1.16.0",
+        "0.32.0"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-898c-q2cr-xwhg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2018-16487",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44490",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.00403,
+        "epss_percentile": 0.32223,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-898c-q2cr-xwhg",
+            "url": "https://osv.dev/vulnerability/GHSA-898c-q2cr-xwhg"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-898c-q2cr-xwhg",
+            "html_url": "https://github.com/advisories/GHSA-898c-q2cr-xwhg",
+            "published_at": "2026-05-29T15:54:57Z",
+            "updated_at": "2026-06-12T19:25:07Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-44490",
+            "published": "2026-06-11T17:16:33.027",
+            "last_modified": "2026-06-17T10:50:43.067",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44490"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.00403,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.32.0",
+        "target_versions": [
+          "0.32.0",
+          "1.16.0"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42042",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42042"
+        ],
+        "ghsa": [
+          "GHSA-XX6V-RP6X-Q39C",
+          "GHSA-xx6v-rp6x-q39c"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+      "published": "2026-05-05T00:25:22Z",
+      "modified": "2026-09-10T03:51:07.425895085Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-xx6v-rp6x-q39c",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42042",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.00324,
+        "epss_percentile": 0.23237,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-xx6v-rp6x-q39c",
+            "url": "https://osv.dev/vulnerability/GHSA-xx6v-rp6x-q39c"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-xx6v-rp6x-q39c",
+            "html_url": "https://github.com/advisories/GHSA-xx6v-rp6x-q39c",
+            "published_at": "2026-05-05T00:25:22Z",
+            "updated_at": "2026-05-05T00:25:23Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42042",
+            "published": "2026-04-24T18:16:31.293",
+            "last_modified": "2026-06-17T10:47:21.420",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42042"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.00324,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42036",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42036"
+        ],
+        "ghsa": [
+          "GHSA-VF2M-468P-8V99",
+          "GHSA-vf2m-468p-8v99"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+      "published": "2026-05-05T00:26:57Z",
+      "modified": "2026-09-10T03:50:47.671121168Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-vf2m-468p-8v99",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42036",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.0048,
+        "epss_percentile": 0.39207,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-vf2m-468p-8v99",
+            "url": "https://osv.dev/vulnerability/GHSA-vf2m-468p-8v99"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-vf2m-468p-8v99",
+            "html_url": "https://github.com/advisories/GHSA-vf2m-468p-8v99",
+            "published_at": "2026-05-05T00:26:57Z",
+            "updated_at": "2026-05-05T00:26:59Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42036",
+            "published": "2026-04-24T18:16:30.410",
+            "last_modified": "2026-06-17T10:47:20.770",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42036"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.0048,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42034",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42034"
+        ],
+        "ghsa": [
+          "GHSA-5C9X-8GCM-MPGX",
+          "GHSA-5c9x-8gcm-mpgx"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+      "published": "2026-05-05T00:33:25Z",
+      "modified": "2026-09-10T03:50:45.707956373Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-5c9x-8gcm-mpgx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42034",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 5.5,
+        "severity_label": "medium",
+        "epss": 0.0048,
+        "epss_percentile": 0.39208,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-5c9x-8gcm-mpgx",
+            "url": "https://osv.dev/vulnerability/GHSA-5c9x-8gcm-mpgx"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-5c9x-8gcm-mpgx",
+            "html_url": "https://github.com/advisories/GHSA-5c9x-8gcm-mpgx",
+            "published_at": "2026-05-05T00:33:25Z",
+            "updated_at": "2026-05-05T00:33:25Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42034",
+            "published": "2026-04-24T18:16:30.140",
+            "last_modified": "2026-06-17T10:47:20.553",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42034"
+          }
+        }
+      },
+      "assessment": {
+        "score": 43.6,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.55,
+          "epss": 0.0048,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "CVE-2026-42040",
+      "identifiers": {
+        "cve": [
+          "CVE-2026-42040"
+        ],
+        "ghsa": [
+          "GHSA-XHJH-PMCV-23JW",
+          "GHSA-xhjh-pmcv-23jw"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+      "published": "2026-05-05T00:18:03Z",
+      "modified": "2026-09-10T03:50:48.032269033Z",
+      "fixed_versions": [
+        "1.15.1",
+        "0.31.1"
+      ],
+      "references": [
+        "https://github.com/axios/axios/security/advisories/GHSA-xhjh-pmcv-23jw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42040",
+        "https://github.com/axios/axios"
+      ],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": 3.7,
+        "severity_label": "low",
+        "epss": 0.00264,
+        "epss_percentile": 0.16637,
+        "cisa_kev": false,
+        "github_advisory": true,
+        "nvd": true,
+        "sources": {
+          "osv": {
+            "id": "GHSA-xhjh-pmcv-23jw",
+            "url": "https://osv.dev/vulnerability/GHSA-xhjh-pmcv-23jw"
+          },
+          "epss": {
+            "date": "2026-10-04",
+            "url": "https://api.first.org/data/v1/epss"
+          },
+          "github_advisory": {
+            "ghsa_id": "GHSA-xhjh-pmcv-23jw",
+            "html_url": "https://github.com/advisories/GHSA-xhjh-pmcv-23jw",
+            "published_at": "2026-05-05T00:18:03Z",
+            "updated_at": "2026-05-05T00:18:03Z"
+          },
+          "nvd": {
+            "id": "CVE-2026-42040",
+            "published": "2026-04-24T18:16:30.960",
+            "last_modified": "2026-06-17T10:47:21.197",
+            "vuln_status": "Analyzed",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42040"
+          }
+        }
+      },
+      "assessment": {
+        "score": 40.0,
+        "priority": "P3",
+        "confidence": "high",
+        "factors": {
+          "cvss": 0.37,
+          "epss": 0.00264,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": true,
+        "recommended_version": "0.31.1",
+        "target_versions": [
+          "0.31.1",
+          "1.15.1"
+        ],
+        "recommended_action": "Upgrade to a confirmed fixed version and re-scan",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    }
+  ]
+}
