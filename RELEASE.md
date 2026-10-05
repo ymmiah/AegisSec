@@ -8,7 +8,7 @@ AegisSec AI v1.0.0 is the canonical v1 release. It includes the complete native 
 
 - 115 native security skills
 - 64 senior specialist skills/routes
-- 10/10 unit tests
+- 11/11 unit tests
 - Python source compilation
 - JSON/YAML configuration parsing
 - repository structural validation
