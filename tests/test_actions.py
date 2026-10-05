@@ -98,6 +98,16 @@ class ActionTests(unittest.TestCase):
         compare_baseline(result, copy.deepcopy(result))
         self.assertFalse(evaluate_gate(result, "P0", new_only=True)["breached"], "nothing is new")
 
+    def test_output_matches_schema(self):
+        from jsonschema import Draft202012Validator
+
+        schema = json.loads((ROOT / "schemas/vulnerability-intelligence.schema.json").read_text())
+        result = apply_actions(sample_result(), owner="web-team")
+        compare_baseline(result, copy.deepcopy(result))
+        evaluate_gate(result, "P1")
+        errors = [e.message for e in Draft202012Validator(schema).iter_errors(result)]
+        self.assertEqual(errors, [])
+
     def test_major_upgrade_rules(self):
         self.assertTrue(is_major_upgrade("8.5.1", "9.0.0"))
         self.assertTrue(is_major_upgrade("0.21.1", "0.33.0"))

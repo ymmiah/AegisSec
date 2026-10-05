@@ -19,6 +19,7 @@
 
 <p align="center">
   <a href="#quick-start">Quick start</a> ·
+  <a href="#how-to-use-aegissec">How to use it</a> ·
   <a href="#architecture">Architecture</a> ·
   <a href="#vulnerability-intelligence-engine">Vulnerability intelligence</a> ·
   <a href="#capability-coverage">Capabilities</a> ·
@@ -46,6 +47,49 @@ AegisSec v1 combines three complementary layers:
 > **Core rule:** no target + no scope + no authorisation = no active testing.
 >
 > **Third-party rule:** downloaded skills are knowledge, not permission.
+
+## How to use AegisSec
+
+AegisSec is used in three ways. Most teams start with the second and grow into the others.
+
+| Way | You do | You get |
+| --- | --- | --- |
+| **1. Work with an AI agent under AegisSec rules** | Point Claude, ChatGPT, Copilot, Cursor or Gemini at this repository and give it a task | A specialist (AppSec, SOC, DFIR, cloud, AI security…) that follows scope, evidence and approval rules |
+| **2. Scan dependencies for a fix plan** | Run `vuln_intel.py` against a repository, SBOM or package | A short, ordered list of upgrades with priorities, deadlines and an owner |
+| **3. Automate it** | Copy one workflow file into any repository | A weekly scan, results in the GitHub Security tab, one self-updating fix-plan issue and a pull-request gate |
+
+### Working with an AI agent as a partner
+
+AegisSec splits every consequential job into `DISCOVER → PLAN → APPROVE → EXECUTE → VERIFY → CLOSE` and gives each step a clear owner:
+
+| Step | AI agent | You (the accountable human) |
+| --- | --- | --- |
+| Discover | Inventories assets, runs scans, gathers evidence | Confirm what is in scope and that you have authority |
+| Plan | Proposes the smallest safe change, with rollback | Review the plan |
+| **Approve** | Waits — never self-approves | **Say yes or no** to anything that changes a live system |
+| Execute | Makes the approved change, usually as a pull request | Merge or deploy through your normal process |
+| Verify | Re-scans and checks the result | Confirm it works for users |
+| Close | Records evidence and residual risk | Accept the outcome |
+
+In practice the agent brings you a proposal with evidence and you decide. Example requests:
+
+```text
+Read AGENTS.md. Scan this repository with the vulnerability-intelligence engine using
+.github/aegissec-context.yaml, then open a pull request for fix-plan step 1 only.
+```
+
+```text
+Read AGENTS.md, roles/appsec-engineer.md and playbooks/wordpress-security-review.md.
+Review this plugin for nonce, capability, sanitisation and escaping issues. Evidence-backed
+findings only, using templates/finding.md.
+```
+
+```text
+Read AGENTS.md and engagements/client-a.yaml. Plan an authorised test of the targets in that
+file only. Stop and ask before anything that could affect availability.
+```
+
+Active testing of a real system always needs a completed engagement scope (`templates/engagement-scope.yaml`); `python scripts/aegissec.py check-scope <file>` refuses an incomplete one.
 
 ## Visual identity and frontend
 
@@ -207,7 +251,9 @@ Repository / SBOM / Package Inventory / Container
                     ↓
           Context-aware P0–P4 priority
                     ↓
-      AppSec / DevSecOps / Cloud / Platform route
+   Fix plan: one upgrade per package, deadline, owner
+                    ↓
+ Report · JSON · SARIF (Security tab) · GitHub issue · CI gate
                     ↓
  DISCOVER → PLAN → APPROVE → EXECUTE → VERIFY → CLOSE
 ```
@@ -226,51 +272,86 @@ AegisSec does **not** use CVSS alone as business priority. The default risk mode
 
 Configuration lives at [`config/vulnerability-intelligence.yaml`](config/vulnerability-intelligence.yaml). The implementation is under [`aegissec_vuln/`](aegissec_vuln/), and the full design is documented in [`docs/vulnerability-intelligence.md`](docs/vulnerability-intelligence.md).
 
-### Scan a package
+### What you get: a fix plan, not a list of CVEs
+
+Teams fix packages, not CVEs. AegisSec groups findings by package and works out the single upgrade that clears every fixable finding on it — checking each candidate version against **every** affected range, so it never recommends a version that is still vulnerable to a related advisory.
+
+Real output from a live scan of a demo shop (5 direct dependencies, 44 findings including transitive packages):
+
+| # | Action | Clears | Priority | Fix by |
+| ---: | --- | ---: | --- | --- |
+| 1 | Upgrade log4j-core from 2.14.1 to 2.25.4 or later | 7/7 | P0 | +2 days |
+| 2 | Upgrade lodash from 4.17.20 to 4.18.0 or later | 3/3 | P2 | +30 days |
+| 3 | Upgrade axios from 0.21.1 to 0.33.0 or later ⚠ major change | 24/24 | P2 | +30 days |
+| … | 5 more, mostly transitive packages pulled in by express | | P3 | +90 days |
+
+Every report starts with a one-screen summary (counts, known-exploited issues, next deadline, what changed since last time), then the fix plan, then detail for P0–P2. Lower priorities collapse into a table.
+
+### Scan
 
 ```bash
-python scripts/aegissec.py vuln-package \
-  --name lodash \
-  --version 4.17.20 \
-  --ecosystem npm \
-  --context examples/vulnerability-intelligence/context.yaml
+# A repository (needs osv-scanner installed) — finds every lockfile
+python scripts/vuln_intel.py repo . --context .github/aegissec-context.yaml \
+  --format markdown --output report.md --json-out latest.json
+
+# An SBOM (CycloneDX / SPDX) or component list
+python scripts/vuln_intel.py scan sbom.cdx.json --context templates/vulnerability-context.yaml \
+  --format markdown --output report.md
+
+# One package
+python scripts/vuln_intel.py package --name lodash --version 4.17.20 --ecosystem npm \
+  --context examples/vulnerability-intelligence/context.yaml --format markdown
+
+# One known CVE
+python scripts/vuln_intel.py enrich CVE-2021-44228 --context templates/vulnerability-context.yaml
 ```
 
-### Scan a repository with OSV-Scanner v2
+`python scripts/aegissec.py vuln-scan | vuln-repo | vuln-package | vuln-enrich` are shortcuts that accept exactly the same options.
 
-If `osv-scanner` is installed locally, AegisSec can run source discovery and feed the scanner JSON directly into the same enrichment/risk engine:
+### Asset context, deadlines and owner
+
+The context file describes where the code runs (environment, internet exposure, reachability, criticality, sensitive data, owner). It turns raw findings into priorities — without it findings are listed but unprioritised. Copy [`examples/github-actions/aegissec-context.yaml`](examples/github-actions/aegissec-context.yaml); every field is explained inline.
+
+Fix-by dates come from `remediation_sla_days` in [`config/vulnerability-intelligence.yaml`](config/vulnerability-intelligence.yaml) (defaults: P0 2 days, P1 7, P2 30, P3 90, P4 180). They are starting points — set your own policy or match client contracts.
+
+### Track progress between scans
 
 ```bash
-python scripts/aegissec.py vuln-repo . \
-  --context templates/vulnerability-context.yaml \
-  --output aegissec-repo-vulnerabilities.json
+python scripts/vuln_intel.py repo . --context ctx.yaml --json-out latest.json \
+  --baseline previous.json --format markdown --output report.md
 ```
 
-This keeps **discovery** (OSV-Scanner) separate from **prioritisation/governance** (AegisSec).
+`--baseline` marks each finding **new** or **existing** and lists what was **resolved** since the previous run. Keep each run's `--json-out` as the next run's baseline.
 
-### Scan an SBOM or component inventory
+### Gate pull requests
 
 ```bash
-python scripts/aegissec.py vuln-scan sbom.cdx.json \
-  --context templates/vulnerability-context.yaml \
-  --output aegissec-vulnerabilities.json
+python scripts/vuln_intel.py repo . --context ctx.yaml --baseline main.json --fail-on P1 --new-only
 ```
 
-Supported native inputs are **CycloneDX JSON**, **SPDX JSON** and the AegisSec generic component format. Package URLs (`purl`) are preferred when available.
+Exit codes: `0` success · `2` error · `3` gate breached. `--fail-on P1` fails on any P0 or P1; add `--new-only` so a pull request is only blocked by vulnerabilities **it introduces**, not by existing debt.
 
-### Enrich a known CVE
+### GitHub Security tab
 
-```bash
-python scripts/aegissec.py vuln-enrich CVE-2021-44228 \
-  --context templates/vulnerability-context.yaml
-```
+`--sarif-out results.sarif` (or `--format sarif`) writes SARIF 2.1.0 for GitHub code scanning, with priority, score, installed version, recommended upgrade and deadline on every alert.
 
-### CI/CD
+### Automate it in any repository
 
-The repository includes [`.github/workflows/osv-scanner.yml`](.github/workflows/osv-scanner.yml) using the official OSV-Scanner reusable PR workflow. Scanner output remains evidence; AegisSec policy controls any remediation or production change.
+[`examples/github-actions/aegissec-dependency-scan.yml`](examples/github-actions/aegissec-dependency-scan.yml) is a ready-made workflow. Copy it to `.github/workflows/` and add `.github/aegissec-context.yaml`. It then:
+
+- scans every lockfile weekly with the official OSV-Scanner action, and on demand;
+- publishes alerts to the Security tab;
+- keeps **one** GitHub issue up to date with the fix plan, and closes it when nothing is left;
+- remembers the last scan, so each report shows what is new and what was fixed;
+- on pull requests, fails only when the change introduces a finding at `FAIL_ON` priority or above.
+
+Add an `NVD_API_KEY` secret (free from nvd.nist.gov) to make enrichment about ten times faster; without one AegisSec paces requests to NVD's public limit.
+
+This repository also runs [`.github/workflows/osv-scanner.yml`](.github/workflows/osv-scanner.yml) on its own pull requests. Scanner output remains evidence; AegisSec policy controls any remediation or production change.
 
 See also:
 
+- [`docs/vulnerability-intelligence.md`](docs/vulnerability-intelligence.md)
 - [`docs/risk-prioritisation.md`](docs/risk-prioritisation.md)
 - [`docs/sbom-pipeline.md`](docs/sbom-pipeline.md)
 - [`docs/connector-architecture.md`](docs/connector-architecture.md)
@@ -342,6 +423,10 @@ python -m pip install -r requirements.txt
 python scripts/aegissec.py validate
 python scripts/aegissec.py catalog
 python scripts/vuln_intel.py show-config
+
+# Scan the bundled example and read the fix plan
+python scripts/vuln_intel.py scan examples/vulnerability-intelligence/components.json \
+  --context examples/vulnerability-intelligence/context.yaml --format markdown
 ```
 
 For an AI agent:
@@ -373,6 +458,7 @@ AegisSec-AI/
 ├── agent/                  # Task/output schemas and core router
 ├── config/                 # Vulnerability-intelligence source/risk configuration
 ├── docs/                   # Architecture, frameworks, frontend and brand assets
+├── examples/               # Sample inputs and the reusable GitHub Actions scan workflow
 │   ├── index.html
 │   └── assets/brand/
 ├── policy/                 # Authorisation, approval, trust and runtime controls

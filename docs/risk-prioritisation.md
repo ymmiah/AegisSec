@@ -24,6 +24,21 @@ Weights are normalised automatically and are configurable in `config/vulnerabili
 - `P3` — medium-priority remediation or mitigation
 - `P4` — low priority / monitor / accept with documented rationale
 
+## Remediation deadlines
+
+Each priority maps to a fix-by date, set in `config/vulnerability-intelligence.yaml`:
+
+```yaml
+remediation_sla_days:
+  P0: 2
+  P1: 7
+  P2: 30
+  P3: 90
+  P4: 180
+```
+
+These defaults are starting points, not a standard. Align them with your organisation's policy, regulatory requirements or client contracts. CISA KEV due dates are kept in each finding's sources for reference; they are set for US federal agencies and are often already in the past for older vulnerabilities, so they do not drive `due_by`.
+
 ## Urgency floors
 
 Weighted averages can hide urgent exploitation. The engine therefore applies explainable floors:
