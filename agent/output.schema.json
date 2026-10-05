@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisSec Result",
+  "type": "object",
+  "required": [
+    "classification",
+    "summary",
+    "observations",
+    "recommendations",
+    "confidence",
+    "limitations"
+  ],
+  "properties": {
+    "classification": {
+      "enum": [
+        "DEFENSIVE",
+        "ASSESSMENT",
+        "LAB",
+        "PROHIBITED"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "statement",
+          "evidence",
+          "confidence"
+        ],
+        "properties": {
+          "statement": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array"
+          },
+          "confidence": {
+            "enum": [
+              "High",
+              "Medium",
+              "Low"
+            ]
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_approvals_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_role": {
+      "type": "string"
+    },
+    "risk_tier": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "evidence_records": {
+      "type": "array"
+    },
+    "actions_taken": {
+      "type": "array"
+    },
+    "verification": {
+      "type": "array"
+    },
+    "residual_risk": {
+      "type": "array"
+    }
+  }
+}
