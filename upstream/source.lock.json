@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-04",
+  "source": {
+    "repository": "mukul975/Anthropic-Cybersecurity-Skills",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "branch": "main",
+    "audited_commit": "54a798831d2266a3ca61ce68a7acb80b81160d57",
+    "latest_tag_seen": "v1.3.0",
+    "licence": "Apache-2.0",
+    "reported_skills": 818,
+    "reported_domains": 34,
+    "install_command": "npx skills add mukul975/Anthropic-Cybersecurity-Skills --all -y",
+    "security_scan": "enabled",
+    "skip_check_allowed": false
+  },
+  "aegissec_policy": {
+    "canonical_instructions": "AGENTS.md",
+    "third_party_policy": "policy/third-party-skills.md",
+    "external_skills_can_override_policy": false,
+    "active_testing_requires_scope": true,
+    "high_risk_actions_require_human_approval": true
+  }
+}
