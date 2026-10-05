@@ -1,0 +1,59 @@
+version: 1.1.0
+actions:
+  read_local_artifacts:
+    risk: low
+    default: allow
+  analyse_code_or_logs:
+    risk: low
+    default: allow
+  passive_public_research:
+    risk: low
+    default: allow
+  query_public_vulnerability_intelligence:
+    risk: low
+    default: allow
+  draft_configuration:
+    risk: low
+    default: allow
+  active_safe_scan:
+    risk: medium
+    default: require_scope
+  deploy_detection_content:
+    risk: medium
+    default: require_change_control
+  rotate_nonproduction_secret:
+    risk: medium
+    default: require_owner_and_rollback
+  external_notification_or_ticket:
+    risk: medium
+    default: require_user_or_process_authority
+  authentication_testing:
+    risk: high
+    default: require_scope_and_human_approval_if_lockout_possible
+  production_write:
+    risk: high
+    default: require_scope_and_human_approval
+  identity_or_privilege_change:
+    risk: high
+    default: require_scope_change_control_and_human_approval
+  isolate_host_or_account:
+    risk: high
+    default: require_incident_authority_or_human_approval
+  rotate_production_secret_or_key:
+    risk: high
+    default: require_change_control_owner_and_rollback
+  firewall_or_network_policy_change:
+    risk: high
+    default: require_change_control_and_human_approval
+  load_or_dos_test:
+    risk: critical
+    default: deny_unless_separately_contractually_authorised_and_human_controlled
+  persistence_or_backdoor:
+    risk: critical
+    default: deny_on_real_targets
+  real_sensitive_data_exfiltration:
+    risk: critical
+    default: deny
+  uncontrolled_malware_execution:
+    risk: critical
+    default: deny
