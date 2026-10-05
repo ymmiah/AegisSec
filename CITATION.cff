@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: AegisSec AI
+message: If you use this project in research or training, please cite it.
+type: software
+authors:
+- family-names: Miah
+  given-names: Yasin Mohammed
+version: 1.0.0
+date-released: '2026-10-05'
+license: MIT
