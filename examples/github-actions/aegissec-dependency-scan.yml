@@ -1,0 +1,187 @@
+# AegisSec dependency scan — copy to .github/workflows/ in any repository.
+#
+# What it does
+#   Weekly (and on demand): scans every lockfile in the repo, prioritises the
+#   results against your asset context, publishes them to the Security tab,
+#   and keeps ONE GitHub issue up to date with the fix plan. The issue closes
+#   itself when nothing is left to fix.
+#   On pull requests: fails the check only if the PR introduces a NEW finding
+#   at FAIL_ON priority or above, compared with the last scan of the base branch.
+#
+# Setup (two files)
+#   1. This workflow  -> .github/workflows/aegissec-dependency-scan.yml
+#   2. Asset context  -> .github/aegissec-context.yaml (see aegissec-context.yaml
+#      next to this file). Without it findings are listed but not prioritised,
+#      so deadlines and the PR gate do not apply.
+#   Optional: add an NVD_API_KEY repository secret (free from nvd.nist.gov) to
+#   make enrichment roughly ten times faster.
+#
+# Notes
+#   - Security-tab upload needs code scanning (free on public repos; GitHub
+#     Advanced Security on private ones). Without it that step is skipped and
+#     everything else still works.
+#   - Third-party actions are pinned to reviewed commits.
+
+name: AegisSec dependency scan
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aegissec-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AEGISSEC_REPOSITORY: ymmiah/AegisSec
+  AEGISSEC_REF: main # pin to a tag or commit for fully reproducible runs
+  CONTEXT_FILE: .github/aegissec-context.yaml
+  FAIL_ON: P1 # PR gate: P0 = only "act now"; P1 = also "urgent"
+  ISSUE_LABEL: aegissec
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # Security tab (SARIF)
+      issues: write # fix-plan issue
+      actions: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      # Scan before AegisSec is checked out so its own files are not included.
+      - name: Find vulnerable dependencies (OSV-Scanner)
+        uses: google/osv-scanner-action/osv-scanner-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        continue-on-error: true # exits non-zero when it finds vulnerabilities
+        with:
+          scan-args: |-
+            --format=json
+            --output=osv-results.json
+            --recursive
+            ./
+
+      - name: Check out AegisSec
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          repository: ${{ env.AEGISSEC_REPOSITORY }}
+          ref: ${{ env.AEGISSEC_REF }}
+          path: .aegissec
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Install AegisSec
+        run: python -m pip install -r .aegissec/requirements.txt
+
+      - name: Restore last scan (baseline)
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .aegissec-baseline
+          key: aegissec-baseline-${{ github.event.pull_request.base.ref || github.ref_name }}-${{ github.run_id }}
+          restore-keys: aegissec-baseline-${{ github.event.pull_request.base.ref || github.ref_name }}-
+
+      - name: Prioritise and build the fix plan
+        id: aegissec
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ ! -s osv-results.json ]; then
+            echo "::error::OSV-Scanner produced no results file; see the previous step's log."
+            exit 1
+          fi
+          args=(repo . --from-osv-json osv-results.json
+                --format markdown --output aegissec-report.md
+                --json-out aegissec-latest.json --sarif-out aegissec.sarif)
+          if [ -f "$CONTEXT_FILE" ]; then
+            args+=(--context "$CONTEXT_FILE")
+          else
+            echo "::warning::$CONTEXT_FILE not found: findings are not prioritised and the PR gate is off."
+          fi
+          [ -f .aegissec-baseline/latest.json ] && args+=(--baseline .aegissec-baseline/latest.json)
+          if [ "$EVENT" = "pull_request" ]; then
+            args+=(--fail-on "$FAIL_ON")
+            [ -f .aegissec-baseline/latest.json ] && args+=(--new-only)
+          fi
+          set +e
+          python .aegissec/scripts/vuln_intel.py "${args[@]}"
+          code=$?
+          set -e
+          [ "$code" -ne 0 ] && [ "$code" -ne 3 ] && exit "$code"
+          echo "gate_exit=$code" >> "$GITHUB_OUTPUT"
+          echo "findings=$(python -c 'import json; print(json.load(open("aegissec-latest.json"))["finding_count"])')" >> "$GITHUB_OUTPUT"
+          cat aegissec-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish to the Security tab
+        if: always() && hashFiles('aegissec.sarif') != ''
+        continue-on-error: true # requires code scanning to be available for this repo
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          sarif_file: aegissec.sarif
+          category: aegissec-dependencies
+
+      - name: Keep the fix-plan issue up to date
+        if: github.event_name != 'pull_request' && steps.aegissec.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FINDINGS: ${{ steps.aegissec.outputs.findings }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create "$ISSUE_LABEL" --color B60205 --description "AegisSec dependency fix plan" --force >/dev/null
+          number=$(gh issue list --label "$ISSUE_LABEL" --state open --limit 1 --json number --jq '.[0].number // empty')
+          {
+            head -c 60000 aegissec-report.md # GitHub caps issue bodies at 65,536 characters
+            [ "$(wc -c < aegissec-report.md)" -gt 60000 ] && printf '\n\n_Report truncated — the full version is in the run artifacts._\n'
+            printf '\n---\nUpdated by [this scan](%s).\n' "$RUN_URL"
+          } > issue.md
+          if [ "$FINDINGS" -gt 0 ]; then
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file issue.md
+              echo "Updated issue #$number"
+            else
+              gh issue create --title "AegisSec: dependency fix plan" --label "$ISSUE_LABEL" --body-file issue.md
+            fi
+          elif [ -n "$number" ]; then
+            gh issue comment "$number" --body "No known vulnerabilities remain. Closing. ([scan]($RUN_URL))"
+            gh issue close "$number"
+          fi
+
+      - name: Save this scan as the next baseline
+        if: github.event_name != 'pull_request' && steps.aegissec.outcome == 'success'
+        run: mkdir -p .aegissec-baseline && cp aegissec-latest.json .aegissec-baseline/latest.json
+
+      - name: Store baseline
+        if: github.event_name != 'pull_request' && steps.aegissec.outcome == 'success'
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .aegissec-baseline
+          key: aegissec-baseline-${{ github.ref_name }}-${{ github.run_id }}
+
+      - name: Keep reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: aegissec-report
+          path: |
+            aegissec-report.md
+            aegissec-latest.json
+            aegissec.sarif
+          if-no-files-found: ignore
+
+      - name: Apply the PR gate
+        if: steps.aegissec.outputs.gate_exit == '3'
+        run: |
+          echo "::error::This pull request adds vulnerabilities at ${FAIL_ON} or above. See the job summary for the fix plan."
+          exit 1
