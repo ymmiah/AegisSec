@@ -1,0 +1,19 @@
+{
+  "name": "aegissec-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-native cybersecurity operating workspace with governed skills, vulnerability intelligence, context-aware prioritisation, and guarded agent execution.",
+  "scripts": {
+    "skills:list-upstream": "npx skills add mukul975/Anthropic-Cybersecurity-Skills --list",
+    "skills:install-upstream": "npx skills add mukul975/Anthropic-Cybersecurity-Skills --all -y",
+    "skills:check": "npx skills check",
+    "skills:update": "npx skills update",
+    "skills:lock": "npx skills generate-lock",
+    "validate": "python scripts/aegissec.py validate",
+    "catalog": "python scripts/aegissec.py catalog",
+    "risk": "python scripts/aegissec.py risk",
+    "skills:validate-senior": "python scripts/aegissec.py senior-status",
+    "vuln:example": "python scripts/vuln_intel.py scan examples/vulnerability-intelligence/components.json --context examples/vulnerability-intelligence/context.yaml",
+    "vuln:config": "python scripts/vuln_intel.py show-config"
+  }
+}
