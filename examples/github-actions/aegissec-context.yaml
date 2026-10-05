@@ -1,0 +1,15 @@
+# AegisSec asset context — copy to .github/aegissec-context.yaml
+# Describes where this code runs. AegisSec uses it to turn raw findings into
+# priorities (P0–P4), fix-by dates and an owner. Be honest: overstating
+# exposure creates noise; understating it hides real risk.
+asset:
+  asset_id: my-web-app            # short name shown in reports and issues
+  environment: production         # production | staging | development
+  owner: web-team                 # person or team accountable for fixes
+  asset_criticality: high         # low | medium | high | critical
+  internet_exposed: true          # reachable from the public internet?
+  reachable: true                 # is vulnerable code actually called at runtime?
+  runtime_loaded: true            # are dependencies loaded in the running app?
+  privileged_component: false     # runs with elevated/admin privileges?
+  sensitive_data: true            # handles personal, payment or confidential data?
+  compensating_controls: []       # e.g. ["WAF virtual patch for CVE-2021-44228"]

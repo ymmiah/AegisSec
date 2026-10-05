@@ -280,7 +280,14 @@ def vuln_cli(argv):
     return subprocess.run([sys.executable, str(helper), *argv], cwd=ROOT, check=False).returncode
 
 
+VULN_SHORTCUTS = {"vuln-scan": "scan", "vuln-repo": "repo", "vuln-enrich": "enrich", "vuln-package": "package"}
+
+
 def main():
+    # vuln-* commands are thin aliases: forward every option unchanged so new
+    # scanner flags (--fail-on, --baseline, --sarif-out, ...) work here too.
+    if len(sys.argv) > 1 and sys.argv[1] in VULN_SHORTCUTS:
+        return vuln_cli([VULN_SHORTCUTS[sys.argv[1]], *sys.argv[2:]])
     ap = argparse.ArgumentParser(prog="aegissec")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("validate")
