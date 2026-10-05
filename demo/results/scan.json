@@ -1,0 +1,3761 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-05T11:47:27.762369+00:00",
+  "engine": "AegisSec Vulnerability Intelligence",
+  "component_count": 5,
+  "finding_count": 39,
+  "sources": {
+    "osv": true,
+    "github_advisory": true,
+    "nvd": true,
+    "cisa_kev": true,
+    "epss": true
+  },
+  "warnings": [],
+  "findings": [
+    {
+      "id": "GHSA-XXJR-MMJV-4GPG",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-XXJR-MMJV-4GPG"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:33.722177Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-xxjr-mmjv-4gpg",
+            "url": "https://osv.dev/vulnerability/GHSA-xxjr-mmjv-4gpg"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-XX6V-RP6X-Q39C",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-XX6V-RP6X-Q39C"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:07.425895Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-xx6v-rp6x-q39c",
+            "url": "https://osv.dev/vulnerability/GHSA-xx6v-rp6x-q39c"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-XHJH-PMCV-23JW",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-XHJH-PMCV-23JW"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:48.032269Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-xhjh-pmcv-23jw",
+            "url": "https://osv.dev/vulnerability/GHSA-xhjh-pmcv-23jw"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-WF5P-G6VW-RHXX",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-WF5P-G6VW-RHXX"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:49:47.742398Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-wf5p-g6vw-rhxx",
+            "url": "https://osv.dev/vulnerability/GHSA-wf5p-g6vw-rhxx"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-W9J2-PVGH-6H63",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-W9J2-PVGH-6H63"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:47.772907Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-w9j2-pvgh-6h63",
+            "url": "https://osv.dev/vulnerability/GHSA-w9j2-pvgh-6h63"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-VF2M-468P-8V99",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-VF2M-468P-8V99"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:47.671121Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-vf2m-468p-8v99",
+            "url": "https://osv.dev/vulnerability/GHSA-vf2m-468p-8v99"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-VC5P-V9HR-52MJ",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-VC5P-V9HR-52MJ"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:32.126499Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-vc5p-v9hr-52mj",
+            "url": "https://osv.dev/vulnerability/GHSA-vc5p-v9hr-52mj"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-R5FR-RJXR-66JC",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-R5FR-RJXR-66JC"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:02.970455Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-r5fr-rjxr-66jc",
+            "url": "https://osv.dev/vulnerability/GHSA-r5fr-rjxr-66jc"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-QWPH-4952-7XR6",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-QWPH-4952-7XR6"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2025-02-13T18:33:13Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-qwph-4952-7xr6",
+            "url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-PMWG-CVHR-8VH7",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-PMWG-CVHR-8VH7"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:06.691311Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pmwg-cvhr-8vh7",
+            "url": "https://osv.dev/vulnerability/GHSA-pmwg-cvhr-8vh7"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-PJWM-PJ3P-43MV",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-PJWM-PJ3P-43MV"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:06.693575Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pjwm-pj3p-43mv",
+            "url": "https://osv.dev/vulnerability/GHSA-pjwm-pj3p-43mv"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-PF86-5X62-JRWF",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-PF86-5X62-JRWF"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:06.658921Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-pf86-5x62-jrwf",
+            "url": "https://osv.dev/vulnerability/GHSA-pf86-5x62-jrwf"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-P92Q-9VQR-4J8V",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-P92Q-9VQR-4J8V"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:09.218790Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-p92q-9vqr-4j8v",
+            "url": "https://osv.dev/vulnerability/GHSA-p92q-9vqr-4j8v"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-P6XC-XR62-6R2G",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-P6XC-XR62-6R2G"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-06-09T10:30:14.432177Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-p6xc-xr62-6r2g",
+            "url": "https://osv.dev/vulnerability/GHSA-p6xc-xr62-6r2g"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-MMX7-HFXF-JPPX",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-MMX7-HFXF-JPPX"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:52.753640Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-mmx7-hfxf-jppx",
+            "url": "https://osv.dev/vulnerability/GHSA-mmx7-hfxf-jppx"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-M7PR-HJQH-92CM",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-M7PR-HJQH-92CM"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:06.293033Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-m7pr-hjqh-92cm",
+            "url": "https://osv.dev/vulnerability/GHSA-m7pr-hjqh-92cm"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-JR5F-V2JV-69X6",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-JR5F-V2JV-69X6"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:56.787685Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-jr5f-v2jv-69x6",
+            "url": "https://osv.dev/vulnerability/GHSA-jr5f-v2jv-69x6"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-JFH8-C2JP-5V3Q",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-JFH8-C2JP-5V3Q"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2025-10-22T19:37:02.616807Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-jfh8-c2jp-5v3q",
+            "url": "https://osv.dev/vulnerability/GHSA-jfh8-c2jp-5v3q"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-J5F8-GRM9-P9FC",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-J5F8-GRM9-P9FC"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:50.017253Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-j5f8-grm9-p9fc",
+            "url": "https://osv.dev/vulnerability/GHSA-j5f8-grm9-p9fc"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-HJRF-2M68-5959",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-HJRF-2M68-5959"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2024-06-24T21:24:06Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-hjrf-2m68-5959",
+            "url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-HFXV-24RG-XRQF",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-HFXV-24RG-XRQF"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:49.732285Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-hfxv-24rg-xrqf",
+            "url": "https://osv.dev/vulnerability/GHSA-hfxv-24rg-xrqf"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-FVCV-3M26-PCQX",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-FVCV-3M26-PCQX"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:44.273401Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-fvcv-3m26-pcqx",
+            "url": "https://osv.dev/vulnerability/GHSA-fvcv-3m26-pcqx"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-F23M-R3PF-42RH",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-F23M-R3PF-42RH"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:44.050013Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-f23m-r3pf-42rh",
+            "url": "https://osv.dev/vulnerability/GHSA-f23m-r3pf-42rh"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-CPH5-M8F7-6C5X",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-CPH5-M8F7-6C5X"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:49:08.788547Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-cph5-m8f7-6c5x",
+            "url": "https://osv.dev/vulnerability/GHSA-cph5-m8f7-6c5x"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-8CF7-32GW-WR33",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-8CF7-32GW-WR33"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "jsonwebtoken",
+        "version": "8.5.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/jsonwebtoken@8.5.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2024-06-24T21:23:38Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-8cf7-32gw-wr33",
+            "url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-898C-Q2CR-XWHG",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-898C-Q2CR-XWHG"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:04.811379Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-898c-q2cr-xwhg",
+            "url": "https://osv.dev/vulnerability/GHSA-898c-q2cr-xwhg"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-8489-44MV-GGJ8",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-8489-44MV-GGJ8"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-06-09T10:45:14.253296Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-8489-44mv-ggj8",
+            "url": "https://osv.dev/vulnerability/GHSA-8489-44mv-ggj8"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-7RJR-3Q55-VV33",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-7RJR-3Q55-VV33"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-10-02T20:30:05.438504Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-7rjr-3q55-vv33",
+            "url": "https://osv.dev/vulnerability/GHSA-7rjr-3q55-vv33"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-7Q8Q-RJ6J-MHJQ",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-7Q8Q-RJ6J-MHJQ"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:10.872027Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-7q8q-rj6j-mhjq",
+            "url": "https://osv.dev/vulnerability/GHSA-7q8q-rj6j-mhjq"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-6HG6-V5C8-FPHQ",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-6HG6-V5C8-FPHQ"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:43.570169Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-6hg6-v5c8-fphq",
+            "url": "https://osv.dev/vulnerability/GHSA-6hg6-v5c8-fphq"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-6CHQ-WFR3-2HJ9",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-6CHQ-WFR3-2HJ9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:04.772235Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-6chq-wfr3-2hj9",
+            "url": "https://osv.dev/vulnerability/GHSA-6chq-wfr3-2hj9"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-62HF-57XW-28J9",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-62HF-57XW-28J9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:45.703789Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-62hf-57xw-28j9",
+            "url": "https://osv.dev/vulnerability/GHSA-62hf-57xw-28j9"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-5C9X-8GCM-MPGX",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-5C9X-8GCM-MPGX"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:45.707956Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-5c9x-8gcm-mpgx",
+            "url": "https://osv.dev/vulnerability/GHSA-5c9x-8gcm-mpgx"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-43FC-JF86-J433",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-43FC-JF86-J433"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:34.100599Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-43fc-jf86-j433",
+            "url": "https://osv.dev/vulnerability/GHSA-43fc-jf86-j433"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-3PXV-7CMR-FJR4",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-3PXV-7CMR-FJR4"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1",
+        "ecosystem": "Maven",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:42.492278Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3pxv-7cmr-fjr4",
+            "url": "https://osv.dev/vulnerability/GHSA-3pxv-7cmr-fjr4"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-3P68-RC4W-QGX5",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-3P68-RC4W-QGX5"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:50:42.452672Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3p68-rc4w-qgx5",
+            "url": "https://osv.dev/vulnerability/GHSA-3p68-rc4w-qgx5"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-3G43-6GMG-66JW",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-3G43-6GMG-66JW"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "axios",
+        "version": "0.21.1",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/axios@0.21.1",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:51:04.440180Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-3g43-6gmg-66jw",
+            "url": "https://osv.dev/vulnerability/GHSA-3g43-6gmg-66jw"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-35JH-R3H4-6JHM",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-35JH-R3H4-6JHM"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2026-09-10T03:49:04.067984Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-35jh-r3h4-6jhm",
+            "url": "https://osv.dev/vulnerability/GHSA-35jh-r3h4-6jhm"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    },
+    {
+      "id": "GHSA-29MW-WPGM-HMR9",
+      "identifiers": {
+        "cve": [],
+        "ghsa": [
+          "GHSA-29MW-WPGM-HMR9"
+        ],
+        "osv": [],
+        "other": []
+      },
+      "component": {
+        "name": "lodash",
+        "version": "4.17.20",
+        "ecosystem": "npm",
+        "purl": "pkg:npm/lodash@4.17.20",
+        "path": null,
+        "direct": true,
+        "metadata": {}
+      },
+      "summary": null,
+      "published": null,
+      "modified": "2025-09-29T21:12:31.102523Z",
+      "fixed_versions": [],
+      "references": [],
+      "intelligence": {
+        "osv": true,
+        "cvss_score": null,
+        "severity_label": null,
+        "epss": null,
+        "epss_percentile": null,
+        "cisa_kev": false,
+        "github_advisory": false,
+        "nvd": false,
+        "sources": {
+          "osv": {
+            "id": "GHSA-29mw-wpgm-hmr9",
+            "url": "https://osv.dev/vulnerability/GHSA-29mw-wpgm-hmr9"
+          }
+        }
+      },
+      "assessment": {
+        "score": 32.5,
+        "priority": "P3",
+        "confidence": "low",
+        "factors": {
+          "cvss": 0.0,
+          "epss": 0.0,
+          "kev": 0.0,
+          "reachability": 1.0,
+          "exposure": 1.0,
+          "asset_criticality": 0.75,
+          "privilege": 0.0
+        },
+        "weights": {
+          "cvss": 0.2,
+          "epss": 0.2,
+          "kev": 0.2,
+          "reachability": 0.15,
+          "exposure": 0.1,
+          "asset_criticality": 0.1,
+          "privilege": 0.05
+        },
+        "reasons": [
+          "Asset is internet exposed",
+          "Vulnerable component/path is reachable"
+        ],
+        "context": {
+          "asset_id": "online-shop-checkout",
+          "environment": "production",
+          "asset_criticality": "high",
+          "internet_exposed": true,
+          "reachable": true,
+          "runtime_loaded": true,
+          "privileged_component": false,
+          "sensitive_data": true,
+          "compensating_controls": [],
+          "owner": "web-team"
+        }
+      },
+      "routing": {
+        "primary_role": "devsecops-security",
+        "supporting_roles": [
+          "forward-deployed-security-engineer",
+          "threat-intelligence"
+        ],
+        "playbook": "playbooks/continuous-vulnerability-management.md",
+        "reason": "Software dependency/SBOM vulnerability remediation"
+      },
+      "remediation": {
+        "fix_available": false,
+        "target_versions": [],
+        "recommended_action": "Review vendor/advisory mitigation and track a fixed version",
+        "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
+        "production_change_control_required": true
+      }
+    }
+  ]
+}
