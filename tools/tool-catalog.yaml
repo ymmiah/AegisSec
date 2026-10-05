@@ -1,0 +1,72 @@
+version: 1.0.0
+principles:
+- Tools do not create authorisation.
+- Use read-only/passive capability first.
+- Pin versions for reproducible evidence where practical.
+- Do not paste live secrets into command history or reports.
+categories:
+  network_discovery:
+    examples:
+    - Nmap
+    - masscan (lab/explicit high-volume approval only)
+    default: Rate-limited service discovery on explicit scope only
+  web_proxy:
+    examples:
+    - Burp Suite
+    - OWASP ZAP
+    default: Manual/controlled verification; disable unsafe automation by default
+  code_security:
+    examples:
+    - Semgrep
+    - CodeQL
+    - Bandit
+    - gosec
+    default: Treat findings as hypotheses until reviewed
+  dependency_security:
+    examples:
+    - OSV-Scanner
+    - Trivy
+    - Grype
+    - Dependabot
+    default: Assess reachability, fixed versions and compensating controls
+  secrets:
+    examples:
+    - Gitleaks
+    - TruffleHog
+    default: Run only on authorised repositories; rotate any confirmed secret
+  cloud:
+    examples:
+    - Prowler
+    - ScoutSuite
+    - native cloud security services
+    default: Read-only credentials first; constrain account/project/tenant
+  containers:
+    examples:
+    - Trivy
+    - Grype
+    - Syft
+    - kube-bench
+    default: Prefer image/config scanning before runtime interaction
+  dfir:
+    examples:
+    - Velociraptor
+    - KAPE
+    - Volatility
+    - Timesketch
+    default: Preserve originals and chain-of-custody where required
+  detection:
+    examples:
+    - Sigma
+    - YARA
+    - Suricata
+    - Zeek
+    default: Validate rules against representative telemetry and false positives
+  vulnerability_intelligence:
+    examples:
+    - OSV.dev API
+    - GitHub Advisory Database
+    - NVD CVE API
+    - CISA KEV
+    - FIRST EPSS
+    default: Passive/public intelligence; preserve source provenance and do not equate
+      a match with exploitability or authorisation.
