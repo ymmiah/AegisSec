@@ -9,6 +9,9 @@
 - Regenerated `MANIFEST.sha256`; every listed file now exists and verifies.
 - Vulnerability scans failed against the live OSV API (HTTP 400) whenever a component had a versioned purl, because the version was sent twice. The OSV query now sends the version only once; a regression test covers pinned, scoped, unpinned and name-based queries.
 - Live scans under-prioritised every finding (all P3, confidence low — including Log4Shell). OSV's batch endpoint returns only IDs, so findings had no CVE aliases, severity or fixed versions and EPSS, CISA KEV and NVD enrichment never ran. The OSV connector now fetches each full record (cached per ID); a regression test reproduces the live API shape.
+- GitHub Advisory enrichment crashed on every CVE (`'str' object has no attribute 'get'`) because the REST API returns `first_patched_version` as a string. Both shapes are now accepted, and CVSS is read from `cvss_severities` (v4, then v3) before the legacy `cvss` field.
+- NVD enrichment was rate-limited (HTTP 429) on real scans. Requests are now paced to NVD's public limits (6.5 s apart without `NVD_API_KEY`, 0.7 s with one) and a 429 waits for the window to clear before one retry.
+- Remediation recommended older-branch fixes (for example Log4j 2.3.1 for an installed 2.14.1). `target_versions` now lists only genuine upgrades, lowest first, with a new `recommended_version`, also shown in the Markdown report.
 - `aegissec risk` with no action now lists the known actions instead of exiting with a usage error.
 
 ## 1.0.0 Stable — 2026-10-05

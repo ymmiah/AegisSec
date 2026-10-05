@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from typing import Any, Iterable
@@ -240,7 +241,7 @@ class VulnerabilityIntelligenceEngine:
 
     def _merge_github(self, findings: list[dict[str, Any]], advisory: dict[str, Any]) -> None:
         ghsa_id = advisory.get("ghsa_id")
-        score = _to_float((advisory.get("cvss") or {}).get("score"))
+        score = _github_cvss_score(advisory)
         for finding in findings:
             intel = finding["intelligence"]
             intel["github_advisory"] = True
@@ -250,7 +251,11 @@ class VulnerabilityIntelligenceEngine:
             if ghsa_id and ghsa_id not in finding["identifiers"]["ghsa"]:
                 finding["identifiers"]["ghsa"].append(ghsa_id)
             for vuln in advisory.get("vulnerabilities", []) or []:
-                patched = (vuln.get("first_patched_version") or {}).get("identifier")
+                # The REST API returns first_patched_version as a plain string; older
+                # payloads used {"identifier": ...}. Accept both.
+                patched = vuln.get("first_patched_version")
+                if isinstance(patched, dict):
+                    patched = patched.get("identifier")
                 if patched and patched not in finding["fixed_versions"]:
                     finding["fixed_versions"].append(patched)
             intel["sources"]["github_advisory"] = {
@@ -294,10 +299,13 @@ class VulnerabilityIntelligenceEngine:
 
     def _remediation(self, finding: dict[str, Any], context: AssetContext | None) -> dict[str, Any]:
         fixed = finding.get("fixed_versions") or []
+        current = ((finding.get("component") or {}).get("version")) or ""
+        targets = _upgrade_targets(current, fixed)
         production = bool(context and context.environment.lower() == "production")
         return {
             "fix_available": bool(fixed),
-            "target_versions": fixed,
+            "recommended_version": targets[0] if targets else None,
+            "target_versions": targets,
             "recommended_action": "Upgrade to a confirmed fixed version and re-scan" if fixed else "Review vendor/advisory mitigation and track a fixed version",
             "verification": "Repeat dependency/SBOM scan and confirm the vulnerable version is no longer present/reachable",
             "production_change_control_required": production,
@@ -309,6 +317,34 @@ def _to_float(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
+
+
+def _version_key(version: str) -> tuple[int, ...] | None:
+    parts = [p for p in re.split(r"[^0-9]+", version.split("+", 1)[0]) if p]
+    return tuple(int(p) for p in parts) if parts else None
+
+
+def _upgrade_targets(current: str, fixed: list[str]) -> list[str]:
+    """Fixed versions that are actual upgrades from `current`, lowest first.
+
+    OSV lists a fix for every maintained branch (e.g. Log4j 2.3.1 and 2.12.2
+    alongside 2.15.0); recommending an older branch's fix is not an upgrade.
+    Falls back to the full list when versions cannot be compared.
+    """
+    cur = _version_key(current) if current else None
+    keyed = [(k, v) for v in fixed if (k := _version_key(v)) is not None]
+    if cur is None or len(keyed) != len(fixed):
+        return list(fixed)
+    return [v for k, v in sorted(set(keyed)) if k > cur]
+
+
+def _github_cvss_score(advisory: dict[str, Any]) -> float | None:
+    severities = advisory.get("cvss_severities") or {}
+    for key in ("cvss_v4", "cvss_v3"):
+        score = _to_float((severities.get(key) or {}).get("score"))
+        if score:
+            return score
+    return _to_float((advisory.get("cvss") or {}).get("score")) or None
 
 
 def _nvd_cvss_score(cve: dict[str, Any]) -> float | None:

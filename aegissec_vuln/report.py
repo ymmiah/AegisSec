@@ -31,6 +31,7 @@ def markdown_report(result: dict[str, Any]) -> str:
                 f"- EPSS: `{intel.get('epss', 'n/a')}`",
                 f"- CISA KEV: `{bool(intel.get('cisa_kev'))}`",
                 f"- Fixed version(s): `{', '.join(finding.get('fixed_versions', [])) or 'not confirmed'}`",
+                f"- Recommended upgrade: `{(finding.get('remediation') or {}).get('recommended_version') or 'not confirmed'}`",
                 "",
                 (finding.get("summary") or "No summary available.").strip(),
                 "",
