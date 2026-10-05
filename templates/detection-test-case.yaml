@@ -1,0 +1,10 @@
+detection_test:
+  id: DET-TST-NNN
+  detection_id: ''
+  data_source: ''
+  fixture: ''
+  expected_match: true
+  expected_fields: []
+  negative_cases: []
+  test_environment: lab
+  result: pending
