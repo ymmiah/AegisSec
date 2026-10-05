@@ -1,0 +1,5 @@
+---
+description: AegisSec ethical cybersecurity rules
+alwaysApply: true
+---
+Read AGENTS.md first. Apply policy/policy-precedence.md. Active real-world testing requires explicit engagement scope. Consequential actions use DISCOVER → PLAN → APPROVE → EXECUTE → VERIFY → CLOSE. Prefer defensive and reversible work, preserve evidence, minimise sensitive data and require human approval for high-impact changes.
