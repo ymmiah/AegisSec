@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisSec Tool Action",
+  "type": "object",
+  "required": [
+    "action_id",
+    "tool",
+    "mode",
+    "risk",
+    "target",
+    "purpose"
+  ],
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "tool": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "DEFENSIVE",
+        "ASSESSMENT",
+        "LAB",
+        "PROHIBITED"
+      ]
+    },
+    "risk": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "approval_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rollback": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expected_effect": {
+      "type": "string"
+    }
+  }
+}

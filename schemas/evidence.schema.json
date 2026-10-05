@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisSec Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "source",
+    "observed_at",
+    "integrity",
+    "sensitivity"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string"
+    },
+    "collector": {
+      "type": "string"
+    },
+    "integrity": {
+      "type": "object",
+      "properties": {
+        "sha256": {
+          "type": "string"
+        },
+        "original_preserved": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sensitivity": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

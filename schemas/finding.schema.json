@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Security Finding",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "severity",
+    "confidence",
+    "asset",
+    "observation",
+    "evidence",
+    "risk",
+    "recommendation",
+    "verification"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low",
+        "Informational"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "asset": {
+      "type": "string"
+    },
+    "observation": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "risk": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    },
+    "verification": {
+      "type": "string"
+    }
+  }
+}

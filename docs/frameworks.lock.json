@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-10-04",
+  "note": "Use this as a reviewed baseline, then verify online when exact current framework content materially affects a task.",
+  "frameworks": [
+    {
+      "name": "MITRE ATT&CK",
+      "version": "19.2",
+      "status": "current",
+      "url": "https://attack.mitre.org/resources/versions/",
+      "release_date": "2026-08-06"
+    },
+    {
+      "name": "MITRE D3FEND Ontology",
+      "version": "1.6.0",
+      "status": "current",
+      "release_date": "2026-08-31",
+      "url": "https://d3fend.mitre.org/version/"
+    },
+    {
+      "name": "NIST Cybersecurity Framework",
+      "version": "2.0",
+      "status": "final",
+      "url": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "name": "NIST SP 800-61",
+      "version": "Rev. 3",
+      "status": "final",
+      "release": "2025-04",
+      "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+    },
+    {
+      "name": "NIST SSDF",
+      "version": "1.1 / SP 800-218",
+      "status": "final",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+    },
+    {
+      "name": "NIST SSDF",
+      "version": "1.2 / SP 800-218 Rev. 1",
+      "status": "draft",
+      "release": "2025-12-17",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/r1/ipd"
+    },
+    {
+      "name": "OWASP Top 10",
+      "version": "2025",
+      "status": "current released version",
+      "url": "https://top10.owasp.org/2025/"
+    },
+    {
+      "name": "OWASP ASVS",
+      "version": "5.0.0",
+      "status": "latest version listed by OWASP",
+      "url": "https://owasp.org/projects/asvs"
+    },
+    {
+      "name": "OWASP Top 10 for Agentic Applications",
+      "version": "2026",
+      "status": "released",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    },
+    {
+      "name": "OWASP Agentic Skills Top 10",
+      "version": "1.0-2026",
+      "status": "released",
+      "url": "https://owasp.org/projects/agentic-skills-top-10"
+    },
+    {
+      "name": "NIST AI RMF",
+      "version": "1.0",
+      "status": "final",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "name": "OWASP Top 10 for LLM Applications",
+      "version": "2026",
+      "status": "latest released edition",
+      "release": "2026-08-03",
+      "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    },
+    {
+      "name": "OWASP Agent Control Standard",
+      "version": "2026-09-01 resource",
+      "status": "released/current resource",
+      "release": "2026-09-01",
+      "url": "https://genai.owasp.org/resource/agent-control-standard-acs/"
+    },
+    {
+      "name": "OWASP Agentic Security Governance",
+      "version": "State of Agentic AI Security and Governance 2.01",
+      "status": "current guidance",
+      "release": "2026-06-01",
+      "url": "https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance-2-01/"
+    },
+    {
+      "name": "OWASP Secure MCP Server Development Guide",
+      "version": "2026 resource",
+      "status": "current guidance",
+      "url": "https://genai.owasp.org/initiatives/agentic-security-initiative/"
+    }
+  ]
+}

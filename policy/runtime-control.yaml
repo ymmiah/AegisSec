@@ -1,0 +1,21 @@
+version: 1.0.0
+states: [DISCOVER, PLAN, APPROVE, EXECUTE, VERIFY, CLOSE, STOP]
+default_flow:
+  - DISCOVER
+  - PLAN
+  - APPROVE
+  - EXECUTE
+  - VERIFY
+  - CLOSE
+replan_triggers:
+  - target_or_scope_changes
+  - unexpected_side_effect
+  - new_sensitive_data
+  - privilege_requirement_increases
+  - tool_or_dependency_changes
+stop_triggers:
+  - out_of_scope_target
+  - authority_uncertain
+  - destructive_effect_not_explicitly_authorised
+  - real_sensitive_data_exfiltration
+  - uncontrolled_malware_execution

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisSec Approval",
+  "type": "object",
+  "required": [
+    "id",
+    "approved_by",
+    "action",
+    "exact_targets",
+    "risk"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "exact_targets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "risk": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
