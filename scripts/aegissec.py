@@ -162,6 +162,9 @@ def validate():
             print(" -", e)
         return 1
 
+    skill_errors, agent_skill_count = validate_agent_skills()
+    errors.extend(skill_errors)
+
     try:
         manifest = load_json(ROOT / "agent/manifest.json")
         if manifest.get("curated_skill_count") != len(ids):
@@ -175,11 +178,71 @@ def validate():
         return 1
     print(f"OK: {len(ids)} curated AegisSec security skills indexed; repository structure valid.")
     print("All-in-one senior layer: 64 specialist skills and routes validated.")
+    print(f"Agent Skills: {agent_skill_count} SKILL.md files meet the Agent Skills specification.")
     if expected:
         print(f"Upstream integration configured for {expected} reported third-party skills.")
     for w in warnings:
         print("Warning:", w)
     return 0
+
+
+SKILL_NAME_RE = __import__("re").compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+
+
+def validate_agent_skills(root=None):
+    """Check every skills/**/SKILL.md against the Agent Skills specification (agentskills.io).
+
+    Also checks AegisSec-specific links: skills referenced by name must exist,
+    and every $AEGISSEC_HOME/<path> a skill tells the agent to open must exist.
+    """
+    import re
+    try:
+        import yaml
+    except ImportError:
+        raise SystemExit("Install requirements: python -m pip install -r requirements.txt")
+    root = Path(root or ROOT)
+    errors = []
+    files = sorted((root / "skills").rglob("SKILL.md"))
+    names = {f.parent.name for f in files}
+    for f in files:
+        rel = f.relative_to(root)
+        text = f.read_text(encoding="utf-8")
+        m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+        if not m:
+            errors.append(f"{rel}: frontmatter must start on line 1 and be closed with ---")
+            continue
+        try:
+            fm = yaml.safe_load(m.group(1)) or {}
+        except yaml.YAMLError as exc:
+            errors.append(f"{rel}: invalid YAML frontmatter ({exc})")
+            continue
+        allowed = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
+        extra = set(fm) - allowed
+        if extra:
+            errors.append(f"{rel}: non-standard top-level keys {sorted(extra)} (put them under metadata)")
+        name = str(fm.get("name") or "")
+        if not (1 <= len(name) <= 64) or not SKILL_NAME_RE.match(name):
+            errors.append(f"{rel}: name must be 1-64 chars of a-z, 0-9 and single hyphens")
+        if name != f.parent.name:
+            errors.append(f"{rel}: name '{name}' must match its directory '{f.parent.name}'")
+        desc = str(fm.get("description") or "").strip()
+        if not (20 <= len(desc) <= 1024):
+            errors.append(f"{rel}: description must be 20-1024 characters (has {len(desc)})")
+        if len(str(fm.get("compatibility") or "")) > 500:
+            errors.append(f"{rel}: compatibility must be at most 500 characters")
+        meta = fm.get("metadata") or {}
+        if not isinstance(meta, dict) or any(not isinstance(v, str) for v in meta.values()):
+            errors.append(f"{rel}: metadata must map strings to strings")
+        if text.count("\n") > 500:
+            errors.append(f"{rel}: keep SKILL.md under 500 lines; move detail into references/")
+        body = text[m.end():]
+        for ref in sorted(set(re.findall(r"\*\*(aegissec(?:-[a-z0-9]+)*)\*\*", body))):
+            if ref not in names:
+                errors.append(f"{rel}: references unknown skill '{ref}'")
+        for ref in sorted(set(re.findall(r"\$AEGISSEC_HOME/([A-Za-z0-9_./-]+[A-Za-z0-9_])", body))):
+            if not (root / ref).exists():
+                errors.append(f"{rel}: points to missing file $AEGISSEC_HOME/{ref}")
+    return errors, len(files)
 
 
 def build_context(domain, task):
@@ -198,22 +261,71 @@ def build_context(domain, task):
     print("\n\n---\n\n".join(parts))
 
 
-def check_scope(path):
-    data = load_yaml(path)
+PLACEHOLDER_MARKERS = ("example.invalid", "example.com", "example.org", "replace with", "yyyy")
+
+
+def _parse_when(value):
+    from datetime import datetime, timezone
+    if isinstance(value, datetime):
+        return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
+def check_scope(path, now=None):
+    """Structural gate for active testing: all eight AGENTS.md section 2 requirements."""
+    from datetime import datetime, timezone
+    data = load_yaml(path) or {}
     problems = []
-    eng = data.get("engagement", {})
-    scope = data.get("scope", {})
-    controls = data.get("controls", {})
-    if eng.get("authority_confirmed") is not True:
-        problems.append("authority_confirmed must be true")
-    if not scope.get("targets"):
+    eng = data.get("engagement") or {}
+    scope = data.get("scope") or {}
+    controls = data.get("controls") or {}
+    handling = data.get("data_handling") or {}
+
+    # 1. named owner/client
+    if not str(eng.get("owner") or "").strip() or "organisation / system owner" in str(eng.get("owner")).lower():
+        problems.append("engagement.owner must name the system owner/client")
+    # 2. explicit targets, none still placeholders
+    targets = scope.get("targets") or []
+    if not targets:
         problems.append("at least one explicit target is required")
+    for target in targets:
+        text = " ".join(str(v) for v in (target.values() if isinstance(target, dict) else [target])).lower()
+        if any(marker in text for marker in PLACEHOLDER_MARKERS):
+            problems.append(f"target still looks like a template placeholder: {target}")
+    # 3. permitted categories / 4. prohibited actions
     if not scope.get("permitted_testing"):
         problems.append("permitted_testing is required")
     if not scope.get("prohibited_actions"):
         problems.append("prohibited_actions is required")
+    # 5. start/end window, and now inside it
+    start, end = _parse_when(eng.get("start")), _parse_when(eng.get("end"))
+    if not start or not end:
+        problems.append("engagement.start and engagement.end must be ISO 8601 date-times")
+    elif end <= start:
+        problems.append("engagement.end must be after engagement.start")
+    else:
+        current = now or datetime.now(timezone.utc)
+        if current < start:
+            problems.append(f"testing window has not started (starts {start.isoformat()})")
+        elif current > end:
+            problems.append(f"testing window has ended (ended {end.isoformat()})")
+    # 6. data handling
+    if not handling.get("classification") or not handling.get("evidence_store"):
+        problems.append("data_handling.classification and data_handling.evidence_store are required")
+    # 7. emergency contact and stop conditions
+    contact = str(controls.get("emergency_stop_contact") or "")
+    if not contact.strip() or any(marker in contact.lower() for marker in PLACEHOLDER_MARKERS):
+        problems.append("controls.emergency_stop_contact must be a real contact")
     if not controls.get("stop_conditions"):
         problems.append("stop_conditions is required")
+    # 8. authority
+    if eng.get("authority_confirmed") is not True:
+        problems.append("authority_confirmed must be true")
+
     if problems:
         print("Scope NOT ready for active testing:")
         for p in problems:

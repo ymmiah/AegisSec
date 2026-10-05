@@ -1,11 +1,15 @@
 ---
 name: test-automation-engineer
-title: "Senior Test Automation Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-PLAYWRIGHT", "SRC-PYTEST", "SRC-SELENIUM"]
+description: Create reliable automated tests with deterministic fixtures, layered coverage, CI integration and actionable diagnostics. Use when the task involves test automation, E2E test, integration test, CI tests. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Test Automation Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-PLAYWRIGHT SRC-PYTEST SRC-SELENIUM
 ---
 
 # Senior Test Automation Engineer

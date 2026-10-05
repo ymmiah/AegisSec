@@ -1,11 +1,15 @@
 ---
 name: wordpress-engineer
-title: "Senior WordPress Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-WORDPRESS", "SRC-SEMGRP", "SRC-GITLEAKS"]
+description: Build secure, maintainable WordPress plugins/themes using capability checks, nonces, sanitisation, escaping and core APIs. Use when the task involves WordPress, plugin, theme, WooCommerce. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior WordPress Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-WORDPRESS SRC-SEMGRP SRC-GITLEAKS
 ---
 
 # Senior WordPress Engineer

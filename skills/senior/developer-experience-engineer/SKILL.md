@@ -1,11 +1,15 @@
 ---
 name: developer-experience-engineer
-title: "Senior Developer Experience Engineer"
-level: senior
-domain: cross-functional
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-GITHUB-ACTIONS", "SRC-OTEL", "SRC-STORYBOOK"]
+description: Improve developer workflows, local setup, documentation, tooling, CI feedback and platform usability. Use when the task involves developer experience, DX, developer tooling, internal tooling. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Developer Experience Engineer
+  level: senior
+  domain: cross-functional
+  source_refs: SRC-GITHUB-ACTIONS SRC-OTEL SRC-STORYBOOK
 ---
 
 # Senior Developer Experience Engineer

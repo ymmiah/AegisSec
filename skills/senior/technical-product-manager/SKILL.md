@@ -1,11 +1,15 @@
 ---
 name: technical-product-manager
-title: "Senior Technical Product Manager"
-level: senior
-domain: cross-functional
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OPENAI-AGENTS", "SRC-STORYBOOK", "SRC-GITHUB-ACTIONS"]
+description: Convert user problems and technical constraints into prioritised requirements, acceptance criteria and delivery decisions. Use when the task involves technical product, requirements, roadmap, acceptance criteria. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Technical Product Manager
+  level: senior
+  domain: cross-functional
+  source_refs: SRC-OPENAI-AGENTS SRC-STORYBOOK SRC-GITHUB-ACTIONS
 ---
 
 # Senior Technical Product Manager

@@ -1,11 +1,15 @@
 ---
 name: browser-automation-engineer
-title: "Senior Browser Automation Engineer"
-level: senior
-domain: mcp-browser-computer
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-BROWSER-USE", "SRC-PLAYWRIGHT", "SRC-STAGEHAND"]
+description: Build reliable browser workflows with explicit navigation, selectors, state checks, retries and safe credential handling. Use when the task involves browser automation, browser agent, web automation, Playwright. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Browser Automation Engineer
+  level: senior
+  domain: mcp-browser-computer
+  source_refs: SRC-BROWSER-USE SRC-PLAYWRIGHT SRC-STAGEHAND
 ---
 
 # Senior Browser Automation Engineer

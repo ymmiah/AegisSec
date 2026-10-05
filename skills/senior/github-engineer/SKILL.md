@@ -1,11 +1,15 @@
 ---
 name: github-engineer
-title: "Senior GitHub Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-GITHUB-ACTIONS", "SRC-GITLEAKS", "SRC-TRIVY"]
+description: Design secure repository workflows, branching, Actions, releases, code review, permissions and automation. Use when the task involves GitHub, GitHub Actions, pull request, repository automation. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior GitHub Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-GITHUB-ACTIONS SRC-GITLEAKS SRC-TRIVY
 ---
 
 # Senior GitHub Engineer

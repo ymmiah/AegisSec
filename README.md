@@ -54,9 +54,44 @@ AegisSec is used in three ways. Most teams start with the second and grow into t
 
 | Way | You do | You get |
 | --- | --- | --- |
-| **1. Work with an AI agent under AegisSec rules** | Point Claude, ChatGPT, Copilot, Cursor or Gemini at this repository and give it a task | A specialist (AppSec, SOC, DFIR, cloud, AI security…) that follows scope, evidence and approval rules |
+| **1. Give your AI agent AegisSec skills** | Install the skills into Claude Code, Codex, Cursor, Gemini CLI, Copilot or 70+ other agents — or load the files into a chat app | An agent that scans, triages, fixes and reports while following scope, evidence and approval rules |
 | **2. Scan dependencies for a fix plan** | Run `vuln_intel.py` against a repository, SBOM or package | A short, ordered list of upgrades with priorities, deadlines and an owner |
 | **3. Automate it** | Copy one workflow file into any repository | A weekly scan, results in the GitHub Security tab, one self-updating fix-plan issue and a pull-request gate |
+
+### AegisSec skills for AI agents
+
+AegisSec ships **72 [Agent Skills](https://agentskills.io)**: 8 operational skills that drive the AegisSec tools, plus 64 senior specialist skills. Each is a `SKILL.md` with a name and a description; the agent reads the descriptions and loads a skill only when a task matches. All pass the official `agentskills validate` check, and `python scripts/aegissec.py validate` enforces the specification in CI.
+
+| Skill | Use it to |
+| --- | --- |
+| `aegissec` | Apply the operating rules to any security task: classify, enforce scope and approval, route to the right skill |
+| `aegissec-vuln-scan` | Scan a repo, SBOM or package and get a prioritised fix plan |
+| `aegissec-fix-plan-pr` | Turn one fix-plan step into a tested pull request, verified by a re-scan |
+| `aegissec-cve-triage` | Decide whether one CVE matters to your code, and what to do about it |
+| `aegissec-scope-check` | Gate any active testing on a complete, in-window engagement scope |
+| `aegissec-finding-report` | Write evidence-based findings, pentest and incident reports |
+| `aegissec-ci-setup` | Add weekly scanning, Security-tab alerts and a PR gate to a GitHub repo |
+| `aegissec-wordpress-review` | Review WordPress plugins, themes and sites for nonce, capability, escaping, SQL and file-handling flaws |
+
+**Coding agents (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot and others).** Install into the project you are working on:
+
+```bash
+# the 8 operational skills
+npx skills add ymmiah/AegisSec \
+  -s aegissec -s aegissec-vuln-scan -s aegissec-fix-plan-pr -s aegissec-cve-triage \
+  -s aegissec-scope-check -s aegissec-finding-report -s aegissec-ci-setup -s aegissec-wordpress-review
+
+# or everything, including the 64 senior specialists
+npx skills add ymmiah/AegisSec --all
+```
+
+The installer asks which agents to install for: Claude Code reads `.claude/skills/`, while Codex, Cursor, Gemini CLI and Copilot read `.agents/skills/`. Add `-g` to install for your user instead of one project. The skills fetch the AegisSec toolkit to `~/.aegissec` the first time they need it, so they work in any repository. Then just ask, for example "scan this repo for vulnerable dependencies" or "review this plugin's security"; the matching skill loads itself.
+
+When you open **this** repository in one of those agents, its adapter file (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md` or `.cursor/rules/`) also applies the AegisSec rules automatically.
+
+**Chat apps (ChatGPT, Claude.ai, Gemini, Grok).** They cannot install skills from a repository. Upload `skills/aegissec/aegissec/SKILL.md` plus the skill for the job (for example `skills/aegissec/aegissec-wordpress-review/SKILL.md`), or add them to a Claude Project, custom GPT or Gemini Gem as knowledge, with the instruction *"Follow the aegissec skill for every security request."* Chat apps cannot run the scanner, so use them for review, triage and writing, and use a coding agent or CI for scans.
+
+> Skills guide the AI; they do not enforce. AegisSec's hard controls are you approving changes, `check-scope` refusing incomplete or out-of-window engagements, and the CI gate.
 
 ### Working with an AI agent as a partner
 
@@ -89,7 +124,7 @@ Read AGENTS.md and engagements/client-a.yaml. Plan an authorised test of the tar
 file only. Stop and ask before anything that could affect availability.
 ```
 
-Active testing of a real system always needs a completed engagement scope (`templates/engagement-scope.yaml`); `python scripts/aegissec.py check-scope <file>` refuses an incomplete one.
+Active testing of a real system always needs a completed engagement scope (`templates/engagement-scope.yaml`). `python scripts/aegissec.py check-scope <file>` checks all eight requirements in `AGENTS.md`: owner, explicit non-placeholder targets, permitted and prohibited actions, a time window that includes now, data handling, a real emergency contact, stop conditions and confirmed authority.
 
 ## Visual identity and frontend
 
@@ -467,6 +502,7 @@ AegisSec-AI/
 ├── prompts/                # Role-specific agent prompts
 ├── schemas/                # Findings, evidence, approvals and action schemas
 ├── skills/
+│   ├── aegissec/           # 8 operational Agent Skills (install with npx skills)
 │   ├── senior/             # 64 senior specialist skills
 │   ├── router.json
 │   ├── skills-index.json

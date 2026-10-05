@@ -1,11 +1,15 @@
 ---
 name: incident-commander
-title: "Senior Incident Commander"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-CYBER", "SRC-WAZUH", "SRC-MITRE-ATTACK"]
+description: Coordinate security incidents, establish objectives, owners, communications, containment decisions and recovery criteria. Use when the task involves incident commander, security incident, major incident, breach response. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Incident Commander
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-ANTHROPIC-CYBER SRC-WAZUH SRC-MITRE-ATTACK
 ---
 
 # Senior Incident Commander

@@ -1,11 +1,15 @@
 ---
 name: solutions-architect
-title: "Senior Solutions Architect"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-C4MODEL", "SRC-MERMAID", "SRC-OTEL"]
+description: Translate business constraints into implementable solution architecture, integration patterns and migration plans. Use when the task involves solution architecture, integration architecture, migration plan, technical design. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Solutions Architect
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-C4MODEL SRC-MERMAID SRC-OTEL
 ---
 
 # Senior Solutions Architect

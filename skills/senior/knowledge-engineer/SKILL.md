@@ -1,11 +1,15 @@
 ---
 name: knowledge-engineer
-title: "Senior Knowledge Engineer"
-level: senior
-domain: memory-rag-research
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-GRAPHITI", "SRC-LANGCHAIN", "SRC-OPENVIKING"]
+description: Structure domain knowledge into taxonomies, ontologies, entities, relationships and retrieval-ready representations. Use when the task involves knowledge graph, ontology, taxonomy, knowledge base. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Knowledge Engineer
+  level: senior
+  domain: memory-rag-research
+  source_refs: SRC-GRAPHITI SRC-LANGCHAIN SRC-OPENVIKING
 ---
 
 # Senior Knowledge Engineer

@@ -1,11 +1,15 @@
 ---
 name: soc-analyst
-title: "Senior SOC Analyst"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-WAZUH", "SRC-MITRE-ATTACK", "SRC-ANTHROPIC-CYBER"]
+description: Triage security alerts, correlate telemetry, assess severity, preserve evidence and escalate incidents consistently. Use when the task involves SOC, alert triage, SIEM, security alert. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior SOC Analyst
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-WAZUH SRC-MITRE-ATTACK SRC-ANTHROPIC-CYBER
 ---
 
 # Senior SOC Analyst

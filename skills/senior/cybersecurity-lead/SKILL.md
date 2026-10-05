@@ -1,11 +1,15 @@
 ---
 name: cybersecurity-lead
-title: "Senior Cybersecurity Lead"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-CYBER", "SRC-MITRE-ATTACK", "SRC-WAZUH"]
+description: Lead security strategy, risk prioritisation, architecture, incident readiness and cross-team security decisions. Use when the task involves security strategy, cyber lead, security programme, risk prioritisation. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Cybersecurity Lead
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-ANTHROPIC-CYBER SRC-MITRE-ATTACK SRC-WAZUH
 ---
 
 # Senior Cybersecurity Lead

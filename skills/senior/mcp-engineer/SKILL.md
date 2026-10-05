@@ -1,11 +1,15 @@
 ---
 name: mcp-engineer
-title: "Senior MCP Engineer"
-level: senior
-domain: mcp-browser-computer
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MCP-SERVERS", "SRC-MCP-PY", "SRC-FASTMCP"]
+description: Design secure Model Context Protocol servers/clients with strict tool contracts, authentication, validation and least privilege. Use when the task involves MCP, Model Context Protocol, MCP server, MCP client. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior MCP Engineer
+  level: senior
+  domain: mcp-browser-computer
+  source_refs: SRC-MCP-SERVERS SRC-MCP-PY SRC-FASTMCP
 ---
 
 # Senior MCP Engineer

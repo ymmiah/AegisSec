@@ -6,6 +6,9 @@
   "scripts": {
     "skills:list-upstream": "npx skills add mukul975/Anthropic-Cybersecurity-Skills --list",
     "skills:install-upstream": "npx skills add mukul975/Anthropic-Cybersecurity-Skills --all -y",
+    "skills:list-aegissec": "npx skills add ymmiah/AegisSec --list",
+    "skills:install-aegissec": "npx skills add ymmiah/AegisSec -s aegissec -s aegissec-vuln-scan -s aegissec-fix-plan-pr -s aegissec-cve-triage -s aegissec-scope-check -s aegissec-finding-report -s aegissec-ci-setup -s aegissec-wordpress-review",
+    "skills:validate": "python scripts/aegissec.py validate",
     "skills:check": "npx skills check",
     "skills:update": "npx skills update",
     "skills:lock": "npx skills generate-lock",

@@ -1,11 +1,15 @@
 ---
 name: fullstack-engineer
-title: "Senior Full-Stack Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-REACT", "SRC-NEXTJS", "SRC-NODEJS"]
+description: Deliver end-to-end product changes across UI, services, data, authentication, deployment and observability. Use when the task involves full stack, fullstack, web app, product engineering. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Full-Stack Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-REACT SRC-NEXTJS SRC-NODEJS
 ---
 
 # Senior Full-Stack Engineer

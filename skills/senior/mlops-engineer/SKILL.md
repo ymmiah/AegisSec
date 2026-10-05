@@ -1,11 +1,15 @@
 ---
 name: mlops-engineer
-title: "Senior MLOps Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MLFLOW", "SRC-KUBERNETES", "SRC-OTEL"]
+description: Operate ML delivery with versioning, experiment tracking, registries, deployment, monitoring and rollback. Use when the task involves MLOps, model deployment, model registry, ML platform. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior MLOps Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-MLFLOW SRC-KUBERNETES SRC-OTEL
 ---
 
 # Senior MLOps Engineer

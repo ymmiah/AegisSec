@@ -1,11 +1,15 @@
 ---
 name: memory-systems-engineer
-title: "Senior Agent Memory Systems Engineer"
-level: senior
-domain: memory-rag-research
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MEM0", "SRC-LETTA", "SRC-GRAPHITI", "SRC-OPENVIKING"]
+description: Design short/long-term agent memory, consolidation, retrieval, deletion, provenance and poisoning resistance. Use when the task involves agent memory, long term memory, memory store, conversation memory. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Agent Memory Systems Engineer
+  level: senior
+  domain: memory-rag-research
+  source_refs: SRC-MEM0 SRC-LETTA SRC-GRAPHITI SRC-OPENVIKING
 ---
 
 # Senior Agent Memory Systems Engineer

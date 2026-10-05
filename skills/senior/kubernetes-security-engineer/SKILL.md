@@ -1,11 +1,15 @@
 ---
 name: kubernetes-security-engineer
-title: "Senior Kubernetes Security Engineer"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-TRIVY", "SRC-KUBERNETES", "SRC-WAZUH"]
+description: Secure clusters, admission, RBAC, workloads, network policy, supply chain and runtime observability. Use when the task involves Kubernetes security, K8s, container security, cluster hardening. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Kubernetes Security Engineer
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-TRIVY SRC-KUBERNETES SRC-WAZUH
 ---
 
 # Senior Kubernetes Security Engineer

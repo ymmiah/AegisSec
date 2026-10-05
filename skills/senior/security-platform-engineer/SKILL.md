@@ -1,11 +1,15 @@
 ---
 name: security-platform-engineer
-title: "Senior Security Platform Engineer"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-WAZUH", "SRC-OPENLIT", "SRC-LANGFUSE"]
+description: Build reliable security telemetry, detection, automation and integration platforms with safe operational controls. Use when the task involves security platform, SOAR, security telemetry, detection platform. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Security Platform Engineer
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-WAZUH SRC-OPENLIT SRC-LANGFUSE
 ---
 
 # Senior Security Platform Engineer

@@ -1,11 +1,15 @@
 ---
 name: enterprise-architect
-title: "Senior Enterprise Architect"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-C4MODEL", "SRC-MERMAID", "SRC-OPENAPI"]
+description: Align portfolios, capabilities, data, applications and technology standards into a coherent target-state architecture. Use when the task involves enterprise architecture, target state, capability map, technology strategy. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Enterprise Architect
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-C4MODEL SRC-MERMAID SRC-OPENAPI
 ---
 
 # Senior Enterprise Architect

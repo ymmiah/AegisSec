@@ -1,11 +1,15 @@
 ---
 name: sre-engineer
-title: "Senior Site Reliability Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OTEL", "SRC-PROMETHEUS", "SRC-GRAFANA"]
+description: Engineer service reliability using SLOs, observability, incident management, capacity planning and error budgets. Use when the task involves SRE, SLO, reliability, incident management. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Site Reliability Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-OTEL SRC-PROMETHEUS SRC-GRAFANA
 ---
 
 # Senior Site Reliability Engineer

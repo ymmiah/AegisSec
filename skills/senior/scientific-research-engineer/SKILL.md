@@ -1,11 +1,15 @@
 ---
 name: scientific-research-engineer
-title: "Senior Scientific Research Engineer"
-level: senior
-domain: memory-rag-research
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-SCIENTIFIC-SKILLS", "SRC-SCIAGENT", "SRC-DEEPMIND-SCIENCE"]
+description: Plan scientific investigations, evaluate literature and methods, separate evidence from inference and produce reproducible analyses. Use when the task involves scientific research, experiment, paper review, methodology. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Scientific Research Engineer
+  level: senior
+  domain: memory-rag-research
+  source_refs: SRC-SCIENTIFIC-SKILLS SRC-SCIAGENT SRC-DEEPMIND-SCIENCE
 ---
 
 # Senior Scientific Research Engineer

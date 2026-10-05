@@ -1,11 +1,15 @@
 ---
 name: appsec-engineer
-title: "Senior Application Security Engineer"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-SEMGRP", "SRC-DEPENDENCY-CHECK", "SRC-OWASP-NETTACKER"]
+description: Review application design and code, prioritise exploitable risk and build practical remediation and secure defaults. Use when the task involves AppSec, secure code review, SAST, application security. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Application Security Engineer
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-SEMGRP SRC-DEPENDENCY-CHECK SRC-OWASP-NETTACKER
 ---
 
 # Senior Application Security Engineer

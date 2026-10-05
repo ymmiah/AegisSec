@@ -1,11 +1,15 @@
 ---
 name: ai-safety-governance-engineer
-title: "Senior AI Safety & Governance Engineer"
-level: senior
-domain: ai-agent-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-GUARDRAILS", "SRC-PROMPTFOO", "SRC-LANGFUSE"]
+description: Define AI risk controls, approvals, evaluations, auditability, privacy and safe deployment requirements. Use when the task involves AI governance, AI safety, risk controls, approval policy. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior AI Safety & Governance Engineer
+  level: senior
+  domain: ai-agent-engineering
+  source_refs: SRC-GUARDRAILS SRC-PROMPTFOO SRC-LANGFUSE
 ---
 
 # Senior AI Safety & Governance Engineer

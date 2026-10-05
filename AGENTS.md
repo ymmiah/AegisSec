@@ -109,6 +109,8 @@ Treat credentials, tokens, PII, secrets, customer data, private keys, forensic i
 
 Load only relevant files from `skills/` and `playbooks/`. Do not dump the entire repository into the model context unless necessary.
 
+Operational Agent Skills in `skills/aegissec/` (start with `skills/aegissec/aegissec/SKILL.md`) drive the AegisSec tools for scanning, fix-plan pull requests, CVE triage, scope checks, reporting, CI setup and WordPress reviews. They follow these rules and never override them.
+
 AegisSec now has two local skill layers:
 
 1. **Security-native layer** — `skills/index.yaml` and the existing security domain files. Use this for cybersecurity execution, security policy, scope-sensitive work and security-specific playbooks.

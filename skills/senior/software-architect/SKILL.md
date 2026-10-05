@@ -1,11 +1,15 @@
 ---
 name: software-architect
-title: "Senior Software Architect"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OPENAI-AGENTS", "SRC-NEXTJS", "SRC-NODEJS"]
+description: Design maintainable systems with clear boundaries, APIs, data contracts, security, scalability and evolutionary architecture. Use when the task involves software architecture, system design, architecture decision, service design. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Software Architect
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-OPENAI-AGENTS SRC-NEXTJS SRC-NODEJS
 ---
 
 # Senior Software Architect

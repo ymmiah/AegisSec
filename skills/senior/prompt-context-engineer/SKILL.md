@@ -1,11 +1,15 @@
 ---
 name: prompt-context-engineer
-title: "Senior Prompt & Context Engineer"
-level: senior
-domain: ai-agent-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-SKILLS", "SRC-PROMPTFOO", "SRC-GUARDRAILS"]
+description: Build robust system instructions, context assembly, retrieval boundaries and prompt-injection-resistant workflows. Use when the task involves system prompt, context window, prompt design, instruction hierarchy. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Prompt & Context Engineer
+  level: senior
+  domain: ai-agent-engineering
+  source_refs: SRC-ANTHROPIC-SKILLS SRC-PROMPTFOO SRC-GUARDRAILS
 ---
 
 # Senior Prompt & Context Engineer

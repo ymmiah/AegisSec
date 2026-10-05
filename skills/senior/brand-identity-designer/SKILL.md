@@ -1,11 +1,15 @@
 ---
 name: brand-identity-designer
-title: "Senior Brand Identity Designer"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-PENPOT", "SRC-EXCALIDRAW", "SRC-STORYBOOK"]
+description: Develop coherent brand systems covering positioning, typography, colour, logo usage and scalable visual language. Use when the task involves brand design, identity, logo system, visual language. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Brand Identity Designer
+  level: senior
+  domain: design
+  source_refs: SRC-PENPOT SRC-EXCALIDRAW SRC-STORYBOOK
 ---
 
 # Senior Brand Identity Designer

@@ -1,11 +1,15 @@
 ---
 name: database-engineer
-title: "Senior Database Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-POSTGRES", "SRC-DBT", "SRC-AIRFLOW"]
+description: Design schemas, queries, transactions, indexing, migrations, backup and access controls for production data systems. Use when the task involves database, SQL, schema, query performance. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Database Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-POSTGRES SRC-DBT SRC-AIRFLOW
 ---
 
 # Senior Database Engineer

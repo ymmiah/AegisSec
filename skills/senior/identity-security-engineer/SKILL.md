@@ -1,11 +1,15 @@
 ---
 name: identity-security-engineer
-title: "Senior Identity Security Engineer"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MITRE-ATTACK", "SRC-ANTHROPIC-CYBER", "SRC-WAZUH"]
+description: Review identity architecture, privileged access, workload identity, federation and authentication controls. Use when the task involves identity security, SSO, PAM, Entra, Active Directory. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Identity Security Engineer
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-MITRE-ATTACK SRC-ANTHROPIC-CYBER SRC-WAZUH
 ---
 
 # Senior Identity Security Engineer

@@ -1,11 +1,15 @@
 ---
 name: api-engineer
-title: "Senior API Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-NODEJS", "SRC-FASTAPI", "SRC-OTEL"]
+description: Design stable, secure and observable APIs with versioning, validation, idempotency and error contracts. Use when the task involves API design, REST, GraphQL, API integration. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior API Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-NODEJS SRC-FASTAPI SRC-OTEL
 ---
 
 # Senior API Engineer

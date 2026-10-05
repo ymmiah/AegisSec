@@ -1,11 +1,15 @@
 ---
 name: blue-team-lead
-title: "Senior Blue Team Lead"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-WAZUH", "SRC-MITRE-ATTACK", "SRC-ANTHROPIC-CYBER"]
+description: Lead defensive monitoring, hardening, detection coverage, threat hunting and response improvement. Use when the task involves blue team, defensive security, hardening, detection coverage. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Blue Team Lead
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-WAZUH SRC-MITRE-ATTACK SRC-ANTHROPIC-CYBER
 ---
 
 # Senior Blue Team Lead

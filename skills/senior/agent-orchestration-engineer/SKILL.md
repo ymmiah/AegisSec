@@ -1,11 +1,15 @@
 ---
 name: agent-orchestration-engineer
-title: "Senior Agent Orchestration Engineer"
-level: senior
-domain: ai-agent-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-LANGGRAPH", "SRC-CREWAI", "SRC-SMOLAGENTS"]
+description: Design multi-agent coordination, task decomposition, hand-offs, shared state and failure containment. Use when the task involves multi-agent, orchestration, handoff, agent graph. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Agent Orchestration Engineer
+  level: senior
+  domain: ai-agent-engineering
+  source_refs: SRC-LANGGRAPH SRC-CREWAI SRC-SMOLAGENTS
 ---
 
 # Senior Agent Orchestration Engineer

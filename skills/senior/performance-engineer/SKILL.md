@@ -1,11 +1,15 @@
 ---
 name: performance-engineer
-title: "Senior Performance Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OTEL", "SRC-GRAFANA", "SRC-PLAYWRIGHT"]
+description: Diagnose latency, throughput, memory, rendering and database bottlenecks using measurement-first optimisation. Use when the task involves performance, latency, profiling, web performance. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Performance Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-OTEL SRC-GRAFANA SRC-PLAYWRIGHT
 ---
 
 # Senior Performance Engineer

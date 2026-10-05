@@ -1,11 +1,15 @@
 ---
 name: red-team-lead
-title: "Senior Red Team Lead"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-CYBER", "SRC-CALDERA", "SRC-NUCLEI"]
+description: Plan and govern authorised adversary simulation with explicit scope, non-destructive validation and evidence-driven reporting. Use when the task involves red team, penetration test, adversary simulation, attack validation. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Red Team Lead
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-ANTHROPIC-CYBER SRC-CALDERA SRC-NUCLEI
 ---
 
 # Senior Red Team Lead

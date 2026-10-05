@@ -31,3 +31,6 @@ Vulnerability intelligence: docs/vulnerability-intelligence.md
 Vulnerability CLI: scripts/vuln_intel.py (fix plan, --baseline, --fail-on, SARIF)
 Reusable scan workflow: examples/github-actions/aegissec-dependency-scan.yml
 Asset context template: examples/github-actions/aegissec-context.yaml
+
+Operational Agent Skills: skills/aegissec/ (install: npx skills add ymmiah/AegisSec)
+Entry skill for any security task: skills/aegissec/aegissec/SKILL.md

@@ -1,11 +1,15 @@
 ---
 name: design-systems-engineer
-title: "Senior Design Systems Engineer"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-STORYBOOK", "SRC-RADIX", "SRC-SHADCN"]
+description: Build scalable tokens, components, variants, documentation and governance for consistent product interfaces. Use when the task involves design system, components, design tokens, UI library. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Design Systems Engineer
+  level: senior
+  domain: design
+  source_refs: SRC-STORYBOOK SRC-RADIX SRC-SHADCN
 ---
 
 # Senior Design Systems Engineer

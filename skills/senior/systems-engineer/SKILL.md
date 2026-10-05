@@ -1,11 +1,15 @@
 ---
 name: systems-engineer
-title: "Senior Systems Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANSIBLE", "SRC-TERRAFORM", "SRC-OTEL"]
+description: Engineer cross-layer systems covering compute, networking, storage, identity, observability and operational automation. Use when the task involves systems engineering, infrastructure, networking, operations. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Systems Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-ANSIBLE SRC-TERRAFORM SRC-OTEL
 ---
 
 # Senior Systems Engineer

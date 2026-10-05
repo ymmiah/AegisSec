@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Added — Agent Skills for any AI
+
+- **8 operational Agent Skills** in `skills/aegissec/`, installable into Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot and 70+ other agents with `npx skills add ymmiah/AegisSec`: `aegissec` (operating rules and routing), `aegissec-vuln-scan`, `aegissec-fix-plan-pr`, `aegissec-cve-triage`, `aegissec-scope-check`, `aegissec-finding-report`, `aegissec-ci-setup`, `aegissec-wordpress-review`. They fetch the toolkit on first use, so they work in any repository.
+- `validate` now enforces the Agent Skills specification for every `SKILL.md`, plus links between skills and to toolkit files. All 72 skills also pass the official `agentskills validate`.
+- README: "AegisSec skills for AI agents" with install commands for coding agents and guidance for chat apps (ChatGPT, Claude.ai, Gemini, Grok).
+
+### Changed
+
+- The 64 senior `SKILL.md` files now carry a `description` (taken from the index and its triggers) and keep their other fields under `metadata`. They previously had no description and failed the Agent Skills specification, so agents could not discover them.
+- **`check-scope` enforces all eight `AGENTS.md` scope requirements.** It previously checked five and accepted an expired window. It now also requires a named owner, non-placeholder targets, a valid start/end window that includes the current time, data-handling details and a real emergency contact.
+
 ### Added — actionable vulnerability reports
 
 - **Fix plan**: findings are grouped into one upgrade action per package, ordered by priority, naming the version that clears every fixable finding on it. Flags major-version upgrades, known-exploited issues, indirect dependencies and findings with no published fix. Each finding links to its plan step.

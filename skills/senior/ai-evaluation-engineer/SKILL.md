@@ -1,11 +1,15 @@
 ---
 name: ai-evaluation-engineer
-title: "Senior AI Evaluation Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-PROMPTFOO", "SRC-PHOENIX", "SRC-LANGFUSE"]
+description: Design repeatable evaluations for quality, safety, reliability, regressions, tool use and RAG behaviour. Use when the task involves AI evaluation, evals, LLM testing, prompt testing. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior AI Evaluation Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-PROMPTFOO SRC-PHOENIX SRC-LANGFUSE
 ---
 
 # Senior AI Evaluation Engineer

@@ -1,11 +1,15 @@
 ---
 name: data-engineer
-title: "Senior Data Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-AIRFLOW", "SRC-DBT", "SRC-SPARK"]
+description: Build reliable batch/stream data pipelines with contracts, lineage, orchestration, quality and cost controls. Use when the task involves data engineering, ETL, pipeline, warehouse. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Data Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-AIRFLOW SRC-DBT SRC-SPARK
 ---
 
 # Senior Data Engineer

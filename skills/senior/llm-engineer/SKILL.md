@@ -1,11 +1,15 @@
 ---
 name: llm-engineer
-title: "Senior LLM Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OPENAI-AGENTS", "SRC-LITELLM", "SRC-LANGCHAIN"]
+description: Build LLM applications with model routing, structured outputs, tool use, RAG, safety, caching and evaluation. Use when the task involves LLM, large language model, AI app, model routing. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior LLM Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-OPENAI-AGENTS SRC-LITELLM SRC-LANGCHAIN
 ---
 
 # Senior LLM Engineer

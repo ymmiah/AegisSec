@@ -1,11 +1,15 @@
 ---
 name: reliability-resilience-engineer
-title: "Senior Reliability & Resilience Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-CHAOSMESH", "SRC-PROMETHEUS", "SRC-KUBERNETES"]
+description: Design graceful degradation, redundancy, backups, recovery, chaos testing and resilience validation. Use when the task involves resilience, disaster recovery, chaos testing, fault tolerance. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Reliability & Resilience Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-CHAOSMESH SRC-PROMETHEUS SRC-KUBERNETES
 ---
 
 # Senior Reliability & Resilience Engineer

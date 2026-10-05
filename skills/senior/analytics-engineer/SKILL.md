@@ -1,11 +1,15 @@
 ---
 name: analytics-engineer
-title: "Senior Analytics Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-DBT", "SRC-AIRFLOW", "SRC-DUCKDB"]
+description: Build trustworthy analytical models, semantic definitions, tests and stakeholder-ready datasets. Use when the task involves analytics engineering, dbt, metrics, BI model. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Analytics Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-DBT SRC-AIRFLOW SRC-DUCKDB
 ---
 
 # Senior Analytics Engineer
