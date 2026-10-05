@@ -1,0 +1,11 @@
+asset:
+  asset_id: online-shop-checkout
+  environment: production
+  owner: web-team
+  asset_criticality: high
+  internet_exposed: true
+  reachable: true
+  runtime_loaded: true
+  privileged_component: false
+  sensitive_data: true
+  compensating_controls: []

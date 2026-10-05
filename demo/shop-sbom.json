@@ -1,0 +1,9 @@
+{
+  "components": [
+    {"name": "org.apache.logging.log4j:log4j-core", "version": "2.14.1", "ecosystem": "Maven", "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1", "direct": true},
+    {"name": "lodash", "version": "4.17.20", "ecosystem": "npm", "purl": "pkg:npm/lodash@4.17.20", "direct": true},
+    {"name": "axios", "version": "0.21.1", "ecosystem": "npm", "purl": "pkg:npm/axios@0.21.1", "direct": true},
+    {"name": "jsonwebtoken", "version": "8.5.1", "ecosystem": "npm", "purl": "pkg:npm/jsonwebtoken@8.5.1", "direct": true},
+    {"name": "express", "version": "4.21.2", "ecosystem": "npm", "purl": "pkg:npm/express@4.21.2", "direct": true}
+  ]
+}
