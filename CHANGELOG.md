@@ -1,5 +1,33 @@
 # Changelog
 
+## Unreleased
+
+### Added — actionable vulnerability reports
+
+- **Fix plan**: findings are grouped into one upgrade action per package, ordered by priority, naming the version that clears every fixable finding on it. Flags major-version upgrades, known-exploited issues, indirect dependencies and findings with no published fix. Each finding links to its plan step.
+- **Deadlines and owner**: `remediation_sla_days` in the configuration turns priority into a fix-by date (defaults P0 2, P1 7, P2 30, P3 90, P4 180 days); the owner comes from the asset context.
+- **Report redesign**: a one-screen summary, then the fix plan, then detail for P0–P2; P3/P4 collapse into a table; long warnings are shortened.
+- **`--baseline`**: compares with a previous JSON result, marks findings new or existing, and lists what was resolved.
+- **`--fail-on P0..P4` and `--new-only`**: exit code 3 for CI gating, optionally only on newly introduced findings.
+- **SARIF 2.1.0** (`--format sarif`, `--sarif-out`) for the GitHub Security tab.
+- **`--json-out` / `--markdown-out`** to write several formats in one run; **`repo --from-osv-json`** to reuse output from the official OSV-Scanner action.
+- **`examples/github-actions/aegissec-dependency-scan.yml`**: reusable weekly workflow that publishes to the Security tab, keeps one fix-plan issue current (closing it when clean), caches the baseline, and gates pull requests on new findings. Verified end to end on live data.
+- README: new "How to use AegisSec" section with the human/AI partner model; engine, risk, playbook and usage docs updated.
+
+### Fixed
+
+- Restored the GitHub Actions workflows that the web upload had dropped: `validate.yml` (release gates on Python 3.11–3.13, including manifest integrity), `osv-scanner.yml` and `osv-scanner-scheduled.yml` (pinned to `google/osv-scanner-action` v2.6.0 by commit), and a read-only `upstream-audit.yml` drift check.
+- Restored `engagements/.gitkeep` so the engagement scope folder referenced by the agent adapters exists.
+- Regenerated `MANIFEST.sha256`; every listed file now exists and verifies.
+- Vulnerability scans failed against the live OSV API (HTTP 400) whenever a component had a versioned purl, because the version was sent twice. The OSV query now sends the version only once; a regression test covers pinned, scoped, unpinned and name-based queries.
+- Live scans under-prioritised every finding (all P3, confidence low — including Log4Shell). OSV's batch endpoint returns only IDs, so findings had no CVE aliases, severity or fixed versions and EPSS, CISA KEV and NVD enrichment never ran. The OSV connector now fetches each full record (cached per ID); a regression test reproduces the live API shape.
+- GitHub Advisory enrichment crashed on every CVE (`'str' object has no attribute 'get'`) because the REST API returns `first_patched_version` as a string. Both shapes are now accepted, and CVSS is read from `cvss_severities` (v4, then v3) before the legacy `cvss` field.
+- NVD enrichment was rate-limited (HTTP 429) on real scans. Requests are now paced to NVD's public limits (6.5 s apart without `NVD_API_KEY`, 0.7 s with one) and a 429 waits for the window to clear before one retry.
+- Remediation recommended older-branch fixes (for example Log4j 2.3.1 for an installed 2.14.1). `target_versions` now lists only genuine upgrades, lowest first, with a new `recommended_version`, also shown in the Markdown report.
+- Upgrade advice could name a version still inside another advisory's affected range for the same CVE (seen live: lodash 4.17.23 vs 4.18.0). Affected ranges are now tracked per package through deduplication and the lowest version outside every range is recommended.
+- `aegissec.py vuln-*` shortcuts now forward every scanner option.
+- `aegissec risk` with no action now lists the known actions instead of exiting with a usage error.
+
 ## 1.0.0 Stable — 2026-10-05
 
 First stable release of **AegisSec AI v1**. This release consolidates the complete development line into one tested, production-oriented repository.

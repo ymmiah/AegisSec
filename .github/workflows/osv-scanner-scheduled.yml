@@ -1,0 +1,21 @@
+name: OSV-Scanner (scheduled)
+
+# Weekly full scan of the default branch. Results are uploaded to
+# Security > Code scanning as evidence; no automatic remediation.
+
+on:
+  schedule:
+    - cron: "27 6 * * 1"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  scan-scheduled:
+    # google/osv-scanner-action v2.6.0, pinned to the reviewed commit
+    uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@a345acffa64b0eaede81a3d9aae6141214d9c8fc

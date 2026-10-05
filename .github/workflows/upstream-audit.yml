@@ -1,0 +1,45 @@
+name: Upstream skills audit
+
+# Read-only drift check for the optional guarded upstream skill pack.
+# It never installs or updates third-party skills: it only reports whether
+# upstream has moved past the commit recorded in upstream/source.lock.json,
+# so a human can review the change before re-pinning.
+
+on:
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Compare upstream HEAD with the audited commit
+        run: |
+          set -euo pipefail
+          read -r URL BRANCH AUDITED < <(python3 -c "import json; s = json.load(open('upstream/source.lock.json'))['source']; print(s['url'], s['branch'], s['audited_commit'])")
+          [ "$(python3 -c "import json; print(json.load(open('upstream/source.lock.json'))['source']['skip_check_allowed'])")" = "False" ] \
+            || { echo "::error::skip_check_allowed must remain false"; exit 1; }
+          CURRENT=$(git ls-remote "$URL" "refs/heads/$BRANCH" | cut -f1)
+          echo "Upstream:  $URL ($BRANCH)"
+          echo "Audited:   $AUDITED"
+          echo "Current:   $CURRENT"
+          if [ "$CURRENT" = "$AUDITED" ]; then
+            echo "Upstream matches the audited commit."
+          else
+            echo "::warning title=Upstream drift::Upstream has moved past the audited commit. Review the changes before updating upstream/source.lock.json."
+            {
+              echo "### Upstream drift detected"
+              echo ""
+              echo "- Audited: \`$AUDITED\`"
+              echo "- Current: \`$CURRENT\`"
+              echo "- Compare: $URL/compare/$AUDITED...$CURRENT"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

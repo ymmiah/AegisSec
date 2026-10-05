@@ -15,10 +15,15 @@ class Component:
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def osv_query(self) -> dict[str, Any]:
-        query: dict[str, Any] = {"version": self.version}
+        # OSV rejects a query that sets the version twice (HTTP 400), so only
+        # send "version" separately when the purl does not already carry one.
+        query: dict[str, Any] = {}
         if self.purl:
             query["package"] = {"purl": self.purl}
+            if not _purl_has_version(self.purl) and self.version:
+                query["version"] = self.version
         elif self.ecosystem:
+            query["version"] = self.version
             query["package"] = {"name": self.name, "ecosystem": self.ecosystem}
         else:
             raise ValueError(f"Component {self.name!r} needs either purl or ecosystem")
@@ -26,6 +31,12 @@ class Component:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+def _purl_has_version(purl: str) -> bool:
+    """True when a Package URL already pins a version (pkg:type/ns/name@version)."""
+    core = purl.split("#", 1)[0].split("?", 1)[0]
+    return "@" in core.rsplit("/", 1)[-1]
 
 
 @dataclass(frozen=True)
