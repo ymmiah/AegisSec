@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+engagements/*.yaml
+!engagements/.gitkeep
+evidence/
+*.pcap
+*.pcapng
+*.mem
+*.dmp
+*.key
+*.pem
