@@ -7,7 +7,7 @@ from typing import Any, Iterable
 
 from .connectors import CisaKevConnector, EPSSConnector, GitHubAdvisoryConnector, NVDConnector, OSVConnector
 from .models import AssetContext, Component
-from .normalize import canonical_identifier, fixed_versions_from_osv, identifiers_from_osv, severity_label_to_score
+from .normalize import affected_ranges_from_osv, canonical_identifier, fixed_versions_from_osv, identifiers_from_osv, severity_label_to_score
 from .risk import RiskEngine
 
 
@@ -158,7 +158,8 @@ class VulnerabilityIntelligenceEngine:
             "summary": vuln.get("summary") or vuln.get("details"),
             "published": vuln.get("published"),
             "modified": vuln.get("modified"),
-            "fixed_versions": fixed_versions_from_osv(vuln),
+            "fixed_versions": fixed_versions_from_osv(vuln, component.name),
+            "affected_ranges": affected_ranges_from_osv(vuln, component.name),
             "references": [r.get("url") for r in vuln.get("references", []) or [] if r.get("url")],
             "intelligence": {
                 "osv": True,
@@ -183,6 +184,11 @@ class VulnerabilityIntelligenceEngine:
                 continue
             current = grouped[key]
             current["fixed_versions"] = sorted(set(current.get("fixed_versions", [])) | set(finding.get("fixed_versions", [])))
+            # Keep every advisory's affected ranges: a fix for one advisory can
+            # still sit inside another advisory's range for the same CVE.
+            for rng in finding.get("affected_ranges", []):
+                if rng not in current.setdefault("affected_ranges", []):
+                    current["affected_ranges"].append(rng)
             current["references"] = sorted(set(current.get("references", [])) | set(finding.get("references", [])))
         return list(grouped.values())
 
@@ -300,7 +306,7 @@ class VulnerabilityIntelligenceEngine:
     def _remediation(self, finding: dict[str, Any], context: AssetContext | None) -> dict[str, Any]:
         fixed = finding.get("fixed_versions") or []
         current = ((finding.get("component") or {}).get("version")) or ""
-        targets = _upgrade_targets(current, fixed)
+        targets = _upgrade_targets(current, fixed, finding.get("affected_ranges"))
         production = bool(context and context.environment.lower() == "production")
         return {
             "fix_available": bool(fixed),
@@ -324,18 +330,44 @@ def _version_key(version: str) -> tuple[int, ...] | None:
     return tuple(int(p) for p in parts) if parts else None
 
 
-def _upgrade_targets(current: str, fixed: list[str]) -> list[str]:
-    """Fixed versions that are actual upgrades from `current`, lowest first.
+def _is_affected(version: tuple[int, ...], ranges: list[dict[str, Any]]) -> bool:
+    for rng in ranges:
+        start = _version_key(str(rng.get("introduced") or "0")) or (0,)
+        if version < start:
+            continue
+        fixed = _version_key(rng["fixed"]) if rng.get("fixed") else None
+        last = _version_key(rng["last_affected"]) if rng.get("last_affected") else None
+        if fixed is not None:
+            if version < fixed:
+                return True
+        elif last is not None:
+            if version <= last:
+                return True
+        elif not rng.get("fixed") and not rng.get("last_affected"):
+            return True  # open-ended: everything from `introduced` onwards
+    return False
 
-    OSV lists a fix for every maintained branch (e.g. Log4j 2.3.1 and 2.12.2
-    alongside 2.15.0); recommending an older branch's fix is not an upgrade.
-    Falls back to the full list when versions cannot be compared.
+
+def _upgrade_targets(current: str, fixed: list[str], ranges: list[dict[str, Any]] | None = None) -> list[str]:
+    """Fixed versions that are real, safe upgrades from `current`, lowest first.
+
+    - Older-branch fixes are dropped: OSV lists a fix per maintained branch
+      (e.g. Log4j 2.3.1 and 2.12.2 alongside 2.15.0).
+    - A candidate still inside any affected range is dropped: one CVE can have
+      several advisories, and a version that fixes one can remain vulnerable to
+      another (seen live with lodash 4.17.23 vs 4.18.0).
+    Falls back to the full list when versions cannot be compared, and to the
+    highest candidate when the range data leaves no version clear.
     """
     cur = _version_key(current) if current else None
     keyed = [(k, v) for v in fixed if (k := _version_key(v)) is not None]
     if cur is None or len(keyed) != len(fixed):
         return list(fixed)
-    return [v for k, v in sorted(set(keyed)) if k > cur]
+    upgrades = [(k, v) for k, v in sorted(set(keyed)) if k > cur]
+    if not ranges:
+        return [v for _, v in upgrades]
+    safe = [v for k, v in upgrades if not _is_affected(k, ranges)]
+    return safe or [v for _, v in upgrades[-1:]]
 
 
 def _github_cvss_score(advisory: dict[str, Any]) -> float | None:

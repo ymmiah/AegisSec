@@ -118,6 +118,8 @@ def build_fix_plan(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
             notes.append(f"{len(unresolved)} finding(s) have no published fix and stay open after the upgrade")
         if kev:
             notes.append("Includes known exploited vulnerabilities (CISA KEV)")
+        if component.get("direct") is False:
+            notes.append("Indirect dependency: upgrade the package that pulls it in, or pin it with your package manager's override")
 
         plan.append(
             {
