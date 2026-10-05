@@ -1,0 +1,32 @@
+version: 1.0.0
+capabilities:
+  observe:
+    default: allow
+    examples:
+    - read_logs
+    - inspect_code
+    - review_configuration
+    - passive_research
+    - query_vulnerability_intelligence
+  propose_change:
+    default: allow
+    examples:
+    - remediation_plan
+    - detection_rule_draft
+    - architecture_change
+  execute_reversible_change:
+    default: require_change_control
+    examples:
+    - deploy_detection
+    - rotate_test_secret
+    - update_policy
+  identity_or_privilege_change:
+    default: require_scope_and_human_approval
+  containment_action:
+    default: require_incident_authority_or_human_approval
+  disruptive_test:
+    default: deny_unless_separately_authorised
+  persistence:
+    default: deny_on_real_targets
+  real_data_exfiltration:
+    default: deny
