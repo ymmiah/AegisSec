@@ -9,4 +9,3 @@ asset:
   privileged_component: false
   sensitive_data: true
   compensating_controls: []
-
