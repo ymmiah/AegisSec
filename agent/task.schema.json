@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AegisSec Task",
+  "type": "object",
+  "required": [
+    "task",
+    "mode",
+    "objective"
+  ],
+  "properties": {
+    "task": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "DEFENSIVE",
+        "ASSESSMENT",
+        "LAB",
+        "PROHIBITED"
+      ]
+    },
+    "objective": {
+      "type": "string"
+    },
+    "engagement_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_classification": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "desired_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_role": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "risk_tier": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "change_control_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_tool_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
