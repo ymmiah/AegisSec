@@ -15,15 +15,16 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - name: Scan the shop SBOM (live OSV, NVD, EPSS, CISA KEV, GitHub Advisories)
         env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        continue-on-error: true
         run: |
-          set -o pipefail
           mkdir -p demo/results
           { echo '$ python scripts/vuln_intel.py scan demo/shop-sbom.json --context demo/shop-context.yaml --format markdown'; \
-            python scripts/vuln_intel.py scan demo/shop-sbom.json --context demo/shop-context.yaml --format markdown; } 2>&1 | tee demo/results/scan.md
-          python scripts/vuln_intel.py scan demo/shop-sbom.json --context demo/shop-context.yaml --format json --output demo/results/scan.json
+            python scripts/vuln_intel.py scan demo/shop-sbom.json --context demo/shop-context.yaml --format markdown; echo "[exit $?]"; } 2>&1 | tee demo/results/scan.md
+          python scripts/vuln_intel.py scan demo/shop-sbom.json --context demo/shop-context.yaml --format json --output demo/results/scan.json 2> demo/results/scan-json.err || true
           { echo '$ python scripts/vuln_intel.py enrich CVE-2021-44228 --context demo/shop-context.yaml'; \
-            python scripts/vuln_intel.py enrich CVE-2021-44228 --context demo/shop-context.yaml; } 2>&1 | tee demo/results/enrich-log4shell.txt
+            python scripts/vuln_intel.py enrich CVE-2021-44228 --context demo/shop-context.yaml; echo "[exit $?]"; } 2>&1 | tee demo/results/enrich-log4shell.txt
       - name: Save results to the branch
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
