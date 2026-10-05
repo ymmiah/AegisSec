@@ -1,0 +1,1227 @@
+{
+  "package": "AegisSec AI all-in-one senior skills",
+  "version": "1.0.0",
+  "generated": "2026-10-05",
+  "count": 64,
+  "canonical_policy": "AGENTS.md",
+  "skills": [
+    {
+      "id": "senior-agent-router",
+      "title": "Senior Agent Router",
+      "level": "senior",
+      "domain": "routing",
+      "description": "Route complex requests to the smallest capable set of senior specialists while preserving policy, context and output contracts.",
+      "path": "skills/senior/senior-agent-router/SKILL.md",
+      "triggers": [
+        "route task",
+        "choose specialist",
+        "multi-agent plan",
+        "delegate work"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-SKILLS",
+        "SRC-OPENAI-AGENTS",
+        "SRC-LANGGRAPH"
+      ]
+    },
+    {
+      "id": "ai-agent-engineer",
+      "title": "Senior AI Agent Engineer",
+      "level": "senior",
+      "domain": "ai-agent-engineering",
+      "description": "Design reliable tool-using AI agents with bounded autonomy, explicit state, validation, retries and human controls.",
+      "path": "skills/senior/ai-agent-engineer/SKILL.md",
+      "triggers": [
+        "agent design",
+        "tool calling",
+        "agent workflow",
+        "autonomous assistant"
+      ],
+      "source_refs": [
+        "SRC-OPENAI-AGENTS",
+        "SRC-LANGGRAPH",
+        "SRC-CREWAI"
+      ]
+    },
+    {
+      "id": "agent-orchestration-engineer",
+      "title": "Senior Agent Orchestration Engineer",
+      "level": "senior",
+      "domain": "ai-agent-engineering",
+      "description": "Design multi-agent coordination, task decomposition, hand-offs, shared state and failure containment.",
+      "path": "skills/senior/agent-orchestration-engineer/SKILL.md",
+      "triggers": [
+        "multi-agent",
+        "orchestration",
+        "handoff",
+        "agent graph"
+      ],
+      "source_refs": [
+        "SRC-LANGGRAPH",
+        "SRC-CREWAI",
+        "SRC-SMOLAGENTS"
+      ]
+    },
+    {
+      "id": "prompt-context-engineer",
+      "title": "Senior Prompt & Context Engineer",
+      "level": "senior",
+      "domain": "ai-agent-engineering",
+      "description": "Build robust system instructions, context assembly, retrieval boundaries and prompt-injection-resistant workflows.",
+      "path": "skills/senior/prompt-context-engineer/SKILL.md",
+      "triggers": [
+        "system prompt",
+        "context window",
+        "prompt design",
+        "instruction hierarchy"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-SKILLS",
+        "SRC-PROMPTFOO",
+        "SRC-GUARDRAILS"
+      ]
+    },
+    {
+      "id": "ai-safety-governance-engineer",
+      "title": "Senior AI Safety & Governance Engineer",
+      "level": "senior",
+      "domain": "ai-agent-engineering",
+      "description": "Define AI risk controls, approvals, evaluations, auditability, privacy and safe deployment requirements.",
+      "path": "skills/senior/ai-safety-governance-engineer/SKILL.md",
+      "triggers": [
+        "AI governance",
+        "AI safety",
+        "risk controls",
+        "approval policy"
+      ],
+      "source_refs": [
+        "SRC-GUARDRAILS",
+        "SRC-PROMPTFOO",
+        "SRC-LANGFUSE"
+      ]
+    },
+    {
+      "id": "cybersecurity-lead",
+      "title": "Senior Cybersecurity Lead",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Lead security strategy, risk prioritisation, architecture, incident readiness and cross-team security decisions.",
+      "path": "skills/senior/cybersecurity-lead/SKILL.md",
+      "triggers": [
+        "security strategy",
+        "cyber lead",
+        "security programme",
+        "risk prioritisation"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-MITRE-ATTACK",
+        "SRC-WAZUH"
+      ]
+    },
+    {
+      "id": "red-team-lead",
+      "title": "Senior Red Team Lead",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Plan and govern authorised adversary simulation with explicit scope, non-destructive validation and evidence-driven reporting.",
+      "path": "skills/senior/red-team-lead/SKILL.md",
+      "triggers": [
+        "red team",
+        "penetration test",
+        "adversary simulation",
+        "attack validation"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-CALDERA",
+        "SRC-NUCLEI"
+      ]
+    },
+    {
+      "id": "blue-team-lead",
+      "title": "Senior Blue Team Lead",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Lead defensive monitoring, hardening, detection coverage, threat hunting and response improvement.",
+      "path": "skills/senior/blue-team-lead/SKILL.md",
+      "triggers": [
+        "blue team",
+        "defensive security",
+        "hardening",
+        "detection coverage"
+      ],
+      "source_refs": [
+        "SRC-WAZUH",
+        "SRC-MITRE-ATTACK",
+        "SRC-ANTHROPIC-CYBER"
+      ]
+    },
+    {
+      "id": "soc-analyst",
+      "title": "Senior SOC Analyst",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Triage security alerts, correlate telemetry, assess severity, preserve evidence and escalate incidents consistently.",
+      "path": "skills/senior/soc-analyst/SKILL.md",
+      "triggers": [
+        "SOC",
+        "alert triage",
+        "SIEM",
+        "security alert"
+      ],
+      "source_refs": [
+        "SRC-WAZUH",
+        "SRC-MITRE-ATTACK",
+        "SRC-ANTHROPIC-CYBER"
+      ]
+    },
+    {
+      "id": "detection-engineer",
+      "title": "Senior Detection Engineer",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Engineer testable detections, telemetry requirements, tuning logic and coverage mapped to adversary behaviour.",
+      "path": "skills/senior/detection-engineer/SKILL.md",
+      "triggers": [
+        "detection rule",
+        "Sigma",
+        "SIEM rule",
+        "detection as code"
+      ],
+      "source_refs": [
+        "SRC-MITRE-ATTACK",
+        "SRC-WAZUH",
+        "SRC-SEMGRP"
+      ]
+    },
+    {
+      "id": "threat-hunter",
+      "title": "Senior Threat Hunter",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Run hypothesis-led hunts using endpoint, identity, network and cloud telemetry with reproducible evidence.",
+      "path": "skills/senior/threat-hunter/SKILL.md",
+      "triggers": [
+        "threat hunt",
+        "hypothesis hunt",
+        "IOC hunt",
+        "behaviour hunt"
+      ],
+      "source_refs": [
+        "SRC-MITRE-ATTACK",
+        "SRC-WAZUH",
+        "SRC-ANTHROPIC-CYBER"
+      ]
+    },
+    {
+      "id": "dfir-analyst",
+      "title": "Senior DFIR Analyst",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Perform defensible incident triage and forensic analysis with chain-of-custody, timelines and containment recommendations.",
+      "path": "skills/senior/dfir-analyst/SKILL.md",
+      "triggers": [
+        "DFIR",
+        "forensics",
+        "incident evidence",
+        "timeline analysis"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-WAZUH",
+        "SRC-MITRE-ATTACK"
+      ]
+    },
+    {
+      "id": "incident-commander",
+      "title": "Senior Incident Commander",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Coordinate security incidents, establish objectives, owners, communications, containment decisions and recovery criteria.",
+      "path": "skills/senior/incident-commander/SKILL.md",
+      "triggers": [
+        "incident commander",
+        "security incident",
+        "major incident",
+        "breach response"
+      ],
+      "source_refs": [
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-WAZUH",
+        "SRC-MITRE-ATTACK"
+      ]
+    },
+    {
+      "id": "threat-intelligence-analyst",
+      "title": "Senior Threat Intelligence Analyst",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Turn external and internal threat data into actionable intelligence, confidence-rated assessments and detection priorities.",
+      "path": "skills/senior/threat-intelligence-analyst/SKILL.md",
+      "triggers": [
+        "threat intel",
+        "IOC",
+        "campaign analysis",
+        "threat actor"
+      ],
+      "source_refs": [
+        "SRC-MITRE-ATTACK",
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-MISP-AWESOME"
+      ]
+    },
+    {
+      "id": "identity-security-engineer",
+      "title": "Senior Identity Security Engineer",
+      "level": "senior",
+      "domain": "cybersecurity",
+      "description": "Review identity architecture, privileged access, workload identity, federation and authentication controls.",
+      "path": "skills/senior/identity-security-engineer/SKILL.md",
+      "triggers": [
+        "identity security",
+        "SSO",
+        "PAM",
+        "Entra",
+        "Active Directory"
+      ],
+      "source_refs": [
+        "SRC-MITRE-ATTACK",
+        "SRC-ANTHROPIC-CYBER",
+        "SRC-WAZUH"
+      ]
+    },
+    {
+      "id": "devsecops-engineer",
+      "title": "Senior DevSecOps Engineer",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Integrate security into CI/CD, infrastructure, release gates, provenance and developer workflows without blocking delivery.",
+      "path": "skills/senior/devsecops-engineer/SKILL.md",
+      "triggers": [
+        "DevSecOps",
+        "CI/CD security",
+        "pipeline security",
+        "shift left"
+      ],
+      "source_refs": [
+        "SRC-TRIVY",
+        "SRC-GITLEAKS",
+        "SRC-DEPENDENCY-CHECK"
+      ]
+    },
+    {
+      "id": "appsec-engineer",
+      "title": "Senior Application Security Engineer",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Review application design and code, prioritise exploitable risk and build practical remediation and secure defaults.",
+      "path": "skills/senior/appsec-engineer/SKILL.md",
+      "triggers": [
+        "AppSec",
+        "secure code review",
+        "SAST",
+        "application security"
+      ],
+      "source_refs": [
+        "SRC-SEMGRP",
+        "SRC-DEPENDENCY-CHECK",
+        "SRC-OWASP-NETTACKER"
+      ]
+    },
+    {
+      "id": "cloud-security-architect",
+      "title": "Senior Cloud Security Architect",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Design and review secure cloud landing zones, identity, networking, logging, data protection and guardrails.",
+      "path": "skills/senior/cloud-security-architect/SKILL.md",
+      "triggers": [
+        "cloud security",
+        "AWS security",
+        "Azure security",
+        "GCP security"
+      ],
+      "source_refs": [
+        "SRC-TRIVY",
+        "SRC-WAZUH",
+        "SRC-ANTHROPIC-CYBER"
+      ]
+    },
+    {
+      "id": "kubernetes-security-engineer",
+      "title": "Senior Kubernetes Security Engineer",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Secure clusters, admission, RBAC, workloads, network policy, supply chain and runtime observability.",
+      "path": "skills/senior/kubernetes-security-engineer/SKILL.md",
+      "triggers": [
+        "Kubernetes security",
+        "K8s",
+        "container security",
+        "cluster hardening"
+      ],
+      "source_refs": [
+        "SRC-TRIVY",
+        "SRC-KUBERNETES",
+        "SRC-WAZUH"
+      ]
+    },
+    {
+      "id": "software-supply-chain-security",
+      "title": "Senior Software Supply Chain Security Engineer",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Protect dependencies, build systems, artefacts, secrets, SBOMs and provenance across the software lifecycle.",
+      "path": "skills/senior/software-supply-chain-security/SKILL.md",
+      "triggers": [
+        "software supply chain",
+        "SBOM",
+        "dependencies",
+        "provenance"
+      ],
+      "source_refs": [
+        "SRC-TRIVY",
+        "SRC-GITLEAKS",
+        "SRC-DEPENDENCY-CHECK"
+      ]
+    },
+    {
+      "id": "security-platform-engineer",
+      "title": "Senior Security Platform Engineer",
+      "level": "senior",
+      "domain": "devsecops-appsec-cloud",
+      "description": "Build reliable security telemetry, detection, automation and integration platforms with safe operational controls.",
+      "path": "skills/senior/security-platform-engineer/SKILL.md",
+      "triggers": [
+        "security platform",
+        "SOAR",
+        "security telemetry",
+        "detection platform"
+      ],
+      "source_refs": [
+        "SRC-WAZUH",
+        "SRC-OPENLIT",
+        "SRC-LANGFUSE"
+      ]
+    },
+    {
+      "id": "software-architect",
+      "title": "Senior Software Architect",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Design maintainable systems with clear boundaries, APIs, data contracts, security, scalability and evolutionary architecture.",
+      "path": "skills/senior/software-architect/SKILL.md",
+      "triggers": [
+        "software architecture",
+        "system design",
+        "architecture decision",
+        "service design"
+      ],
+      "source_refs": [
+        "SRC-OPENAI-AGENTS",
+        "SRC-NEXTJS",
+        "SRC-NODEJS"
+      ]
+    },
+    {
+      "id": "frontend-engineer",
+      "title": "Senior Frontend Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Build accessible, responsive, performant interfaces with robust state, component architecture and testing.",
+      "path": "skills/senior/frontend-engineer/SKILL.md",
+      "triggers": [
+        "frontend",
+        "React",
+        "Next.js",
+        "web UI"
+      ],
+      "source_refs": [
+        "SRC-REACT",
+        "SRC-NEXTJS",
+        "SRC-STORYBOOK"
+      ]
+    },
+    {
+      "id": "backend-engineer",
+      "title": "Senior Backend Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Design secure backend services, APIs, queues, data access, observability and failure handling.",
+      "path": "skills/senior/backend-engineer/SKILL.md",
+      "triggers": [
+        "backend",
+        "server",
+        "API backend",
+        "service"
+      ],
+      "source_refs": [
+        "SRC-NODEJS",
+        "SRC-DJANGO",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "fullstack-engineer",
+      "title": "Senior Full-Stack Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Deliver end-to-end product changes across UI, services, data, authentication, deployment and observability.",
+      "path": "skills/senior/fullstack-engineer/SKILL.md",
+      "triggers": [
+        "full stack",
+        "fullstack",
+        "web app",
+        "product engineering"
+      ],
+      "source_refs": [
+        "SRC-REACT",
+        "SRC-NEXTJS",
+        "SRC-NODEJS"
+      ]
+    },
+    {
+      "id": "api-engineer",
+      "title": "Senior API Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Design stable, secure and observable APIs with versioning, validation, idempotency and error contracts.",
+      "path": "skills/senior/api-engineer/SKILL.md",
+      "triggers": [
+        "API design",
+        "REST",
+        "GraphQL",
+        "API integration"
+      ],
+      "source_refs": [
+        "SRC-NODEJS",
+        "SRC-FASTAPI",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "wordpress-engineer",
+      "title": "Senior WordPress Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Build secure, maintainable WordPress plugins/themes using capability checks, nonces, sanitisation, escaping and core APIs.",
+      "path": "skills/senior/wordpress-engineer/SKILL.md",
+      "triggers": [
+        "WordPress",
+        "plugin",
+        "theme",
+        "WooCommerce"
+      ],
+      "source_refs": [
+        "SRC-WORDPRESS",
+        "SRC-SEMGRP",
+        "SRC-GITLEAKS"
+      ]
+    },
+    {
+      "id": "performance-engineer",
+      "title": "Senior Performance Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Diagnose latency, throughput, memory, rendering and database bottlenecks using measurement-first optimisation.",
+      "path": "skills/senior/performance-engineer/SKILL.md",
+      "triggers": [
+        "performance",
+        "latency",
+        "profiling",
+        "web performance"
+      ],
+      "source_refs": [
+        "SRC-OTEL",
+        "SRC-GRAFANA",
+        "SRC-PLAYWRIGHT"
+      ]
+    },
+    {
+      "id": "database-engineer",
+      "title": "Senior Database Engineer",
+      "level": "senior",
+      "domain": "software-engineering",
+      "description": "Design schemas, queries, transactions, indexing, migrations, backup and access controls for production data systems.",
+      "path": "skills/senior/database-engineer/SKILL.md",
+      "triggers": [
+        "database",
+        "SQL",
+        "schema",
+        "query performance"
+      ],
+      "source_refs": [
+        "SRC-POSTGRES",
+        "SRC-DBT",
+        "SRC-AIRFLOW"
+      ]
+    },
+    {
+      "id": "mcp-engineer",
+      "title": "Senior MCP Engineer",
+      "level": "senior",
+      "domain": "mcp-browser-computer",
+      "description": "Design secure Model Context Protocol servers/clients with strict tool contracts, authentication, validation and least privilege.",
+      "path": "skills/senior/mcp-engineer/SKILL.md",
+      "triggers": [
+        "MCP",
+        "Model Context Protocol",
+        "MCP server",
+        "MCP client"
+      ],
+      "source_refs": [
+        "SRC-MCP-SERVERS",
+        "SRC-MCP-PY",
+        "SRC-FASTMCP"
+      ]
+    },
+    {
+      "id": "browser-automation-engineer",
+      "title": "Senior Browser Automation Engineer",
+      "level": "senior",
+      "domain": "mcp-browser-computer",
+      "description": "Build reliable browser workflows with explicit navigation, selectors, state checks, retries and safe credential handling.",
+      "path": "skills/senior/browser-automation-engineer/SKILL.md",
+      "triggers": [
+        "browser automation",
+        "browser agent",
+        "web automation",
+        "Playwright"
+      ],
+      "source_refs": [
+        "SRC-BROWSER-USE",
+        "SRC-PLAYWRIGHT",
+        "SRC-STAGEHAND"
+      ]
+    },
+    {
+      "id": "computer-use-engineer",
+      "title": "Senior Computer Use Engineer",
+      "level": "senior",
+      "domain": "mcp-browser-computer",
+      "description": "Design controlled GUI/computer-use workflows with visual verification, bounded actions and reversible state changes.",
+      "path": "skills/senior/computer-use-engineer/SKILL.md",
+      "triggers": [
+        "computer use",
+        "GUI automation",
+        "desktop agent",
+        "screen automation"
+      ],
+      "source_refs": [
+        "SRC-SKYVERN",
+        "SRC-BROWSER-USE",
+        "SRC-OPENHANDS"
+      ]
+    },
+    {
+      "id": "tool-integration-engineer",
+      "title": "Senior Tool Integration Engineer",
+      "level": "senior",
+      "domain": "mcp-browser-computer",
+      "description": "Integrate APIs, connectors and agent tools with stable schemas, authentication, rate limits, retries and observability.",
+      "path": "skills/senior/tool-integration-engineer/SKILL.md",
+      "triggers": [
+        "tool integration",
+        "connector",
+        "API integration",
+        "agent tools"
+      ],
+      "source_refs": [
+        "SRC-MCP-SERVERS",
+        "SRC-FASTMCP",
+        "SRC-LITELLM"
+      ]
+    },
+    {
+      "id": "memory-systems-engineer",
+      "title": "Senior Agent Memory Systems Engineer",
+      "level": "senior",
+      "domain": "memory-rag-research",
+      "description": "Design short/long-term agent memory, consolidation, retrieval, deletion, provenance and poisoning resistance.",
+      "path": "skills/senior/memory-systems-engineer/SKILL.md",
+      "triggers": [
+        "agent memory",
+        "long term memory",
+        "memory store",
+        "conversation memory"
+      ],
+      "source_refs": [
+        "SRC-MEM0",
+        "SRC-LETTA",
+        "SRC-GRAPHITI",
+        "SRC-OPENVIKING"
+      ]
+    },
+    {
+      "id": "rag-engineer",
+      "title": "Senior RAG Engineer",
+      "level": "senior",
+      "domain": "memory-rag-research",
+      "description": "Build retrieval-augmented generation systems with ingestion, chunking, indexing, ranking, citations and evaluation.",
+      "path": "skills/senior/rag-engineer/SKILL.md",
+      "triggers": [
+        "RAG",
+        "retrieval",
+        "vector search",
+        "knowledge base"
+      ],
+      "source_refs": [
+        "SRC-LANGCHAIN",
+        "SRC-GRAPHITI",
+        "SRC-PHOENIX"
+      ]
+    },
+    {
+      "id": "research-engineer",
+      "title": "Senior Research Engineer",
+      "level": "senior",
+      "domain": "memory-rag-research",
+      "description": "Run rigorous multi-source research with query planning, evidence grading, citation tracking and synthesis.",
+      "path": "skills/senior/research-engineer/SKILL.md",
+      "triggers": [
+        "research",
+        "deep research",
+        "evidence synthesis",
+        "literature search"
+      ],
+      "source_refs": [
+        "SRC-SCIENTIFIC-SKILLS",
+        "SRC-SCIAGENT",
+        "SRC-DEEPMIND-SCIENCE"
+      ]
+    },
+    {
+      "id": "scientific-research-engineer",
+      "title": "Senior Scientific Research Engineer",
+      "level": "senior",
+      "domain": "memory-rag-research",
+      "description": "Plan scientific investigations, evaluate literature and methods, separate evidence from inference and produce reproducible analyses.",
+      "path": "skills/senior/scientific-research-engineer/SKILL.md",
+      "triggers": [
+        "scientific research",
+        "experiment",
+        "paper review",
+        "methodology"
+      ],
+      "source_refs": [
+        "SRC-SCIENTIFIC-SKILLS",
+        "SRC-SCIAGENT",
+        "SRC-DEEPMIND-SCIENCE"
+      ]
+    },
+    {
+      "id": "knowledge-engineer",
+      "title": "Senior Knowledge Engineer",
+      "level": "senior",
+      "domain": "memory-rag-research",
+      "description": "Structure domain knowledge into taxonomies, ontologies, entities, relationships and retrieval-ready representations.",
+      "path": "skills/senior/knowledge-engineer/SKILL.md",
+      "triggers": [
+        "knowledge graph",
+        "ontology",
+        "taxonomy",
+        "knowledge base"
+      ],
+      "source_refs": [
+        "SRC-GRAPHITI",
+        "SRC-LANGCHAIN",
+        "SRC-OPENVIKING"
+      ]
+    },
+    {
+      "id": "data-engineer",
+      "title": "Senior Data Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Build reliable batch/stream data pipelines with contracts, lineage, orchestration, quality and cost controls.",
+      "path": "skills/senior/data-engineer/SKILL.md",
+      "triggers": [
+        "data engineering",
+        "ETL",
+        "pipeline",
+        "warehouse"
+      ],
+      "source_refs": [
+        "SRC-AIRFLOW",
+        "SRC-DBT",
+        "SRC-SPARK"
+      ]
+    },
+    {
+      "id": "analytics-engineer",
+      "title": "Senior Analytics Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Build trustworthy analytical models, semantic definitions, tests and stakeholder-ready datasets.",
+      "path": "skills/senior/analytics-engineer/SKILL.md",
+      "triggers": [
+        "analytics engineering",
+        "dbt",
+        "metrics",
+        "BI model"
+      ],
+      "source_refs": [
+        "SRC-DBT",
+        "SRC-AIRFLOW",
+        "SRC-DUCKDB"
+      ]
+    },
+    {
+      "id": "data-scientist",
+      "title": "Senior Data Scientist",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Frame analytical questions, perform statistically sound analysis and communicate uncertainty and decision implications.",
+      "path": "skills/senior/data-scientist/SKILL.md",
+      "triggers": [
+        "data science",
+        "statistics",
+        "analysis",
+        "experiment analysis"
+      ],
+      "source_refs": [
+        "SRC-SCIKIT",
+        "SRC-PANDAS",
+        "SRC-JUPYTER"
+      ]
+    },
+    {
+      "id": "ml-engineer",
+      "title": "Senior Machine Learning Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Build production ML systems covering data, training, evaluation, serving, monitoring and reproducibility.",
+      "path": "skills/senior/ml-engineer/SKILL.md",
+      "triggers": [
+        "machine learning",
+        "ML model",
+        "training pipeline",
+        "inference"
+      ],
+      "source_refs": [
+        "SRC-PYTORCH",
+        "SRC-SCIKIT",
+        "SRC-MLFLOW"
+      ]
+    },
+    {
+      "id": "llm-engineer",
+      "title": "Senior LLM Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Build LLM applications with model routing, structured outputs, tool use, RAG, safety, caching and evaluation.",
+      "path": "skills/senior/llm-engineer/SKILL.md",
+      "triggers": [
+        "LLM",
+        "large language model",
+        "AI app",
+        "model routing"
+      ],
+      "source_refs": [
+        "SRC-OPENAI-AGENTS",
+        "SRC-LITELLM",
+        "SRC-LANGCHAIN"
+      ]
+    },
+    {
+      "id": "mlops-engineer",
+      "title": "Senior MLOps Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Operate ML delivery with versioning, experiment tracking, registries, deployment, monitoring and rollback.",
+      "path": "skills/senior/mlops-engineer/SKILL.md",
+      "triggers": [
+        "MLOps",
+        "model deployment",
+        "model registry",
+        "ML platform"
+      ],
+      "source_refs": [
+        "SRC-MLFLOW",
+        "SRC-KUBERNETES",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "ai-evaluation-engineer",
+      "title": "Senior AI Evaluation Engineer",
+      "level": "senior",
+      "domain": "data-ml-ai",
+      "description": "Design repeatable evaluations for quality, safety, reliability, regressions, tool use and RAG behaviour.",
+      "path": "skills/senior/ai-evaluation-engineer/SKILL.md",
+      "triggers": [
+        "AI evaluation",
+        "evals",
+        "LLM testing",
+        "prompt testing"
+      ],
+      "source_refs": [
+        "SRC-PROMPTFOO",
+        "SRC-PHOENIX",
+        "SRC-LANGFUSE"
+      ]
+    },
+    {
+      "id": "product-designer",
+      "title": "Senior Product Designer",
+      "level": "senior",
+      "domain": "design",
+      "description": "Turn product goals and user needs into coherent flows, information architecture and polished interaction design.",
+      "path": "skills/senior/product-designer/SKILL.md",
+      "triggers": [
+        "product design",
+        "user flow",
+        "wireframe",
+        "interaction design"
+      ],
+      "source_refs": [
+        "SRC-PENPOT",
+        "SRC-STORYBOOK",
+        "SRC-RADIX"
+      ]
+    },
+    {
+      "id": "ui-ux-engineer",
+      "title": "Senior UI/UX Engineer",
+      "level": "senior",
+      "domain": "design",
+      "description": "Bridge design and implementation with accessible components, responsive layouts, interaction states and usability quality.",
+      "path": "skills/senior/ui-ux-engineer/SKILL.md",
+      "triggers": [
+        "UI UX",
+        "interface design",
+        "responsive design",
+        "usability"
+      ],
+      "source_refs": [
+        "SRC-STORYBOOK",
+        "SRC-SHADCN",
+        "SRC-RADIX"
+      ]
+    },
+    {
+      "id": "design-systems-engineer",
+      "title": "Senior Design Systems Engineer",
+      "level": "senior",
+      "domain": "design",
+      "description": "Build scalable tokens, components, variants, documentation and governance for consistent product interfaces.",
+      "path": "skills/senior/design-systems-engineer/SKILL.md",
+      "triggers": [
+        "design system",
+        "components",
+        "design tokens",
+        "UI library"
+      ],
+      "source_refs": [
+        "SRC-STORYBOOK",
+        "SRC-RADIX",
+        "SRC-SHADCN"
+      ]
+    },
+    {
+      "id": "diagram-information-designer",
+      "title": "Senior Diagram & Information Designer",
+      "level": "senior",
+      "domain": "design",
+      "description": "Convert complex systems, processes and data into clear diagrams, architecture views and information hierarchies.",
+      "path": "skills/senior/diagram-information-designer/SKILL.md",
+      "triggers": [
+        "diagram",
+        "architecture diagram",
+        "flowchart",
+        "information design"
+      ],
+      "source_refs": [
+        "SRC-MERMAID",
+        "SRC-EXCALIDRAW",
+        "SRC-PENPOT"
+      ]
+    },
+    {
+      "id": "brand-identity-designer",
+      "title": "Senior Brand Identity Designer",
+      "level": "senior",
+      "domain": "design",
+      "description": "Develop coherent brand systems covering positioning, typography, colour, logo usage and scalable visual language.",
+      "path": "skills/senior/brand-identity-designer/SKILL.md",
+      "triggers": [
+        "brand design",
+        "identity",
+        "logo system",
+        "visual language"
+      ],
+      "source_refs": [
+        "SRC-PENPOT",
+        "SRC-EXCALIDRAW",
+        "SRC-STORYBOOK"
+      ]
+    },
+    {
+      "id": "accessibility-specialist",
+      "title": "Senior Accessibility Specialist",
+      "level": "senior",
+      "domain": "design",
+      "description": "Audit and improve digital experiences for keyboard, screen-reader, contrast, semantics, motion and inclusive interaction.",
+      "path": "skills/senior/accessibility-specialist/SKILL.md",
+      "triggers": [
+        "accessibility",
+        "WCAG",
+        "a11y",
+        "screen reader"
+      ],
+      "source_refs": [
+        "SRC-AXE",
+        "SRC-PLAYWRIGHT",
+        "SRC-STORYBOOK"
+      ]
+    },
+    {
+      "id": "github-engineer",
+      "title": "Senior GitHub Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Design secure repository workflows, branching, Actions, releases, code review, permissions and automation.",
+      "path": "skills/senior/github-engineer/SKILL.md",
+      "triggers": [
+        "GitHub",
+        "GitHub Actions",
+        "pull request",
+        "repository automation"
+      ],
+      "source_refs": [
+        "SRC-GITHUB-ACTIONS",
+        "SRC-GITLEAKS",
+        "SRC-TRIVY"
+      ]
+    },
+    {
+      "id": "sre-engineer",
+      "title": "Senior Site Reliability Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Engineer service reliability using SLOs, observability, incident management, capacity planning and error budgets.",
+      "path": "skills/senior/sre-engineer/SKILL.md",
+      "triggers": [
+        "SRE",
+        "SLO",
+        "reliability",
+        "incident management"
+      ],
+      "source_refs": [
+        "SRC-OTEL",
+        "SRC-PROMETHEUS",
+        "SRC-GRAFANA"
+      ]
+    },
+    {
+      "id": "platform-engineer",
+      "title": "Senior Platform Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Build self-service developer platforms with paved roads, infrastructure automation, policy and observability.",
+      "path": "skills/senior/platform-engineer/SKILL.md",
+      "triggers": [
+        "platform engineering",
+        "developer platform",
+        "internal platform",
+        "infrastructure"
+      ],
+      "source_refs": [
+        "SRC-KUBERNETES",
+        "SRC-TERRAFORM",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "qa-test-engineer",
+      "title": "Senior QA & Test Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Build risk-based test strategies spanning functional, integration, accessibility, compatibility and non-functional quality.",
+      "path": "skills/senior/qa-test-engineer/SKILL.md",
+      "triggers": [
+        "QA",
+        "test plan",
+        "quality assurance",
+        "testing strategy"
+      ],
+      "source_refs": [
+        "SRC-PLAYWRIGHT",
+        "SRC-SELENIUM",
+        "SRC-PYTEST"
+      ]
+    },
+    {
+      "id": "test-automation-engineer",
+      "title": "Senior Test Automation Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Create reliable automated tests with deterministic fixtures, layered coverage, CI integration and actionable diagnostics.",
+      "path": "skills/senior/test-automation-engineer/SKILL.md",
+      "triggers": [
+        "test automation",
+        "E2E test",
+        "integration test",
+        "CI tests"
+      ],
+      "source_refs": [
+        "SRC-PLAYWRIGHT",
+        "SRC-PYTEST",
+        "SRC-SELENIUM"
+      ]
+    },
+    {
+      "id": "solutions-architect",
+      "title": "Senior Solutions Architect",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Translate business constraints into implementable solution architecture, integration patterns and migration plans.",
+      "path": "skills/senior/solutions-architect/SKILL.md",
+      "triggers": [
+        "solution architecture",
+        "integration architecture",
+        "migration plan",
+        "technical design"
+      ],
+      "source_refs": [
+        "SRC-C4MODEL",
+        "SRC-MERMAID",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "enterprise-architect",
+      "title": "Senior Enterprise Architect",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Align portfolios, capabilities, data, applications and technology standards into a coherent target-state architecture.",
+      "path": "skills/senior/enterprise-architect/SKILL.md",
+      "triggers": [
+        "enterprise architecture",
+        "target state",
+        "capability map",
+        "technology strategy"
+      ],
+      "source_refs": [
+        "SRC-C4MODEL",
+        "SRC-MERMAID",
+        "SRC-OPENAPI"
+      ]
+    },
+    {
+      "id": "systems-engineer",
+      "title": "Senior Systems Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Engineer cross-layer systems covering compute, networking, storage, identity, observability and operational automation.",
+      "path": "skills/senior/systems-engineer/SKILL.md",
+      "triggers": [
+        "systems engineering",
+        "infrastructure",
+        "networking",
+        "operations"
+      ],
+      "source_refs": [
+        "SRC-ANSIBLE",
+        "SRC-TERRAFORM",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "reliability-resilience-engineer",
+      "title": "Senior Reliability & Resilience Engineer",
+      "level": "senior",
+      "domain": "platform-quality-architecture",
+      "description": "Design graceful degradation, redundancy, backups, recovery, chaos testing and resilience validation.",
+      "path": "skills/senior/reliability-resilience-engineer/SKILL.md",
+      "triggers": [
+        "resilience",
+        "disaster recovery",
+        "chaos testing",
+        "fault tolerance"
+      ],
+      "source_refs": [
+        "SRC-CHAOSMESH",
+        "SRC-PROMETHEUS",
+        "SRC-KUBERNETES"
+      ]
+    },
+    {
+      "id": "forward-deployed-engineer",
+      "title": "Senior Forward Deployed Engineer",
+      "level": "senior",
+      "domain": "cross-functional",
+      "description": "Embed with users to discover requirements, integrate systems, troubleshoot production and hand over durable solutions.",
+      "path": "skills/senior/forward-deployed-engineer/SKILL.md",
+      "triggers": [
+        "forward deployed engineer",
+        "customer deployment",
+        "integration",
+        "production enablement"
+      ],
+      "source_refs": [
+        "SRC-OPENHANDS",
+        "SRC-OPENAI-AGENTS",
+        "SRC-OTEL"
+      ]
+    },
+    {
+      "id": "technical-product-manager",
+      "title": "Senior Technical Product Manager",
+      "level": "senior",
+      "domain": "cross-functional",
+      "description": "Convert user problems and technical constraints into prioritised requirements, acceptance criteria and delivery decisions.",
+      "path": "skills/senior/technical-product-manager/SKILL.md",
+      "triggers": [
+        "technical product",
+        "requirements",
+        "roadmap",
+        "acceptance criteria"
+      ],
+      "source_refs": [
+        "SRC-OPENAI-AGENTS",
+        "SRC-STORYBOOK",
+        "SRC-GITHUB-ACTIONS"
+      ]
+    },
+    {
+      "id": "developer-experience-engineer",
+      "title": "Senior Developer Experience Engineer",
+      "level": "senior",
+      "domain": "cross-functional",
+      "description": "Improve developer workflows, local setup, documentation, tooling, CI feedback and platform usability.",
+      "path": "skills/senior/developer-experience-engineer/SKILL.md",
+      "triggers": [
+        "developer experience",
+        "DX",
+        "developer tooling",
+        "internal tooling"
+      ],
+      "source_refs": [
+        "SRC-GITHUB-ACTIONS",
+        "SRC-OTEL",
+        "SRC-STORYBOOK"
+      ]
+    },
+    {
+      "id": "privacy-security-engineer",
+      "title": "Senior Privacy & Security Engineer",
+      "level": "senior",
+      "domain": "cross-functional",
+      "description": "Integrate privacy, data minimisation, retention, access control, threat modelling and security requirements into product delivery.",
+      "path": "skills/senior/privacy-security-engineer/SKILL.md",
+      "triggers": [
+        "privacy engineering",
+        "data protection",
+        "privacy security",
+        "retention"
+      ],
+      "source_refs": [
+        "SRC-GUARDRAILS",
+        "SRC-SEMGRP",
+        "SRC-TRIVY"
+      ]
+    }
+  ]
+}
