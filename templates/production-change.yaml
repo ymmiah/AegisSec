@@ -1,0 +1,14 @@
+change:
+  id: CHG-YYYY-NNN
+  owner: ''
+  objective: ''
+  assets: []
+  exact_change: ''
+  risk: ''
+  dependencies: []
+  prechecks: []
+  approval_reference: ''
+  rollback: ''
+  validation: []
+  monitoring: []
+  result: pending
