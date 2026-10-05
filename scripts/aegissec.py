@@ -258,8 +258,13 @@ def senior_status():
     return 0
 
 
-def risk(action):
+def risk(action=None):
     data = load_yaml(ROOT / "tools/action-risk.yaml")
+    if not action:
+        print("Known actions (usage: aegissec risk <action>):")
+        for name in sorted(data.get("actions", {})):
+            print(" -", name)
+        return 0
     entry = data.get("actions", {}).get(action)
     if not entry:
         print("Unknown action. Known actions:")
@@ -289,8 +294,8 @@ def main():
     sub.add_parser("upstream-update")
     sub.add_parser("catalog")
     sub.add_parser("senior-status")
-    r = sub.add_parser("risk")
-    r.add_argument("action")
+    r = sub.add_parser("risk", help="Show the risk tier and default control for an action")
+    r.add_argument("action", nargs="?", help="Action name; omit to list all known actions")
     vs = sub.add_parser("vuln-scan", help="Scan SBOM/component JSON with the vulnerability-intelligence engine")
     vs.add_argument("input")
     vs.add_argument("--context")

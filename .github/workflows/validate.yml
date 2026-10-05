@@ -1,0 +1,51 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Release gates (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Compile sources
+        run: python -m compileall -q aegissec_vuln scripts tests
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Repository validation
+        run: |
+          python scripts/aegissec.py validate
+          python scripts/aegissec.py catalog
+          python scripts/aegissec.py senior-status
+          python scripts/vuln_intel.py show-config > /dev/null
+
+      - name: Manifest integrity
+        run: sha256sum --check --strict --quiet MANIFEST.sha256
