@@ -1,0 +1,1030 @@
+version: 1.0.0
+updated: '2026-10-05'
+skills:
+- id: asset-inventory
+  title: Asset Inventory & Attack Surface
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-1
+  file: skills/core/asset-inventory.md
+- id: risk-assessment
+  title: Cyber Risk Assessment
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/core/risk-assessment.md
+- id: threat-modelling
+  title: Threat Modelling
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - OWASP
+  file: skills/core/threat-modelling.md
+- id: security-architecture
+  title: Secure Architecture Review
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  file: skills/core/security-architecture.md
+- id: vulnerability-management
+  title: Vulnerability Management
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CIS-7
+  - NIST-CSF
+  file: skills/core/vulnerability-management.md
+- id: engagement-planning
+  title: Red-Team Engagement Planning
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - PTES
+  - NIST-CSF
+  file: skills/red-team/engagement-planning.md
+- id: attack-surface-discovery
+  title: Authorised Attack-Surface Discovery
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/red-team/attack-surface-discovery.md
+- id: web-security-testing
+  title: Web Application Security Testing
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - OWASP-Top10-2025
+  - ASVS-5.0
+  file: skills/red-team/web-security-testing.md
+- id: api-security-testing
+  title: API Security Testing
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - OWASP-API-2023
+  - ASVS-5.0
+  file: skills/red-team/api-security-testing.md
+- id: identity-assessment
+  title: Identity & Active Directory Security Review
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - CIS
+  - MITRE-ATT&CK
+  file: skills/red-team/identity-assessment.md
+- id: cloud-assessment
+  title: Cloud Penetration Test Planning
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/red-team/cloud-assessment.md
+- id: network-assessment
+  title: Network Security Assessment
+  domain: red-team
+  mode: ASSESSMENT
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/red-team/network-assessment.md
+- id: social-engineering-simulation
+  title: Social-Engineering Simulation
+  domain: red-team
+  mode: ASSESSMENT
+  risk: high
+  frameworks:
+  - NIST-CSF
+  file: skills/red-team/social-engineering-simulation.md
+- id: wireless-assessment
+  title: Wireless Security Assessment
+  domain: red-team
+  mode: ASSESSMENT
+  risk: high
+  frameworks:
+  - CIS
+  file: skills/red-team/wireless-assessment.md
+- id: soc-triage
+  title: SOC Alert Triage
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-800-61r3
+  file: skills/blue-team/soc-triage.md
+- id: detection-engineering
+  title: Detection Engineering
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/blue-team/detection-engineering.md
+- id: threat-hunting
+  title: Threat Hunting
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/blue-team/threat-hunting.md
+- id: siem-engineering
+  title: SIEM Engineering
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/blue-team/siem-engineering.md
+- id: endpoint-defence
+  title: Endpoint / EDR Defence
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/blue-team/endpoint-defence.md
+- id: network-defence
+  title: Network Detection & Response
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  - CIS
+  file: skills/blue-team/network-defence.md
+- id: identity-monitoring
+  title: Identity Threat Detection
+  domain: blue-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS
+  file: skills/blue-team/identity-monitoring.md
+- id: incident-response
+  title: Incident Response
+  domain: dfir
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/incident-response.md
+- id: windows-triage
+  title: Windows Incident Triage
+  domain: dfir
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/windows-triage.md
+- id: linux-triage
+  title: Linux Incident Triage
+  domain: dfir
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/linux-triage.md
+- id: cloud-forensics
+  title: Cloud Incident Investigation
+  domain: dfir
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/cloud-forensics.md
+- id: phishing-analysis
+  title: Phishing & Email Analysis
+  domain: dfir
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/phishing-analysis.md
+- id: malware-triage
+  title: Malware Triage
+  domain: dfir
+  mode: LAB
+  risk: high
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/malware-triage.md
+- id: ransomware-response
+  title: Ransomware Response
+  domain: dfir
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/ransomware-response.md
+- id: forensic-evidence
+  title: Evidence & Chain of Custody
+  domain: dfir
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-800-61r3
+  file: skills/dfir/forensic-evidence.md
+- id: secure-code-review
+  title: Secure Code Review
+  domain: appsec
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - ASVS-5.0
+  - OWASP-Top10-2025
+  file: skills/appsec/secure-code-review.md
+- id: sast-triage
+  title: SAST Finding Triage
+  domain: appsec
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - OWASP
+  file: skills/appsec/sast-triage.md
+- id: sca-supply-chain
+  title: Dependency & SCA Review
+  domain: appsec
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - OWASP-Top10-2025
+  file: skills/appsec/sca-supply-chain.md
+- id: secrets-security
+  title: Secrets Security
+  domain: appsec
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  file: skills/appsec/secrets-security.md
+- id: authentication-review
+  title: Authentication & Session Review
+  domain: appsec
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - ASVS-5.0
+  - OWASP-Top10-2025
+  file: skills/appsec/authentication-review.md
+- id: cryptography-review
+  title: Applied Cryptography Review
+  domain: appsec
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - ASVS-5.0
+  - NIST
+  file: skills/appsec/cryptography-review.md
+- id: business-logic-review
+  title: Business Logic Security
+  domain: appsec
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-Top10-2025
+  file: skills/appsec/business-logic-review.md
+- id: ci-cd-security
+  title: CI/CD Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - CIS
+  file: skills/devsecops/ci-cd-security.md
+- id: software-supply-chain
+  title: Software Supply-Chain Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - OWASP-Top10-2025
+  file: skills/devsecops/software-supply-chain.md
+- id: sbom-provenance
+  title: SBOM & Provenance
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  file: skills/devsecops/sbom-provenance.md
+- id: iac-security
+  title: Infrastructure-as-Code Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CIS
+  - NIST-SSDF
+  file: skills/devsecops/iac-security.md
+- id: container-security
+  title: Container Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CIS
+  - NIST-SSDF
+  file: skills/devsecops/container-security.md
+- id: kubernetes-security
+  title: Kubernetes Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/devsecops/kubernetes-security.md
+- id: github-security
+  title: GitHub Repository Security
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  file: skills/devsecops/github-security.md
+- id: aws-security
+  title: AWS Security Review
+  domain: cloud
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/cloud/aws-security.md
+- id: azure-security
+  title: Azure Security Review
+  domain: cloud
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/cloud/azure-security.md
+- id: gcp-security
+  title: GCP Security Review
+  domain: cloud
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/cloud/gcp-security.md
+- id: saas-security
+  title: SaaS Security Review
+  domain: cloud
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CIS
+  - NIST-CSF
+  file: skills/cloud/saas-security.md
+- id: llm-security
+  title: LLM Application Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-LLM-Top10-2026
+  - OWASP-Agentic-Applications-2026
+  - NIST-AI-RMF
+  - MITRE-ATLAS
+  file: skills/ai-security/llm-security.md
+- id: agentic-security
+  title: Agentic AI Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agentic-Applications-2026
+  - OWASP-Agentic-Skills-Top10-1.0-2026
+  - OWASP-Agent-Control-Standard
+  - NIST-AI-RMF
+  - MITRE-ATLAS
+  file: skills/ai-security/agentic-security.md
+- id: rag-security
+  title: RAG Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-GenAI
+  file: skills/ai-security/rag-security.md
+- id: tool-mcp-security
+  title: AI Tool / MCP Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agentic-Applications-2026
+  - OWASP-Agentic-Skills-Top10-1.0-2026
+  - OWASP-Agent-Control-Standard
+  - NIST-AI-RMF
+  file: skills/ai-security/tool-mcp-security.md
+- id: model-supply-chain
+  title: Model Supply-Chain Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-AI-RMF
+  file: skills/ai-security/model-supply-chain.md
+- id: ai-red-team
+  title: AI Red-Team Planning
+  domain: ai-security
+  mode: LAB
+  risk: high
+  frameworks:
+  - OWASP-GenAI
+  - NIST-AI-RMF
+  file: skills/ai-security/ai-red-team.md
+- id: wordpress-security
+  title: WordPress Security
+  domain: platform
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP
+  - CIS
+  file: skills/platform/wordpress-security.md
+- id: mobile-security
+  title: Mobile Application Security
+  domain: platform
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-MASVS
+  file: skills/platform/mobile-security.md
+- id: ot-ics-security
+  title: OT / ICS Security Review
+  domain: platform
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - NIST-CSF
+  - MITRE-ATT&CK-ICS
+  file: skills/platform/ot-ics-security.md
+- id: nist-csf
+  title: NIST CSF 2.0 Programme Mapping
+  domain: governance
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF-2.0
+  file: skills/governance/nist-csf.md
+- id: cis-controls
+  title: CIS Controls v8.1 Assessment
+  domain: governance
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CIS-v8.1
+  file: skills/governance/cis-controls.md
+- id: third-party-risk
+  title: Third-Party & Supply-Chain Risk
+  domain: governance
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - NIST-SSDF
+  file: skills/governance/third-party-risk.md
+- id: security-policy
+  title: Security Policy Engineering
+  domain: governance
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/governance/security-policy.md
+- id: finding-writing
+  title: Security Finding Writing
+  domain: reporting
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CVSS
+  - OWASP
+  file: skills/reporting/finding-writing.md
+- id: executive-reporting
+  title: Executive Security Reporting
+  domain: reporting
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/reporting/executive-reporting.md
+- id: retest-validation
+  title: Remediation Retest
+  domain: reporting
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/reporting/retest-validation.md
+- id: cti-analysis
+  title: Cyber Threat Intelligence Analysis
+  domain: threat-intel
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  - NIST-CSF
+  file: skills/threat-intel/cti-analysis.md
+- id: vulnerability-intelligence
+  title: Vulnerability & Exploitation Intelligence
+  domain: threat-intel
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - CISA-KEV
+  - NIST-CSF
+  file: skills/threat-intel/vulnerability-intelligence.md
+- id: ioc-management
+  title: IOC & Observable Management
+  domain: threat-intel
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - STIX/TAXII
+  - NIST-CSF
+  file: skills/threat-intel/ioc-management.md
+- id: campaign-analysis
+  title: Threat Campaign Analysis
+  domain: threat-intel
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/threat-intel/campaign-analysis.md
+- id: control-validation
+  title: Purple-Team Control Validation
+  domain: purple-team
+  mode: LAB
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  - NIST-CSF
+  file: skills/purple-team/control-validation.md
+- id: detection-validation
+  title: Detection Validation & Regression Testing
+  domain: purple-team
+  mode: LAB
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  file: skills/purple-team/detection-validation.md
+- id: tabletop-exercises
+  title: Cybersecurity Tabletop Exercises
+  domain: purple-team
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-800-61r3
+  file: skills/purple-team/tabletop-exercises.md
+- id: agent-skill-security
+  title: Third-Party Agent Skill Security Review
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-Agentic-Skills-Top10-1.0-2026
+  - OWASP-Agentic-Applications-2026
+  - NIST-AI-RMF
+  - NIST-SSDF
+  file: skills/ai-security/agent-skill-security.md
+- id: fde-customer-discovery
+  title: Customer Discovery & Security Requirements
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  file: skills/forward-deployed-engineering/customer-discovery.md
+- id: fde-environment-readiness
+  title: Environment Readiness Assessment
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/forward-deployed-engineering/environment-readiness.md
+- id: fde-secure-deployment-planning
+  title: Secure Deployment Planning
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-SSDF
+  - CIS-v8.1
+  file: skills/forward-deployed-engineering/secure-deployment-planning.md
+- id: fde-solution-architecture-integration
+  title: Solution Architecture & Integration Design
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  - NIST-SSDF
+  file: skills/forward-deployed-engineering/solution-architecture-integration.md
+- id: fde-identity-sso-integration
+  title: Identity, SSO & Provisioning Integration
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - Zero-Trust
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/forward-deployed-engineering/identity-sso-integration.md
+- id: fde-security-tool-integration
+  title: Security Platform & Tool Integration
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/forward-deployed-engineering/security-tool-integration.md
+- id: fde-telemetry-observability-onboarding
+  title: Telemetry & Observability Onboarding
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - MITRE-ATT&CK
+  file: skills/forward-deployed-engineering/telemetry-observability-onboarding.md
+- id: fde-production-troubleshooting
+  title: Production Troubleshooting & Root-Cause Analysis
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/production-troubleshooting.md
+- id: fde-secure-automation
+  title: Secure Automation & Orchestration
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-SSDF
+  - CIS-v8.1
+  file: skills/forward-deployed-engineering/secure-automation.md
+- id: fde-cloud-environment-integration
+  title: Cloud Environment Integration
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  - Zero-Trust
+  file: skills/forward-deployed-engineering/cloud-environment-integration.md
+- id: fde-detection-content-deployment
+  title: Detection Content Deployment
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/detection-content-deployment.md
+- id: fde-customer-incident-support
+  title: Customer Incident Support
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - NIST-800-61r3
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/customer-incident-support.md
+- id: fde-change-release-management
+  title: Change, Release & Rollback Management
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-SSDF
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/change-release-management.md
+- id: fde-validation-acceptance-testing
+  title: Validation & Acceptance Testing
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/validation-acceptance-testing.md
+- id: fde-runbook-handover
+  title: Runbook, Handover & Customer Enablement
+  domain: forward-deployed-engineering
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/forward-deployed-engineering/runbook-handover.md
+- id: security-requirements-engineering
+  title: Security Requirements Engineering
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - NIST-SSDF
+  - OWASP-ASVS
+  file: skills/core/security-requirements-engineering.md
+- id: exposure-management
+  title: Continuous Exposure Management
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  - MITRE-ATT&CK
+  file: skills/core/exposure-management.md
+- id: attack-path-management
+  title: Attack Path Management
+  domain: core
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  - MITRE-D3FEND
+  - NIST-CSF
+  file: skills/core/attack-path-management.md
+- id: zero-trust-architecture
+  title: Zero Trust Architecture Review
+  domain: core
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-ZTA
+  - NIST-CSF
+  - CISA-ZTMM
+  file: skills/core/zero-trust-architecture.md
+- id: active-directory-hardening
+  title: Active Directory Hardening
+  domain: identity-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  - MITRE-D3FEND
+  - CIS
+  file: skills/identity-security/active-directory-hardening.md
+- id: entra-id-security
+  title: Microsoft Entra ID Security
+  domain: identity-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - MITRE-ATT&CK
+  - NIST-CSF
+  - Zero-Trust
+  file: skills/identity-security/entra-id-security.md
+- id: pam-pim-security
+  title: PAM / PIM Security
+  domain: identity-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  - CIS
+  file: skills/identity-security/pam-pim-security.md
+- id: identity-lifecycle-governance
+  title: Identity Lifecycle & Access Governance
+  domain: identity-security
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  file: skills/identity-security/identity-lifecycle-governance.md
+- id: workload-machine-identity
+  title: Workload & Machine Identity Security
+  domain: identity-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - Zero-Trust
+  - NIST-SSDF
+  file: skills/identity-security/workload-machine-identity.md
+- id: security-platform-engineering
+  title: Security Platform Engineering
+  domain: security-platform
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/security-platform/security-platform-engineering.md
+- id: telemetry-engineering
+  title: Security Telemetry Engineering
+  domain: security-platform
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  - NIST-CSF
+  file: skills/security-platform/telemetry-engineering.md
+- id: detection-as-code
+  title: Detection as Code
+  domain: security-platform
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - MITRE-ATT&CK
+  - MITRE-D3FEND
+  file: skills/security-platform/detection-as-code.md
+- id: security-automation-soar
+  title: Security Automation & SOAR Engineering
+  domain: security-platform
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - NIST-800-61r3
+  file: skills/security-platform/security-automation-soar.md
+- id: security-data-pipeline
+  title: Security Data Pipeline Engineering
+  domain: security-platform
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  file: skills/security-platform/security-data-pipeline.md
+- id: data-classification-dlp
+  title: Data Classification & DLP
+  domain: data-security
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS-v8.1
+  file: skills/data-security/data-classification-dlp.md
+- id: secrets-lifecycle
+  title: Secrets Lifecycle Management
+  domain: data-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-SSDF
+  - CIS-v8.1
+  file: skills/data-security/secrets-lifecycle.md
+- id: database-security
+  title: Database Security Review
+  domain: data-security
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - CIS
+  file: skills/data-security/database-security.md
+- id: backup-recovery-resilience
+  title: Backup, Recovery & Cyber Resilience
+  domain: data-security
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF
+  - NIST-800-61r3
+  file: skills/data-security/backup-recovery-resilience.md
+- id: key-management-hsm
+  title: Key Management & HSM Security
+  domain: data-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-CSF
+  - NIST-SSDF
+  file: skills/data-security/key-management-hsm.md
+- id: agent-control-standard
+  title: Agent Runtime Control & OWASP ACS
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agent-Control-Standard
+  - OWASP-Agentic-Applications-2026
+  file: skills/ai-security/agent-control-standard.md
+- id: agent-identity-authorisation
+  title: Agent Identity & Authorisation
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agentic-Applications-2026
+  - NIST-AI-RMF
+  - Zero-Trust
+  file: skills/ai-security/agent-identity-authorisation.md
+- id: agent-memory-security
+  title: Agent Memory Security
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agentic-Applications-2026
+  - OWASP-Agentic-Skills-Top10-1.0-2026
+  file: skills/ai-security/agent-memory-security.md
+- id: agent-runtime-observability
+  title: Agent Runtime Observability
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - OWASP-Agent-Control-Standard
+  - NIST-AI-RMF
+  file: skills/ai-security/agent-runtime-observability.md
+- id: secure-mcp-server-development
+  title: Secure MCP Server Development
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - OWASP-Agentic-Applications-2026
+  - NIST-SSDF
+  file: skills/ai-security/secure-mcp-server-development.md
+- id: ai-bom-model-provenance
+  title: AI BOM, Model & Dataset Provenance
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-AI-RMF
+  - NIST-SSDF
+  file: skills/ai-security/ai-bom-model-provenance.md
+- id: genai-incident-response
+  title: GenAI / Agentic Incident Response
+  domain: ai-security
+  mode: DEFENSIVE
+  risk: high
+  frameworks:
+  - NIST-800-61r3
+  - OWASP-Agentic-Applications-2026
+  - OWASP-LLM-Top10-2026
+  file: skills/ai-security/genai-incident-response.md
+- id: secure-build-runners
+  title: Secure CI/CD Build Runners
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: medium
+  frameworks:
+  - NIST-SSDF
+  - SLSA
+  file: skills/devsecops/secure-build-runners.md
+- id: artifact-signing-attestation
+  title: Artifact Signing & Build Attestation
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-SSDF
+  - SLSA
+  - Sigstore
+  file: skills/devsecops/artifact-signing-attestation.md
+- id: vulnerability-intelligence-orchestration
+  title: Vulnerability Intelligence Orchestration
+  domain: devsecops
+  mode: DEFENSIVE
+  risk: low
+  frameworks:
+  - NIST-CSF-2.0
+  - NIST-SSDF
+  - CISA-KEV
+  - FIRST-EPSS
+  - OSV
+  file: skills/devsecops/vulnerability-intelligence-orchestration.md
