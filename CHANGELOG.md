@@ -8,6 +8,7 @@
 - Restored `engagements/.gitkeep` so the engagement scope folder referenced by the agent adapters exists.
 - Regenerated `MANIFEST.sha256`; every listed file now exists and verifies.
 - Vulnerability scans failed against the live OSV API (HTTP 400) whenever a component had a versioned purl, because the version was sent twice. The OSV query now sends the version only once; a regression test covers pinned, scoped, unpinned and name-based queries.
+- Live scans under-prioritised every finding (all P3, confidence low — including Log4Shell). OSV's batch endpoint returns only IDs, so findings had no CVE aliases, severity or fixed versions and EPSS, CISA KEV and NVD enrichment never ran. The OSV connector now fetches each full record (cached per ID); a regression test reproduces the live API shape.
 - `aegissec risk` with no action now lists the known actions instead of exiting with a usage error.
 
 ## 1.0.0 Stable — 2026-10-05
