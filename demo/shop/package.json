@@ -1,0 +1,12 @@
+{
+  "name": "demo-online-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deliberately outdated dependencies for the AegisSec real-world demo. Do not deploy.",
+  "dependencies": {
+    "axios": "0.21.1",
+    "express": "4.21.2",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.20"
+  }
+}
