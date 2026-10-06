@@ -2,12 +2,16 @@
 # CLI flags and Harness(...) arguments override these. Keys mirror the CLI.
 version: 1
 
-# Provider: anthropic | openai (or any OpenAI-compatible endpoint via base_url).
-# API keys are read from the environment, never stored here.
+# Provider: anthropic | openai | nvidia (NVIDIA NIM).
+# "openai" also covers any OpenAI-compatible endpoint via base_url.
+# "nvidia" uses the NVIDIA API catalog (https://integrate.api.nvidia.com/v1);
+# point base_url at a self-hosted NIM (e.g. http://localhost:8000/v1).
+# API keys are read from the environment, never stored here:
+#   anthropic -> ANTHROPIC_API_KEY, openai -> OPENAI_API_KEY, nvidia -> NVIDIA_API_KEY.
 provider: anthropic
-model: null            # null = provider default (anthropic: claude-opus-5-5)
-base_url: null         # set for an OpenAI-compatible gateway or local model
-api_key_env: OPENAI_API_KEY   # OpenAI providers only
+model: null            # null = provider default (anthropic: claude-opus-5-5; nvidia: meta/llama-3.3-70b-instruct)
+base_url: null         # OpenAI-compatible gateway, self-hosted NIM, or local model
+api_key_env: OPENAI_API_KEY   # OpenAI-compatible providers only (nvidia defaults to NVIDIA_API_KEY)
 
 # Default persona (see: python scripts/aegissec_agent.py --list-agents).
 agent: aegissec-operator

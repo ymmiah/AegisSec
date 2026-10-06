@@ -60,10 +60,10 @@ def _approver(tool_name: str, summary: str) -> bool:
 
 def main() -> int:
     p = argparse.ArgumentParser(prog="aegissec-agent", description="AegisSec runtime harness (governed security chatbot)")
-    p.add_argument("--provider", default="anthropic", help="anthropic or openai (default anthropic)")
+    p.add_argument("--provider", default="anthropic", help="anthropic, openai or nvidia (NVIDIA NIM) — default anthropic")
     p.add_argument("--model", help="model id (provider default otherwise)")
-    p.add_argument("--base-url", help="override API base URL (e.g. an OpenAI-compatible gateway)")
-    p.add_argument("--api-key-env", help="env var holding the key (OpenAI providers; default OPENAI_API_KEY)")
+    p.add_argument("--base-url", help="override API base URL (OpenAI-compatible gateway, or a self-hosted NIM e.g. http://localhost:8000/v1)")
+    p.add_argument("--api-key-env", help="env var holding the key (OpenAI-compatible providers; default OPENAI_API_KEY, or NVIDIA_API_KEY for nvidia)")
     p.add_argument("--agent", default="aegissec-operator", help="persona slug (see --list-agents)")
     p.add_argument("--workdir", default=".", help="sandbox root for file tools (default: cwd)")
     p.add_argument("--scope", help="engagement scope YAML to load (enables gated active testing if it passes)")

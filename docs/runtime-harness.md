@@ -30,6 +30,11 @@ export OPENAI_API_KEY=sk-...
 python scripts/aegissec_agent.py --provider openai --model gpt-4o \
   --base-url https://api.openai.com/v1
 
+# NVIDIA NIM — the NVIDIA API catalog, or a self-hosted NIM container
+export NVIDIA_API_KEY=nvapi-...
+python scripts/aegissec_agent.py --provider nvidia --model meta/llama-3.3-70b-instruct
+# self-hosted NIM:  --provider nvidia --base-url http://localhost:8000/v1
+
 # one-shot
 python scripts/aegissec_agent.py --once "Scan ./sbom.cdx.json and give me the fix plan"
 
@@ -104,6 +109,7 @@ An action not in the policy fails closed. This is why active testing, production
 
 - **Anthropic** — `ANTHROPIC_API_KEY`; default model `claude-opus-5-5`; `anthropic-version` defaults to `2023-06-01` (override with `ANTHROPIC_VERSION`).
 - **OpenAI-compatible** — `OPENAI_API_KEY` (or `--api-key-env`); set `--base-url` for gateways or local servers that speak the chat-completions API.
+- **NVIDIA NIM** — `--provider nvidia`, `NVIDIA_API_KEY`; defaults to the NVIDIA API catalog (`https://integrate.api.nvidia.com/v1`, override with `NVIDIA_API_BASE_URL` or `--base-url`) and model `meta/llama-3.3-70b-instruct`. Point `--base-url` at a self-hosted NIM container (for example `http://localhost:8000/v1`). NIM is OpenAI-compatible; pick a model that supports tool calling.
 
 Keys are read from the environment and never written to disk or into memory. Defaults live in [`config/agent.yaml`](../config/agent.yaml).
 

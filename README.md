@@ -68,10 +68,12 @@ AegisSec can run as a **governed security agent over any LLM** — as a CLI, or 
 export ANTHROPIC_API_KEY=sk-...
 python scripts/aegissec_agent.py --agent security-appsec-engineer
 
-# one-shot, OpenAI or any OpenAI-compatible endpoint
+# OpenAI, NVIDIA NIM, or any OpenAI-compatible endpoint (gateway / local / self-hosted NIM)
 export OPENAI_API_KEY=sk-...
 python scripts/aegissec_agent.py --provider openai --model gpt-4o \
   --once "Scan ./sbom.cdx.json and give me the fix plan"
+export NVIDIA_API_KEY=nvapi-...
+python scripts/aegissec_agent.py --provider nvidia   # NVIDIA NIM (or --base-url a self-hosted NIM)
 
 # offline — see the agents and skills, no key needed
 python scripts/aegissec_agent.py --list-agents

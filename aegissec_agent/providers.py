@@ -159,6 +159,25 @@ class OpenAIProvider(LLMProvider):
         return turn
 
 
+class NvidiaProvider(OpenAIProvider):
+    """NVIDIA NIM — the NVIDIA API catalog or a self-hosted NIM container.
+
+    Both speak the OpenAI chat-completions API, so this reuses OpenAIProvider
+    and only changes the defaults. Point at a self-hosted NIM with base_url
+    (or NVIDIA_API_BASE_URL), e.g. http://localhost:8000/v1. Pick a model that
+    supports tool calling (the default does).
+    """
+
+    name = "nvidia"
+    DEFAULT_BASE_URL = "https://integrate.api.nvidia.com/v1"
+
+    def __init__(self, model="meta/llama-3.3-70b-instruct", api_key=None, max_tokens=4096,
+                 base_url=None, api_key_env="NVIDIA_API_KEY"):
+        base_url = base_url or os.getenv("NVIDIA_API_BASE_URL") or self.DEFAULT_BASE_URL
+        super().__init__(model=model, api_key=api_key, max_tokens=max_tokens,
+                         base_url=base_url, api_key_env=api_key_env)
+
+
 class StubProvider(LLMProvider):
     """Deterministic provider for offline use and tests.
 
@@ -186,4 +205,6 @@ def build_provider(name: str, **kwargs) -> LLMProvider:
         return AnthropicProvider(**{k: v for k, v in kwargs.items() if v is not None})
     if name in ("openai", "openai-compatible"):
         return OpenAIProvider(**{k: v for k, v in kwargs.items() if v is not None})
-    raise ProviderError(f"unknown provider '{name}' (use anthropic or openai, or pass a provider object)")
+    if name in ("nvidia", "nim", "nvidia-nim"):
+        return NvidiaProvider(**{k: v for k, v in kwargs.items() if v is not None})
+    raise ProviderError(f"unknown provider '{name}' (use anthropic, openai or nvidia, or pass a provider object)")

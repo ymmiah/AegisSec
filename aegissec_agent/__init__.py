@@ -7,12 +7,16 @@ Public API:
 
 from .harness import Event, Harness
 from .policy import Decision, PolicyGate
-from .providers import AssistantTurn, LLMProvider, StubProvider, ToolCall, build_provider
+from .providers import (
+    AnthropicProvider, AssistantTurn, LLMProvider, NvidiaProvider,
+    OpenAIProvider, StubProvider, ToolCall, build_provider,
+)
 from .tools import Tool, ToolContext
 
 __all__ = [
     "Harness", "Event", "PolicyGate", "Decision",
-    "LLMProvider", "StubProvider", "AssistantTurn", "ToolCall", "build_provider",
+    "LLMProvider", "AnthropicProvider", "OpenAIProvider", "NvidiaProvider",
+    "StubProvider", "AssistantTurn", "ToolCall", "build_provider",
     "Tool", "ToolContext",
 ]
 __version__ = "1.0.0"

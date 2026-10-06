@@ -179,6 +179,38 @@ class OpenAIWireTests(unittest.TestCase):
         importlib.reload(providers_mod)
 
 
+class NvidiaWireTests(unittest.TestCase):
+    def setUp(self):
+        self.captured = {}
+
+        def fake_post(url, headers, body, timeout=120):
+            self.captured.update(url=url, headers=headers, body=body)
+            return {"choices": [{"message": {"content": "ok", "tool_calls": []}}]}
+        providers_mod._post = fake_post
+
+    def test_nim_defaults_and_openai_shape(self):
+        from aegissec_agent.providers import build_provider
+        p = build_provider("nvidia", api_key="k")  # from registry, no explicit base_url/model
+        self.assertEqual(p.model, "meta/llama-3.3-70b-instruct")
+        self.assertEqual(p.base_url, "https://integrate.api.nvidia.com/v1")
+        tool = Harness(StubProvider([]), agent="aegissec-operator").tools[0]
+        p.complete("SYS", [{"role": "user", "text": "hi"}], [tool])
+        # NIM is OpenAI-compatible: Bearer auth, /chat/completions, function tools
+        self.assertEqual(self.captured["url"], "https://integrate.api.nvidia.com/v1/chat/completions")
+        self.assertEqual(self.captured["headers"]["authorization"], "Bearer k")
+        self.assertEqual(self.captured["body"]["tools"][0]["type"], "function")
+        self.assertEqual(self.captured["body"]["messages"][0], {"role": "system", "content": "SYS"})
+
+    def test_self_hosted_base_url_override(self):
+        from aegissec_agent.providers import build_provider
+        p = build_provider("nim", api_key="k", base_url="http://localhost:8000/v1")
+        self.assertEqual(p.base_url, "http://localhost:8000/v1")
+
+    def tearDown(self):
+        import importlib
+        importlib.reload(providers_mod)
+
+
 class PersonaTests(unittest.TestCase):
     def test_index_matches_files_and_all_load(self):
         entries = personas.load_index()
