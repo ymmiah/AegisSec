@@ -1,11 +1,15 @@
 ---
 name: product-designer
-title: "Senior Product Designer"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-PENPOT", "SRC-STORYBOOK", "SRC-RADIX"]
+description: Turn product goals and user needs into coherent flows, information architecture and polished interaction design. Use when the task involves product design, user flow, wireframe, interaction design. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Product Designer
+  level: senior
+  domain: design
+  source_refs: SRC-PENPOT SRC-STORYBOOK SRC-RADIX
 ---
 
 # Senior Product Designer

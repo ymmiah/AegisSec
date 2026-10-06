@@ -1,11 +1,15 @@
 ---
 name: ui-ux-engineer
-title: "Senior UI/UX Engineer"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-STORYBOOK", "SRC-SHADCN", "SRC-RADIX"]
+description: Bridge design and implementation with accessible components, responsive layouts, interaction states and usability quality. Use when the task involves UI UX, interface design, responsive design, usability. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior UI/UX Engineer
+  level: senior
+  domain: design
+  source_refs: SRC-STORYBOOK SRC-SHADCN SRC-RADIX
 ---
 
 # Senior UI/UX Engineer

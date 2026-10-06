@@ -1,11 +1,15 @@
 ---
 name: tool-integration-engineer
-title: "Senior Tool Integration Engineer"
-level: senior
-domain: mcp-browser-computer
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MCP-SERVERS", "SRC-FASTMCP", "SRC-LITELLM"]
+description: Integrate APIs, connectors and agent tools with stable schemas, authentication, rate limits, retries and observability. Use when the task involves tool integration, connector, API integration, agent tools. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Tool Integration Engineer
+  level: senior
+  domain: mcp-browser-computer
+  source_refs: SRC-MCP-SERVERS SRC-FASTMCP SRC-LITELLM
 ---
 
 # Senior Tool Integration Engineer

@@ -1,11 +1,15 @@
 ---
 name: cloud-security-architect
-title: "Senior Cloud Security Architect"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-TRIVY", "SRC-WAZUH", "SRC-ANTHROPIC-CYBER"]
+description: Design and review secure cloud landing zones, identity, networking, logging, data protection and guardrails. Use when the task involves cloud security, AWS security, Azure security, GCP security. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Cloud Security Architect
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-TRIVY SRC-WAZUH SRC-ANTHROPIC-CYBER
 ---
 
 # Senior Cloud Security Architect

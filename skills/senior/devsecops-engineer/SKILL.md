@@ -1,11 +1,15 @@
 ---
 name: devsecops-engineer
-title: "Senior DevSecOps Engineer"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-TRIVY", "SRC-GITLEAKS", "SRC-DEPENDENCY-CHECK"]
+description: Integrate security into CI/CD, infrastructure, release gates, provenance and developer workflows without blocking delivery. Use when the task involves DevSecOps, CI/CD security, pipeline security, shift left. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior DevSecOps Engineer
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-TRIVY SRC-GITLEAKS SRC-DEPENDENCY-CHECK
 ---
 
 # Senior DevSecOps Engineer

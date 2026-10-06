@@ -1,11 +1,15 @@
 ---
 name: senior-agent-router
-title: "Senior Agent Router"
-level: senior
-domain: routing
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-SKILLS", "SRC-OPENAI-AGENTS", "SRC-LANGGRAPH"]
+description: Route complex requests to the smallest capable set of senior specialists while preserving policy, context and output contracts. Use when the task involves route task, choose specialist, multi-agent plan, delegate work. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Agent Router
+  level: senior
+  domain: routing
+  source_refs: SRC-ANTHROPIC-SKILLS SRC-OPENAI-AGENTS SRC-LANGGRAPH
 ---
 
 # Senior Agent Router

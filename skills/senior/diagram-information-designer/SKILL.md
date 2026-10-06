@@ -1,11 +1,15 @@
 ---
 name: diagram-information-designer
-title: "Senior Diagram & Information Designer"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MERMAID", "SRC-EXCALIDRAW", "SRC-PENPOT"]
+description: Convert complex systems, processes and data into clear diagrams, architecture views and information hierarchies. Use when the task involves diagram, architecture diagram, flowchart, information design. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Diagram & Information Designer
+  level: senior
+  domain: design
+  source_refs: SRC-MERMAID SRC-EXCALIDRAW SRC-PENPOT
 ---
 
 # Senior Diagram & Information Designer

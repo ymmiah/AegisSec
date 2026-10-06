@@ -1,11 +1,15 @@
 ---
 name: computer-use-engineer
-title: "Senior Computer Use Engineer"
-level: senior
-domain: mcp-browser-computer
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-SKYVERN", "SRC-BROWSER-USE", "SRC-OPENHANDS"]
+description: Design controlled GUI/computer-use workflows with visual verification, bounded actions and reversible state changes. Use when the task involves computer use, GUI automation, desktop agent, screen automation. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Computer Use Engineer
+  level: senior
+  domain: mcp-browser-computer
+  source_refs: SRC-SKYVERN SRC-BROWSER-USE SRC-OPENHANDS
 ---
 
 # Senior Computer Use Engineer

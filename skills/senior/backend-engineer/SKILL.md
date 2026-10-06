@@ -1,11 +1,15 @@
 ---
 name: backend-engineer
-title: "Senior Backend Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-NODEJS", "SRC-DJANGO", "SRC-OTEL"]
+description: Design secure backend services, APIs, queues, data access, observability and failure handling. Use when the task involves backend, server, API backend, service. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Backend Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-NODEJS SRC-DJANGO SRC-OTEL
 ---
 
 # Senior Backend Engineer

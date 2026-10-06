@@ -1,11 +1,15 @@
 ---
 name: threat-intelligence-analyst
-title: "Senior Threat Intelligence Analyst"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MITRE-ATTACK", "SRC-ANTHROPIC-CYBER", "SRC-MISP-AWESOME"]
+description: Turn external and internal threat data into actionable intelligence, confidence-rated assessments and detection priorities. Use when the task involves threat intel, IOC, campaign analysis, threat actor. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Threat Intelligence Analyst
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-MITRE-ATTACK SRC-ANTHROPIC-CYBER SRC-MISP-AWESOME
 ---
 
 # Senior Threat Intelligence Analyst

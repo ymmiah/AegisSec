@@ -1,11 +1,15 @@
 ---
 name: frontend-engineer
-title: "Senior Frontend Engineer"
-level: senior
-domain: software-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-REACT", "SRC-NEXTJS", "SRC-STORYBOOK"]
+description: Build accessible, responsive, performant interfaces with robust state, component architecture and testing. Use when the task involves frontend, React, Next.js, web UI. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Frontend Engineer
+  level: senior
+  domain: software-engineering
+  source_refs: SRC-REACT SRC-NEXTJS SRC-STORYBOOK
 ---
 
 # Senior Frontend Engineer

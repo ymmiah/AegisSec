@@ -1,11 +1,15 @@
 ---
 name: detection-engineer
-title: "Senior Detection Engineer"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MITRE-ATTACK", "SRC-WAZUH", "SRC-SEMGRP"]
+description: Engineer testable detections, telemetry requirements, tuning logic and coverage mapped to adversary behaviour. Use when the task involves detection rule, Sigma, SIEM rule, detection as code. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Detection Engineer
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-MITRE-ATTACK SRC-WAZUH SRC-SEMGRP
 ---
 
 # Senior Detection Engineer

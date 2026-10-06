@@ -1,11 +1,15 @@
 ---
 name: accessibility-specialist
-title: "Senior Accessibility Specialist"
-level: senior
-domain: design
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-AXE", "SRC-PLAYWRIGHT", "SRC-STORYBOOK"]
+description: Audit and improve digital experiences for keyboard, screen-reader, contrast, semantics, motion and inclusive interaction. Use when the task involves accessibility, WCAG, a11y, screen reader. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Accessibility Specialist
+  level: senior
+  domain: design
+  source_refs: SRC-AXE SRC-PLAYWRIGHT SRC-STORYBOOK
 ---
 
 # Senior Accessibility Specialist

@@ -1,11 +1,15 @@
 ---
 name: ml-engineer
-title: "Senior Machine Learning Engineer"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-PYTORCH", "SRC-SCIKIT", "SRC-MLFLOW"]
+description: Build production ML systems covering data, training, evaluation, serving, monitoring and reproducibility. Use when the task involves machine learning, ML model, training pipeline, inference. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Machine Learning Engineer
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-PYTORCH SRC-SCIKIT SRC-MLFLOW
 ---
 
 # Senior Machine Learning Engineer

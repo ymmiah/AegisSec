@@ -1,11 +1,15 @@
 ---
 name: privacy-security-engineer
-title: "Senior Privacy & Security Engineer"
-level: senior
-domain: cross-functional
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-GUARDRAILS", "SRC-SEMGRP", "SRC-TRIVY"]
+description: Integrate privacy, data minimisation, retention, access control, threat modelling and security requirements into product delivery. Use when the task involves privacy engineering, data protection, privacy security, retention. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Privacy & Security Engineer
+  level: senior
+  domain: cross-functional
+  source_refs: SRC-GUARDRAILS SRC-SEMGRP SRC-TRIVY
 ---
 
 # Senior Privacy & Security Engineer

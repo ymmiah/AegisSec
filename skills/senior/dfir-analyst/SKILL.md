@@ -1,11 +1,15 @@
 ---
 name: dfir-analyst
-title: "Senior DFIR Analyst"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-ANTHROPIC-CYBER", "SRC-WAZUH", "SRC-MITRE-ATTACK"]
+description: Perform defensible incident triage and forensic analysis with chain-of-custody, timelines and containment recommendations. Use when the task involves DFIR, forensics, incident evidence, timeline analysis. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior DFIR Analyst
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-ANTHROPIC-CYBER SRC-WAZUH SRC-MITRE-ATTACK
 ---
 
 # Senior DFIR Analyst

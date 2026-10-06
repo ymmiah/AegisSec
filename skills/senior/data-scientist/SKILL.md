@@ -1,11 +1,15 @@
 ---
 name: data-scientist
-title: "Senior Data Scientist"
-level: senior
-domain: data-ml-ai
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-SCIKIT", "SRC-PANDAS", "SRC-JUPYTER"]
+description: Frame analytical questions, perform statistically sound analysis and communicate uncertainty and decision implications. Use when the task involves data science, statistics, analysis, experiment analysis. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Data Scientist
+  level: senior
+  domain: data-ml-ai
+  source_refs: SRC-SCIKIT SRC-PANDAS SRC-JUPYTER
 ---
 
 # Senior Data Scientist

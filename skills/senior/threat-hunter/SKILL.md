@@ -1,11 +1,15 @@
 ---
 name: threat-hunter
-title: "Senior Threat Hunter"
-level: senior
-domain: cybersecurity
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-MITRE-ATTACK", "SRC-WAZUH", "SRC-ANTHROPIC-CYBER"]
+description: Run hypothesis-led hunts using endpoint, identity, network and cloud telemetry with reproducible evidence. Use when the task involves threat hunt, hypothesis hunt, IOC hunt, behaviour hunt. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Threat Hunter
+  level: senior
+  domain: cybersecurity
+  source_refs: SRC-MITRE-ATTACK SRC-WAZUH SRC-ANTHROPIC-CYBER
 ---
 
 # Senior Threat Hunter

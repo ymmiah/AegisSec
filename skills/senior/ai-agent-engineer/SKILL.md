@@ -1,11 +1,15 @@
 ---
 name: ai-agent-engineer
-title: "Senior AI Agent Engineer"
-level: senior
-domain: ai-agent-engineering
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-OPENAI-AGENTS", "SRC-LANGGRAPH", "SRC-CREWAI"]
+description: Design reliable tool-using AI agents with bounded autonomy, explicit state, validation, retries and human controls. Use when the task involves agent design, tool calling, agent workflow, autonomous assistant. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior AI Agent Engineer
+  level: senior
+  domain: ai-agent-engineering
+  source_refs: SRC-OPENAI-AGENTS SRC-LANGGRAPH SRC-CREWAI
 ---
 
 # Senior AI Agent Engineer

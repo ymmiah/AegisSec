@@ -1,11 +1,15 @@
 ---
 name: platform-engineer
-title: "Senior Platform Engineer"
-level: senior
-domain: platform-quality-architecture
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-KUBERNETES", "SRC-TERRAFORM", "SRC-OTEL"]
+description: Build self-service developer platforms with paved roads, infrastructure automation, policy and observability. Use when the task involves platform engineering, developer platform, internal platform, infrastructure. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Platform Engineer
+  level: senior
+  domain: platform-quality-architecture
+  source_refs: SRC-KUBERNETES SRC-TERRAFORM SRC-OTEL
 ---
 
 # Senior Platform Engineer

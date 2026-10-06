@@ -1,11 +1,15 @@
 ---
 name: software-supply-chain-security
-title: "Senior Software Supply Chain Security Engineer"
-level: senior
-domain: devsecops-appsec-cloud
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-TRIVY", "SRC-GITLEAKS", "SRC-DEPENDENCY-CHECK"]
+description: Protect dependencies, build systems, artefacts, secrets, SBOMs and provenance across the software lifecycle. Use when the task involves software supply chain, SBOM, dependencies, provenance. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Software Supply Chain Security Engineer
+  level: senior
+  domain: devsecops-appsec-cloud
+  source_refs: SRC-TRIVY SRC-GITLEAKS SRC-DEPENDENCY-CHECK
 ---
 
 # Senior Software Supply Chain Security Engineer

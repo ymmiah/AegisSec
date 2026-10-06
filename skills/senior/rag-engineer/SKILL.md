@@ -1,11 +1,15 @@
 ---
 name: rag-engineer
-title: "Senior RAG Engineer"
-level: senior
-domain: memory-rag-research
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-LANGCHAIN", "SRC-GRAPHITI", "SRC-PHOENIX"]
+description: Build retrieval-augmented generation systems with ingestion, chunking, indexing, ranking, citations and evaluation. Use when the task involves RAG, retrieval, vector search, knowledge base. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior RAG Engineer
+  level: senior
+  domain: memory-rag-research
+  source_refs: SRC-LANGCHAIN SRC-GRAPHITI SRC-PHOENIX
 ---
 
 # Senior RAG Engineer

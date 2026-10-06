@@ -1,11 +1,15 @@
 ---
 name: research-engineer
-title: "Senior Research Engineer"
-level: senior
-domain: memory-rag-research
-package: aegissec-all-in-one
-version: 1.0.0
-source_refs: ["SRC-SCIENTIFIC-SKILLS", "SRC-SCIAGENT", "SRC-DEEPMIND-SCIENCE"]
+description: Run rigorous multi-source research with query planning, evidence grading, citation tracking and synthesis. Use when the task involves research, deep research, evidence synthesis, literature search. Part of AegisSec; follow the aegissec skill's scope and approval rules.
+license: MIT
+metadata:
+  author: ymmiah
+  package: aegissec-all-in-one
+  version: 1.0.0
+  title: Senior Research Engineer
+  level: senior
+  domain: memory-rag-research
+  source_refs: SRC-SCIENTIFIC-SKILLS SRC-SCIAGENT SRC-DEEPMIND-SCIENCE
 ---
 
 # Senior Research Engineer

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-06",
+  "source": {
+    "repository": "msitarzewski/agency-agents",
+    "also_known_as": "The Agency / AgentLand",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "audited_commit": "83294689da3832c0a9f223221148c411fd3eacc0",
+    "licence": "MIT",
+    "copyright": "Copyright (c) 2025 AgentLand Contributors"
+  },
+  "imported": {
+    "what": "Security (12) and DevSecOps/SRE (5) agent personas, used as runtime personas in the AegisSec harness.",
+    "where": "agents/community/",
+    "verbatim": true,
+    "count": 17,
+    "files": [
+      {
+        "file": "agents/community/devsecops/engineering-devops-automator.md",
+        "division": "devsecops",
+        "sha256": "dbb3d2518a4fff4df1930fd311ef6ffa96670d08b101567b7e241f941ced94c9"
+      },
+      {
+        "file": "agents/community/devsecops/engineering-identity-access-engineer.md",
+        "division": "devsecops",
+        "sha256": "803b047d1b838fba2687a95bf2b8528cee86cf744130037f8380b1cc172c3f8e"
+      },
+      {
+        "file": "agents/community/devsecops/engineering-platform-engineer.md",
+        "division": "devsecops",
+        "sha256": "0736a0c476ff46e16e33b36ec143352107b82d69b3501bcdaefe22feee252652"
+      },
+      {
+        "file": "agents/community/devsecops/engineering-privacy-engineer.md",
+        "division": "devsecops",
+        "sha256": "0d00d2f0d3008a55000eb01f13adac54f40daf471d240a7c073477efe92376a6"
+      },
+      {
+        "file": "agents/community/devsecops/engineering-sre.md",
+        "division": "devsecops",
+        "sha256": "85b305e495506913f50c7cb28de42444a85fbc4898cd3ad4e1dc9b358b4ab5e8"
+      },
+      {
+        "file": "agents/community/security/security-ai-generated-code-auditor.md",
+        "division": "security",
+        "sha256": "ac2196a914bfb00dddfef93edb9eef1860f924f9582d814cd303ab45e4fc71bc"
+      },
+      {
+        "file": "agents/community/security/security-appsec-engineer.md",
+        "division": "security",
+        "sha256": "29282b0e428402e514a3632395af8fc56723e3a20bc4d9b4892aa223f25575e6"
+      },
+      {
+        "file": "agents/community/security/security-architect.md",
+        "division": "security",
+        "sha256": "022d46483ec8764198534d1c6c58b734b269028270f0800f4f5e6bceb103c0cd"
+      },
+      {
+        "file": "agents/community/security/security-blockchain-security-auditor.md",
+        "division": "security",
+        "sha256": "35bcc88d3b4b2016d0057cfc5f823d9c2326db2f412e89c2fc3796c4f226210b"
+      },
+      {
+        "file": "agents/community/security/security-cloud-security-architect.md",
+        "division": "security",
+        "sha256": "fa18b1e1ed59534c1126f4b44ef06419f3975d98675b37d54ee11a9e3f970d1b"
+      },
+      {
+        "file": "agents/community/security/security-compliance-auditor.md",
+        "division": "security",
+        "sha256": "ebb550ceef8011be23fe5a6fab0a7b3f77c2433f4d6aa22617a7eb87db97274f"
+      },
+      {
+        "file": "agents/community/security/security-incident-responder.md",
+        "division": "security",
+        "sha256": "be8d0eedd37ddc79767e8fcff518b1d7c565a4e388624a7d62c099270bc0b9e3"
+      },
+      {
+        "file": "agents/community/security/security-penetration-tester.md",
+        "division": "security",
+        "sha256": "f52c2524309fb048250b412daa6a2ad0a906b5daff01f64f195052d024b9e1a0"
+      },
+      {
+        "file": "agents/community/security/security-secrets-credential-engineer.md",
+        "division": "security",
+        "sha256": "260bca8dff41a1c0fb502fd895fd149f2632b30156a2fe327b52b3ef3d3d75f6"
+      },
+      {
+        "file": "agents/community/security/security-senior-secops.md",
+        "division": "security",
+        "sha256": "80f83d40f631134ab458247433b616e8fbdfdc0c7bdc568e356d4e6902385359"
+      },
+      {
+        "file": "agents/community/security/security-threat-detection-engineer.md",
+        "division": "security",
+        "sha256": "8c8758663f93e94e27c1d7c21e33a08448ae4dd314fc5d24d91c6289806b9e78"
+      },
+      {
+        "file": "agents/community/security/security-threat-intelligence-analyst.md",
+        "division": "security",
+        "sha256": "536ca88a00075f68aa9b6fd48f86b41d44b962b54f148ca55cd87c8b6dbddadc"
+      }
+    ]
+  },
+  "aegissec_policy": {
+    "canonical_instructions": "AGENTS.md",
+    "third_party_policy": "policy/third-party-skills.md",
+    "personas_can_override_policy": false,
+    "note": "Community personas are specialist knowledge, not authority. The harness always places AGENTS.md above the persona and enforces the scope and approval gates regardless of persona text."
+  }
+}
