@@ -1,6 +1,12 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-10-06
+
+Highlights: actionable vulnerability fix plans, 72 Agent Skills, a governed runtime harness over any LLM (incl. NVIDIA NIM), imported security/DevSecOps personas, and hardened API/credential handling.
+
+### Added — every-agent/every-skill smoke test
+
+- `tests/test_all_agents_skills.py` loads all 18 harness agents and drives the governed loop, loads all 8 operational + 115 native + 64 senior skills, and runs every harness tool (network tools stubbed so CI stays fast and hermetic). Runs in the `validate` gate.
 
 ### Security — hardened every outbound API call
 

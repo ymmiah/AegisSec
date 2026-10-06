@@ -1,4 +1,4 @@
-# Release Validation — AegisSec AI v1.0.0 Stable
+# Release Validation — AegisSec AI v1.1.0
 
 Release date: **5 October 2026**
 
@@ -36,7 +36,7 @@ Release date: **5 October 2026**
 
 ## Stable release status
 
-The v1.0.0 package is considered **stable when all local validation commands below pass**:
+The v1.1.0 package is considered **stable when all local validation commands below pass**:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -48,4 +48,4 @@ python -m unittest discover -s tests -v
 python -m compileall -q aegissec_vuln scripts tests
 ```
 
-`upstream-status` may return a non-zero status when the optional third-party skill package has not been installed; that is expected and does not invalidate the native v1.0.0 release.
+`upstream-status` may return a non-zero status when the optional third-party skill package has not been installed; that is expected and does not invalidate the native release.
