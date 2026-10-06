@@ -115,7 +115,7 @@ class AnthropicWireTests(unittest.TestCase):
     def setUp(self):
         self.captured = {}
 
-        def fake_post(url, headers, body, timeout=120):
+        def fake_post(url, headers, body, timeout=120, secrets=()):
             self.captured.update(url=url, headers=headers, body=body)
             return {"content": [{"type": "text", "text": "hi"},
                                 {"type": "tool_use", "id": "toolu_1", "name": "list_skills", "input": {}}]}
@@ -147,7 +147,7 @@ class OpenAIWireTests(unittest.TestCase):
     def setUp(self):
         self.captured = {}
 
-        def fake_post(url, headers, body, timeout=120):
+        def fake_post(url, headers, body, timeout=120, secrets=()):
             self.captured.update(url=url, headers=headers, body=body)
             return {"choices": [{"message": {"content": "answer",
                     "tool_calls": [{"id": "call_1", "type": "function",
@@ -183,7 +183,7 @@ class NvidiaWireTests(unittest.TestCase):
     def setUp(self):
         self.captured = {}
 
-        def fake_post(url, headers, body, timeout=120):
+        def fake_post(url, headers, body, timeout=120, secrets=()):
             self.captured.update(url=url, headers=headers, body=body)
             return {"choices": [{"message": {"content": "ok", "tool_calls": []}}]}
         providers_mod._post = fake_post

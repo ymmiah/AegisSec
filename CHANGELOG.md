@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Security — hardened every outbound API call
+
+- All outbound HTTP (LLM providers and the OSV/GitHub/NVD/CISA/EPSS connectors) now goes through `aegissec_vuln/securehttp.py`: TLS enforced and verified (never disableable); plain HTTP only to loopback/private hosts, never remote, so bearer keys are never sent in cleartext; `Authorization`/API-key headers stripped on cross-host redirect; secrets redacted from error text; `AEGISSEC_CA_BUNDLE` to trust an inspecting proxy; bounded timeouts. Keys come from the environment, ride in headers only, and are never logged or persisted. Covered by `tests/test_securehttp.py` and documented in `SECURITY.md`.
+
 ### Added — runtime harness (security chatbot over any LLM)
 
 - **`aegissec_agent/`**, a pure-standard-library runtime harness that runs AegisSec as a governed security agent over any LLM. Run it as a CLI (`scripts/aegissec_agent.py`) or embed it with `from aegissec_agent import Harness`.

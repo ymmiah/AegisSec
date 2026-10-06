@@ -111,7 +111,9 @@ An action not in the policy fails closed. This is why active testing, production
 - **OpenAI-compatible** — `OPENAI_API_KEY` (or `--api-key-env`); set `--base-url` for gateways or local servers that speak the chat-completions API.
 - **NVIDIA NIM** — `--provider nvidia`, `NVIDIA_API_KEY`; defaults to the NVIDIA API catalog (`https://integrate.api.nvidia.com/v1`, override with `NVIDIA_API_BASE_URL` or `--base-url`) and model `meta/llama-3.3-70b-instruct`. Point `--base-url` at a self-hosted NIM container (for example `http://localhost:8000/v1`). NIM is OpenAI-compatible; pick a model that supports tool calling.
 
-Keys are read from the environment and never written to disk or into memory. Defaults live in [`config/agent.yaml`](../config/agent.yaml).
+### API security
+
+Every provider call is hardened in `aegissec_vuln/securehttp.py` (shared with the vulnerability connectors): TLS is enforced and verified and cannot be turned off; plain HTTP is allowed only to a loopback/private host (a self-hosted model or NIM), never to a remote one, so a key is never sent in cleartext; keys come from the environment, ride only in headers, and are redacted from any error; auth headers are stripped if a response redirects to another host; set `AEGISSEC_CA_BUNDLE` to trust an inspecting proxy. Keys are never written to disk or into memory. Defaults live in [`config/agent.yaml`](../config/agent.yaml). See [`SECURITY.md`](../SECURITY.md#api-and-credential-security).
 
 ## Limits
 

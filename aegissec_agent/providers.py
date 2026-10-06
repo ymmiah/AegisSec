@@ -21,6 +21,10 @@ import urllib.request
 from dataclasses import dataclass, field
 from typing import Any
 
+from aegissec_vuln.securehttp import opener as _secure_opener
+from aegissec_vuln.securehttp import redact as _redact
+from aegissec_vuln.securehttp import validate_endpoint as _validate_endpoint
+
 
 @dataclass
 class ToolCall:
@@ -39,17 +43,30 @@ class ProviderError(RuntimeError):
     pass
 
 
-def _post(url: str, headers: dict, body: dict, timeout: int = 120) -> dict:
+def _check_endpoint(base_url: str) -> None:
+    try:
+        _validate_endpoint(base_url)
+    except ValueError as exc:
+        raise ProviderError(str(exc)) from None
+
+
+def _post(url: str, headers: dict, body: dict, timeout: int = 120, secrets=()) -> dict:
+    # TLS is enforced and verified; credentials ride only in headers, never in
+    # the URL, and are redacted from any error text.
+    try:
+        _validate_endpoint(url)
+    except ValueError as exc:
+        raise ProviderError(str(exc)) from None
     data = json.dumps(body).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={**headers, "content-type": "application/json"}, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with _secure_opener().open(req, timeout=timeout) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", "replace")[:800]
+        detail = _redact(exc.read().decode("utf-8", "replace")[:800], secrets)
         raise ProviderError(f"HTTP {exc.code} from {url}: {detail}") from None
     except urllib.error.URLError as exc:
-        raise ProviderError(f"could not reach {url}: {exc.reason}") from None
+        raise ProviderError(_redact(f"could not reach {url}: {exc.reason}", secrets)) from None
 
 
 class LLMProvider:
@@ -73,6 +90,7 @@ class AnthropicProvider(LLMProvider):
         self.version = version or os.getenv("ANTHROPIC_VERSION", "2023-06-01")
         if not self.api_key:
             raise ProviderError("ANTHROPIC_API_KEY is not set")
+        _check_endpoint(self.base_url)
 
     def _messages(self, messages: list[dict]) -> list[dict]:
         out = []
@@ -99,7 +117,8 @@ class AnthropicProvider(LLMProvider):
             "tools": [{"name": t.name, "description": t.description, "input_schema": t.input_schema} for t in tools],
         }
         resp = _post(f"{self.base_url}/v1/messages",
-                     {"x-api-key": self.api_key, "anthropic-version": self.version}, body)
+                     {"x-api-key": self.api_key, "anthropic-version": self.version}, body,
+                     secrets=[self.api_key])
         turn = AssistantTurn()
         for block in resp.get("content", []):
             if block.get("type") == "text":
@@ -122,6 +141,7 @@ class OpenAIProvider(LLMProvider):
         self.base_url = base_url.rstrip("/")
         if not self.api_key:
             raise ProviderError(f"{api_key_env} is not set")
+        _check_endpoint(self.base_url)
 
     def _messages(self, system: str, messages: list[dict]) -> list[dict]:
         out = [{"role": "system", "content": system}]
@@ -146,7 +166,8 @@ class OpenAIProvider(LLMProvider):
             "tools": [{"type": "function", "function": {
                 "name": t.name, "description": t.description, "parameters": t.input_schema}} for t in tools],
         }
-        resp = _post(f"{self.base_url}/chat/completions", {"authorization": f"Bearer {self.api_key}"}, body)
+        resp = _post(f"{self.base_url}/chat/completions", {"authorization": f"Bearer {self.api_key}"}, body,
+                     secrets=[self.api_key])
         msg = (resp.get("choices") or [{}])[0].get("message", {})
         turn = AssistantTurn(text=msg.get("content") or "")
         for tc in msg.get("tool_calls") or []:

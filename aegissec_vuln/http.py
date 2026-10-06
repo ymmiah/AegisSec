@@ -8,6 +8,8 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Any
 
+from .securehttp import SENSITIVE_HEADERS, opener, redact, validate_endpoint
+
 
 class HttpError(RuntimeError):
     pass
@@ -42,17 +44,25 @@ class JsonHttpClient:
             payload = json.dumps(body).encode("utf-8")
             merged.setdefault("Content-Type", "application/json")
 
+        # TLS is enforced and verified; credentials ride in headers only and are
+        # redacted from any error text (config sets never_log_api_tokens: true).
+        try:
+            validate_endpoint(url)
+        except ValueError as exc:
+            raise HttpError(str(exc)) from None
+        secrets = [v for k, v in merged.items() if k.lower() in SENSITIVE_HEADERS]
+
         last_error: Exception | None = None
         for attempt in range(self.retries + 1):
             req = urllib.request.Request(url, data=payload, method=method.upper(), headers=merged)
             try:
-                with urllib.request.urlopen(req, timeout=self.timeout) as response:
+                with opener().open(req, timeout=self.timeout) as response:
                     raw = response.read()
                     if not raw:
                         return None
                     return json.loads(raw.decode("utf-8"))
             except urllib.error.HTTPError as exc:
-                detail = exc.read().decode("utf-8", errors="replace")[:500]
+                detail = redact(exc.read().decode("utf-8", errors="replace")[:500], secrets)
                 last_error = HttpError(f"HTTP {exc.code} from {url}: {detail}")
                 # Do not retry most client errors. 429 is retryable.
                 if 400 <= exc.code < 500 and exc.code != 429:
@@ -61,4 +71,4 @@ class JsonHttpClient:
                 last_error = exc
             if attempt < self.retries:
                 time.sleep(0.75 * (2**attempt))
-        raise HttpError(str(last_error) if last_error else f"Request failed: {url}")
+        raise HttpError(redact(str(last_error), secrets) if last_error else f"Request failed: {url}")
