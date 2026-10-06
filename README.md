@@ -9,7 +9,7 @@
 <p align="center"><strong>Governed cybersecurity intelligence and senior-agent skills for AI systems.</strong></p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-v1.0.0-5b8cff?style=flat-square">
+  <img alt="Version" src="https://img.shields.io/badge/version-v1.1.0-5b8cff?style=flat-square">
   <img alt="Native skills" src="https://img.shields.io/badge/native%20security%20skills-115-24d7ff?style=flat-square">
   <img alt="Senior skills" src="https://img.shields.io/badge/senior%20skills-64-a96cff?style=flat-square">
   <img alt="Upstream skills" src="https://img.shields.io/badge/guarded%20upstream-818-37d8b4?style=flat-square">
@@ -163,7 +163,7 @@ Active testing of a real system always needs a completed engagement scope (`temp
 
 ## Visual identity and frontend
 
-AegisSec AI v1.0.0 includes the approved project identity and a responsive GitHub Pages-ready frontend.
+AegisSec AI v1.1.0 includes the approved project identity and a responsive GitHub Pages-ready frontend.
 
 <p align="center">
   <img src="docs/assets/brand/aegissec-lockup.jpg" alt="AegisSec AI logo and wordmark" width="440">
