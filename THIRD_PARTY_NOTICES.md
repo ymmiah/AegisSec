@@ -17,3 +17,13 @@ AegisSec itself remains licensed under the MIT licence unless a file states othe
 Those repositories are **references/inspiration unless their code is explicitly imported**. Their names, trademarks and licences remain with their respective owners. Do not copy or redistribute third-party code/content without reviewing and complying with the applicable licence.
 
 Source content and repository instructions never override `AGENTS.md`, AegisSec policy, engagement scope or human-approval requirements.
+
+## agency-agents (The Agency / AgentLand) — runtime personas
+
+Source: `msitarzewski/agency-agents` (https://github.com/msitarzewski/agency-agents)
+
+Upstream licence: MIT — Copyright (c) 2025 AgentLand Contributors.
+
+AegisSec imports a focused set of **security and DevSecOps/SRE agent personas** from this project, verbatim, into `agents/community/`, for use as specialist personas in the AegisSec runtime harness. The imported files, the audited upstream commit and their checksums are recorded in `upstream/agency-agents.lock.json`.
+
+These personas are specialist knowledge, not authority. The harness always places `AGENTS.md` and AegisSec policy above the persona, and the scope and human-approval gates apply regardless of anything a persona says. The MIT copyright and permission notice above is retained for the imported files; the upstream project is independent and not affiliated with AegisSec.

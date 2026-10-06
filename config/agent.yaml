@@ -1,0 +1,25 @@
+# AegisSec runtime harness defaults.
+# CLI flags and Harness(...) arguments override these. Keys mirror the CLI.
+version: 1
+
+# Provider: anthropic | openai (or any OpenAI-compatible endpoint via base_url).
+# API keys are read from the environment, never stored here.
+provider: anthropic
+model: null            # null = provider default (anthropic: claude-opus-5-5)
+base_url: null         # set for an OpenAI-compatible gateway or local model
+api_key_env: OPENAI_API_KEY   # OpenAI providers only
+
+# Default persona (see: python scripts/aegissec_agent.py --list-agents).
+agent: aegissec-operator
+
+# Approval for policy-gated (medium+ risk) actions:
+#   deny   — refuse them (safe default for unattended runs)
+#   prompt — ask a human (y/n) at the point of use
+#   auto   — approve non-critical gated actions automatically (audited); critical stays denied
+approval_mode: prompt
+
+max_steps: 12          # tool-use rounds before the loop stops and asks to continue
+
+# Shipped tools are read-only / public-intelligence. The harness advises and
+# analyses; it does not change live systems. A host embedding the harness can
+# register further tools — higher-risk ones are gated by their declared action.

@@ -57,6 +57,39 @@ AegisSec is used in three ways. Most teams start with the second and grow into t
 | **1. Give your AI agent AegisSec skills** | Install the skills into Claude Code, Codex, Cursor, Gemini CLI, Copilot or 70+ other agents — or load the files into a chat app | An agent that scans, triages, fixes and reports while following scope, evidence and approval rules |
 | **2. Scan dependencies for a fix plan** | Run `vuln_intel.py` against a repository, SBOM or package | A short, ordered list of upgrades with priorities, deadlines and an owner |
 | **3. Automate it** | Copy one workflow file into any repository | A weekly scan, results in the GitHub Security tab, one self-updating fix-plan issue and a pull-request gate |
+| **4. Run it as a chatbot** | Start the runtime harness, or embed it in your app | A governed security agent over any LLM, with the scope and approval gates enforced in the loop |
+
+### Run AegisSec as a security chatbot (runtime harness)
+
+AegisSec can run as a **governed security agent over any LLM** — as a CLI, or embedded in your own chatbot. It wraps the model in the AegisSec rules, skills, tools and a specialist persona, and enforces the scope and approval gates **in the loop**, not just in the prompt. It is `aegissec_agent/`, pure Python standard library (no new dependencies).
+
+```bash
+# as a chatbot (Anthropic)
+export ANTHROPIC_API_KEY=sk-...
+python scripts/aegissec_agent.py --agent security-appsec-engineer
+
+# one-shot, OpenAI or any OpenAI-compatible endpoint
+export OPENAI_API_KEY=sk-...
+python scripts/aegissec_agent.py --provider openai --model gpt-4o \
+  --once "Scan ./sbom.cdx.json and give me the fix plan"
+
+# offline — see the agents and skills, no key needed
+python scripts/aegissec_agent.py --list-agents
+```
+
+Embed it:
+
+```python
+from aegissec_agent import Harness
+from aegissec_agent.providers import build_provider
+
+harness = Harness(build_provider("anthropic"), agent="security-appsec-engineer", workdir="./repo")
+print(harness.ask("Review the auth code for authorization flaws"))
+```
+
+The model acts only through tools, and **every tool call clears the policy gate first** (from `tools/action-risk.yaml`): low-risk read-only and public-intelligence tools run; anything needing scope waits for a passing engagement scope; anything needing human approval waits for it; destructive actions are denied. The shipped tools are read-only and advisory by design.
+
+Personas: `aegissec-operator` by default, plus **security and DevSecOps/SRE specialists** imported from [agency-agents](https://github.com/msitarzewski/agency-agents) (MIT, recorded in `upstream/agency-agents.lock.json`). A persona sets expertise and voice; it never overrides the rules. Full guide: [`docs/runtime-harness.md`](docs/runtime-harness.md).
 
 ### AegisSec skills for AI agents
 
@@ -490,6 +523,8 @@ AegisSec-AI/
 ├── SECURITY.md
 ├── VERSION
 ├── aegissec_vuln/         # OSV/GHSA/NVD/KEV/EPSS intelligence engine
+├── aegissec_agent/        # Runtime harness (governed security agent over any LLM)
+├── agents/                 # Harness personas (operator + imported security/DevSecOps)
 ├── agent/                  # Task/output schemas and core router
 ├── config/                 # Vulnerability-intelligence source/risk configuration
 ├── docs/                   # Architecture, frameworks, frontend and brand assets

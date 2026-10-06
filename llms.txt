@@ -34,3 +34,7 @@ Asset context template: examples/github-actions/aegissec-context.yaml
 
 Operational Agent Skills: skills/aegissec/ (install: npx skills add ymmiah/AegisSec)
 Entry skill for any security task: skills/aegissec/aegissec/SKILL.md
+
+Runtime harness: aegissec_agent/ (run: scripts/aegissec_agent.py) — governed security agent over any LLM
+Runtime harness guide: docs/runtime-harness.md
+Harness personas: agents/index.json

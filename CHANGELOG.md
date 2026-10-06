@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Added — runtime harness (security chatbot over any LLM)
+
+- **`aegissec_agent/`**, a pure-standard-library runtime harness that runs AegisSec as a governed security agent over any LLM. Run it as a CLI (`scripts/aegissec_agent.py`) or embed it with `from aegissec_agent import Harness`.
+- **Provider-agnostic**: Anthropic Messages API and any OpenAI-compatible endpoint over the standard library; a stub provider runs the whole loop offline for tests.
+- **Policy enforced in the loop**: every tool call clears a gate driven by `tools/action-risk.yaml` — low-risk read-only/intelligence tools run; scope-gated actions need a passing engagement scope; approval-gated actions need a human; destructive actions are denied; unknown actions fail closed.
+- **Tools**: list/read skills, list/read files (sandboxed to a workdir), dependency scan with fix plan, CVE enrichment, scope check. Shipped tools are read-only and advisory.
+- **Personas**: `aegissec-operator` plus 17 **security and DevSecOps/SRE** specialists imported from `msitarzewski/agency-agents` (MIT) into `agents/community/`, recorded with checksums in `upstream/agency-agents.lock.json` and subordinate to AegisSec policy.
+- `validate` now checks `agents/index.json` against the files and verifies imported personas against the upstream lock. README and `docs/runtime-harness.md` document it.
+
 ### Added — Agent Skills for any AI
 
 - **8 operational Agent Skills** in `skills/aegissec/`, installable into Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot and 70+ other agents with `npx skills add ymmiah/AegisSec`: `aegissec` (operating rules and routing), `aegissec-vuln-scan`, `aegissec-fix-plan-pr`, `aegissec-cve-triage`, `aegissec-scope-check`, `aegissec-finding-report`, `aegissec-ci-setup`, `aegissec-wordpress-review`. They fetch the toolkit on first use, so they work in any repository.

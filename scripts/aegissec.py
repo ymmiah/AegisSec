@@ -164,6 +164,8 @@ def validate():
 
     skill_errors, agent_skill_count = validate_agent_skills()
     errors.extend(skill_errors)
+    persona_errors, persona_count = validate_agents()
+    errors.extend(persona_errors)
 
     try:
         manifest = load_json(ROOT / "agent/manifest.json")
@@ -179,6 +181,7 @@ def validate():
     print(f"OK: {len(ids)} curated AegisSec security skills indexed; repository structure valid.")
     print("All-in-one senior layer: 64 specialist skills and routes validated.")
     print(f"Agent Skills: {agent_skill_count} SKILL.md files meet the Agent Skills specification.")
+    print(f"Harness personas: {persona_count} agents indexed; imported personas verified against the upstream lock.")
     if expected:
         print(f"Upstream integration configured for {expected} reported third-party skills.")
     for w in warnings:
@@ -187,6 +190,35 @@ def validate():
 
 
 SKILL_NAME_RE = __import__("re").compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+
+
+def validate_agents(root=None):
+    """Check agents/index.json matches the files, and imported personas match the upstream lock checksums."""
+    import hashlib
+    root = Path(root or ROOT)
+    errors = []
+    index_path = root / "agents/index.json"
+    if not index_path.exists():
+        return ["agents/index.json is missing"], 0
+    entries = json.loads(index_path.read_text(encoding="utf-8")).get("agents", [])
+    indexed = {e["file"] for e in entries}
+    on_disk = {str(p.relative_to(root)) for p in (root / "agents").rglob("*.md")}
+    for missing in indexed - on_disk:
+        errors.append(f"agents/index.json lists a missing file: {missing}")
+    for unindexed in on_disk - indexed:
+        errors.append(f"agent file not in agents/index.json: {unindexed}")
+    for e in entries:
+        if not e.get("description"):
+            errors.append(f"agent '{e.get('slug')}' has no description")
+    lock_path = root / "upstream/agency-agents.lock.json"
+    if lock_path.exists():
+        for item in json.loads(lock_path.read_text(encoding="utf-8")).get("imported", {}).get("files", []):
+            f = root / item["file"]
+            if not f.exists():
+                errors.append(f"imported persona missing: {item['file']}")
+            elif hashlib.sha256(f.read_bytes()).hexdigest() != item["sha256"]:
+                errors.append(f"imported persona changed since import (checksum mismatch): {item['file']}")
+    return errors, len(entries)
 
 
 def validate_agent_skills(root=None):

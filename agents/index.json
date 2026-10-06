@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "generated_note": "Run scripts/aegissec.py to validate; agents load into the AegisSec runtime harness.",
+  "count": 18,
+  "agents": [
+    {
+      "slug": "aegissec-operator",
+      "name": "AegisSec Operator",
+      "description": "The default AegisSec security operator — classifies the request, works through DISCOVER → PLAN → APPROVE → EXECUTE → VERIFY → CLOSE, enforces scope and human approval, and uses the AegisSec skills and tools to deliver evidence-based security work.",
+      "division": "aegissec",
+      "source": "native",
+      "file": "agents/aegissec-operator.md"
+    },
+    {
+      "slug": "engineering-devops-automator",
+      "name": "DevOps Automator",
+      "description": "Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline development, and cloud operations",
+      "division": "devsecops",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/devsecops/engineering-devops-automator.md"
+    },
+    {
+      "slug": "engineering-identity-access-engineer",
+      "name": "Identity & Access Engineer",
+      "description": "Expert identity engineer for OAuth 2.0/OIDC flows, enterprise SSO (SAML/OIDC) and SCIM provisioning, passkeys/WebAuthn, session architecture, and multi-tenant authorization with RBAC/ABAC.",
+      "division": "devsecops",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/devsecops/engineering-identity-access-engineer.md"
+    },
+    {
+      "slug": "engineering-platform-engineer",
+      "name": "Platform Engineer",
+      "description": "Expert internal developer platform (IDP) engineer specializing in golden paths, paved roads, and self-serve infrastructure that multiplies engineering velocity.",
+      "division": "devsecops",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/devsecops/engineering-platform-engineer.md"
+    },
+    {
+      "slug": "engineering-privacy-engineer",
+      "name": "Privacy Engineer",
+      "description": "Expert privacy engineer who implements privacy in code — PII discovery and classification, data minimization, consent enforcement at the API layer, automated DSAR and deletion across services, pseudonymization/tokenization, and retention automation. Builds the technical controls a privacy policy only promises.",
+      "division": "devsecops",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/devsecops/engineering-privacy-engineer.md"
+    },
+    {
+      "slug": "engineering-sre",
+      "name": "SRE (Site Reliability Engineer)",
+      "description": "Expert site reliability engineer specializing in SLOs, error budgets, observability, chaos engineering, and toil reduction for production systems at scale.",
+      "division": "devsecops",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/devsecops/engineering-sre.md"
+    },
+    {
+      "slug": "security-ai-generated-code-auditor",
+      "name": "AI-Generated Code Security Auditor",
+      "description": "Security reviewer for AI-generated and vibe-coded apps — hunts the hardcoded secrets, broken row-level security, and prompt-injection sinks that coding assistants ship by default, then drives a scan, fix, and rescan loop with honest, CWE-mapped findings.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-ai-generated-code-auditor.md"
+    },
+    {
+      "slug": "security-appsec-engineer",
+      "name": "Application Security Engineer",
+      "description": "AppSec specialist who secures the software development lifecycle through threat modeling, secure code review, SAST/DAST integration, and developer security education that makes secure code the default.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-appsec-engineer.md"
+    },
+    {
+      "slug": "security-architect",
+      "name": "Security Architect",
+      "description": "Expert security architect specializing in threat modeling, secure-by-design architecture, trust-boundary analysis, defense-in-depth, and risk-based security reviews across web, API, cloud-native, and distributed systems. Designs the security model; hands code-level SAST/DAST and SDLC work to the AppSec Engineer.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-architect.md"
+    },
+    {
+      "slug": "security-blockchain-security-auditor",
+      "name": "Blockchain Security Auditor",
+      "description": "Expert smart contract security auditor specializing in vulnerability detection, formal verification, exploit analysis, and comprehensive audit report writing for DeFi protocols and blockchain applications.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-blockchain-security-auditor.md"
+    },
+    {
+      "slug": "security-cloud-security-architect",
+      "name": "Cloud Security Architect",
+      "description": "Cloud-native security specialist designing zero trust architectures, implementing defense-in-depth across AWS, Azure, and GCP, and securing infrastructure-as-code pipelines from day one.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-cloud-security-architect.md"
+    },
+    {
+      "slug": "security-compliance-auditor",
+      "name": "Compliance Auditor",
+      "description": "Expert technical compliance auditor specializing in SOC 2, ISO 27001, HIPAA, and PCI-DSS audits — from readiness assessment through evidence collection to certification.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-compliance-auditor.md"
+    },
+    {
+      "slug": "security-incident-responder",
+      "name": "Incident Responder",
+      "description": "Digital forensics and incident response specialist who leads breach investigations, contains active threats, coordinates crisis response, and writes post-mortems that prevent recurrence.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-incident-responder.md"
+    },
+    {
+      "slug": "security-penetration-tester",
+      "name": "Penetration Tester",
+      "description": "Offensive security specialist conducting authorized penetration tests, red team operations, and vulnerability assessments across networks, web applications, and cloud infrastructure.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-penetration-tester.md"
+    },
+    {
+      "slug": "security-secrets-credential-engineer",
+      "name": "Secrets & Credential Hygiene Engineer",
+      "description": "Owns the full lifecycle of secrets and credentials — detection, prevention, vaulting, rotation, and leak response — so an application runs on short-lived, least-privilege credentials that are never in the code and are already rotated by the time a leak is found.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-secrets-credential-engineer.md"
+    },
+    {
+      "slug": "security-senior-secops",
+      "name": "Senior SecOps Engineer",
+      "description": "Defensive application security specialist who scans every code submission for secrets and sensitive data exposure before anything else, then implements or audits security controls following the organization's security standard — covering authentication, authorization, tokens, cookies, HTTP headers, CORS, rate limiting, CSP, secrets management, input validation, and secure logging.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-senior-secops.md"
+    },
+    {
+      "slug": "security-threat-detection-engineer",
+      "name": "Threat Detection Engineer",
+      "description": "Expert detection engineer specializing in SIEM rule development, MITRE ATT&CK coverage mapping, threat hunting, alert tuning, and detection-as-code pipelines for security operations teams.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-threat-detection-engineer.md"
+    },
+    {
+      "slug": "security-threat-intelligence-analyst",
+      "name": "Threat Intelligence Analyst",
+      "description": "Cyber threat intelligence specialist who tracks adversary groups, maps attack campaigns to MITRE ATT&CK, produces actionable intelligence reports, and builds detection rules that catch real threats.",
+      "division": "security",
+      "source": "agency-agents",
+      "license": "MIT",
+      "file": "agents/community/security/security-threat-intelligence-analyst.md"
+    }
+  ]
+}
