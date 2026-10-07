@@ -1,6 +1,6 @@
 {
   "name": "aegissec-ai",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "AI-native cybersecurity operating workspace with governed skills, vulnerability intelligence, context-aware prioritisation, and guarded agent execution.",
   "scripts": {
