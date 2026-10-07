@@ -17,6 +17,8 @@ OPERATIONAL = {
     "aegissec-finding-report",
     "aegissec-ci-setup",
     "aegissec-wordpress-review",
+    "aegissec-adversary-emulation-plan",
+    "aegissec-attack-technique-coverage",
 }
 
 

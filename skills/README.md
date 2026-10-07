@@ -3,11 +3,11 @@
 Every `SKILL.md` here follows the [Agent Skills specification](https://agentskills.io/specification) (`name` and `description` frontmatter, other fields under `metadata`), so any compatible agent can install and use them:
 
 ```bash
-npx skills add ymmiah/AegisSec --list   # see all 72
+npx skills add ymmiah/AegisSec --list   # see all 74
 npx skills add ymmiah/AegisSec -s aegissec -s aegissec-vuln-scan   # pick some
 ```
 
-- `skills/aegissec/` — **8 operational skills** that drive AegisSec's tools: `aegissec` (operating rules and routing), `aegissec-vuln-scan`, `aegissec-fix-plan-pr`, `aegissec-cve-triage`, `aegissec-scope-check`, `aegissec-finding-report`, `aegissec-ci-setup`, `aegissec-wordpress-review`. Install the `aegissec` skill alongside any of the others; it carries the rules they rely on.
+- `skills/aegissec/` — **10 operational skills** that drive AegisSec's tools: `aegissec` (operating rules and routing), `aegissec-vuln-scan`, `aegissec-fix-plan-pr`, `aegissec-cve-triage`, `aegissec-scope-check`, `aegissec-finding-report`, `aegissec-ci-setup`, `aegissec-wordpress-review`, `aegissec-adversary-emulation-plan`, `aegissec-attack-technique-coverage`. Install the `aegissec` skill alongside any of the others; it carries the rules they rely on.
 - `skills/senior/` — 64 senior specialist skills (below).
 - `skills/<domain>/*.md` — the 115 native security skills catalogued in `skills/index.yaml`, loaded by agents working inside this repository.
 
