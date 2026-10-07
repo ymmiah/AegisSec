@@ -95,7 +95,7 @@ Personas: `aegissec-operator` by default, plus **security and DevSecOps/SRE spec
 
 ### AegisSec skills for AI agents
 
-AegisSec ships **72 [Agent Skills](https://agentskills.io)**: 8 operational skills that drive the AegisSec tools, plus 64 senior specialist skills. Each is a `SKILL.md` with a name and a description; the agent reads the descriptions and loads a skill only when a task matches. All pass the official `agentskills validate` check, and `python scripts/aegissec.py validate` enforces the specification in CI.
+AegisSec ships **74 [Agent Skills](https://agentskills.io)**: 10 operational skills that drive the AegisSec tools, plus 64 senior specialist skills. Each is a `SKILL.md` with a name and a description; the agent reads the descriptions and loads a skill only when a task matches. All pass the official `agentskills validate` check, and `python scripts/aegissec.py validate` enforces the specification in CI.
 
 | Skill | Use it to |
 | --- | --- |
@@ -107,14 +107,17 @@ AegisSec ships **72 [Agent Skills](https://agentskills.io)**: 8 operational skil
 | `aegissec-finding-report` | Write evidence-based findings, pentest and incident reports |
 | `aegissec-ci-setup` | Add weekly scanning, Security-tab alerts and a PR gate to a GitHub repo |
 | `aegissec-wordpress-review` | Review WordPress plugins, themes and sites for nonce, capability, escaping, SQL and file-handling flaws |
+| `aegissec-adversary-emulation-plan` | Plan an authorised, ATT&CK-mapped purple-team emulation with the detections each step should trigger |
+| `aegissec-attack-technique-coverage` | Map detections, findings and controls to MITRE ATT&CK and report the gaps |
 
 **Coding agents (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot and others).** Install into the project you are working on:
 
 ```bash
-# the 8 operational skills
+# the 10 operational skills
 npx skills add ymmiah/AegisSec \
   -s aegissec -s aegissec-vuln-scan -s aegissec-fix-plan-pr -s aegissec-cve-triage \
-  -s aegissec-scope-check -s aegissec-finding-report -s aegissec-ci-setup -s aegissec-wordpress-review
+  -s aegissec-scope-check -s aegissec-finding-report -s aegissec-ci-setup -s aegissec-wordpress-review \
+  -s aegissec-adversary-emulation-plan -s aegissec-attack-technique-coverage
 
 # or everything, including the 64 senior specialists
 npx skills add ymmiah/AegisSec --all
@@ -539,7 +542,7 @@ AegisSec-AI/
 ├── prompts/                # Role-specific agent prompts
 ├── schemas/                # Findings, evidence, approvals and action schemas
 ├── skills/
-│   ├── aegissec/           # 8 operational Agent Skills (install with npx skills)
+│   ├── aegissec/           # 10 operational Agent Skills (install with npx skills)
 │   ├── senior/             # 64 senior specialist skills
 │   ├── router.json
 │   ├── skills-index.json

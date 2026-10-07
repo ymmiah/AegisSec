@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Added — purple-team skills
+
+- **`aegissec-adversary-emulation-plan`** — build an authorised, MITRE ATT&CK-mapped purple-team emulation plan: least-impact techniques to emulate under an engagement scope, the detection each step should trigger, and a hand-off to detection validation. Produces a plan and expected detections, never exploitation how-to.
+- **`aegissec-attack-technique-coverage`** — map detections, findings and controls to the ATT&CK matrix and report where coverage is strong, partial or blind, ranked by relevance. Read-only; tests nothing.
+- Operational skills: 8 → 10; total Agent Skills: 72 → 74.
+
 ## 1.1.0 — 2026-10-06
 
 Highlights: actionable vulnerability fix plans, 72 Agent Skills, a governed runtime harness over any LLM (incl. NVIDIA NIM), imported security/DevSecOps personas, and hardened API/credential handling.

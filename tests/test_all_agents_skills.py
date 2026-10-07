@@ -40,7 +40,7 @@ class EverySkillTests(unittest.TestCase):
 
     def test_operational_skills_load(self):
         names = [p.parent.name for p in (ROOT / "skills/aegissec").glob("*/SKILL.md")]
-        self.assertEqual(len(names), 8)
+        self.assertEqual(len(names), 10)
         for name in names:
             with self.subTest(skill=name):
                 content = self.read_skill({"name": name})

@@ -51,6 +51,8 @@ Every material finding needs: ID and title, affected asset, observation time wit
 | To understand one CVE/GHSA and whether it matters to them | **aegissec-cve-triage** |
 | Any active test of a real system | **aegissec-scope-check** first |
 | A finding, pentest or incident write-up | **aegissec-finding-report** |
+| An authorised purple-team / adversary-emulation plan mapped to MITRE ATT&CK | **aegissec-adversary-emulation-plan** |
+| A MITRE ATT&CK detection/control coverage map and gap report | **aegissec-attack-technique-coverage** |
 | Continuous scanning in GitHub (weekly + PR gate) | **aegissec-ci-setup** |
 | A WordPress plugin, theme or site review | **aegissec-wordpress-review** |
 
