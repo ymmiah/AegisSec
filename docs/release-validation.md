@@ -1,4 +1,4 @@
-# Release Validation — AegisSec AI v1.1.0
+# Release Validation — AegisSec AI v1.1.1
 
 Release date: **5 October 2026**
 
@@ -36,7 +36,7 @@ Release date: **5 October 2026**
 
 ## Stable release status
 
-The v1.1.0 package is considered **stable when all local validation commands below pass**:
+The v1.1.1 package is considered **stable when all local validation commands below pass**:
 
 ```bash
 python -m pip install -r requirements.txt
