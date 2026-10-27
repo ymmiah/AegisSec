@@ -3,145 +3,180 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="AegisSec AI — governed cybersecurity skills, senior-agent routing and safe operational control for AI agents.">
-  <meta property="og:title" content="AegisSec AI v1">
-  <meta property="og:description" content="115 native security skills, 64 senior all-in-one skills and guarded integration for 818 upstream cybersecurity skills.">
+  <meta name="theme-color" content="#050b14">
+  <meta name="description" content="AegisSec AI: a governed cybersecurity workspace for AI agents. It turns messy security work into repeatable workflows that start with authorisation and end with evidence and a fix plan.">
+  <meta name="author" content="Yasin Mohammed Miah (ymmiah)">
+  <meta property="og:title" content="AegisSec AI: a registry of real security problems for AI agents">
+  <meta property="og:description" content="State a real security problem. AegisSec routes it to the right playbook under hard scope and approval rules, and you get evidence plus a fix plan.">
   <meta property="og:image" content="assets/brand/aegissec-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.ico">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/brand/aegissec-icon.webp">
   <link rel="stylesheet" href="styles.css">
-  <title>AegisSec AI v1 — Governed Cybersecurity Intelligence for AI Agents</title>
+  <title>AegisSec AI: Governed security workflows for AI agents</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+
   <header class="site-header">
     <nav class="nav shell" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="AegisSec AI home">
-        <img src="assets/brand/icon-64.png" alt="" width="42" height="42">
+        <img src="assets/brand/icon-64.png" alt="" width="38" height="38">
         <span>AegisSec <b>AI</b></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
       <div id="site-menu" class="menu">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#architecture">Architecture</a>
+        <a href="#problems">Problems</a>
+        <a href="#how">How it works</a>
+        <a href="#get">What you get</a>
         <a href="#quickstart">Quick start</a>
-        <a class="button button-small" href="#quickstart">Use AegisSec</a>
+        <a href="#developer">Developer</a>
+        <a class="button button-small" href="https://github.com/ymmiah/AegisSec" rel="noopener">GitHub</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section id="top" class="hero shell">
       <div class="hero-copy">
-        <div class="eyebrow"><span></span> AI-native cybersecurity operations workspace</div>
-        <h1>Operational cybersecurity intelligence for <em>AI agents</em>.</h1>
-        <p class="lead">AegisSec AI gives AI systems structured security expertise, senior engineering skills, governed routing, evidence handling, scope enforcement and human approval controls.</p>
+        <div class="eyebrow"><span></span> Real-world problem-solving registry for security work</div>
+        <h1>Tell it the security problem. Get a <em>governed workflow</em>, evidence and a fix plan.</h1>
+        <p class="lead">AegisSec AI is a cybersecurity workspace for AI agents. It turns messy security work into repeatable workflows that start with authorisation. You state a real problem, such as a CVE backlog, a risky PR, a phishing report or a cloud IAM review. AegisSec routes it to the right playbook under hard rules, and you get evidence plus a fix plan, with a human approval gate before anything consequential.</p>
         <div class="hero-actions">
-          <a class="button" href="#quickstart">Get started</a>
-          <a class="button button-ghost" href="#architecture">Explore architecture</a>
+          <a class="button" href="#problems">Browse problems →</a>
+          <a class="button button-ghost" href="#quickstart">Quick start</a>
         </div>
-        <div class="trust-row" aria-label="Key properties">
-          <span>Authorisation-first</span><span>AI-agnostic</span><span>Evidence-led</span><span>Human-gated</span>
+        <div class="rule-card">
+          <strong>No target + no scope + no authorisation = no active testing.</strong>
+          <span>The rule is enforced in code by <code>check-scope</code> and the runtime harness, not just written in a prompt.</span>
         </div>
       </div>
-      <div class="hero-mark" aria-hidden="true">
-        <div class="orbital"></div>
-        <img src="assets/brand/aegissec-icon.webp" alt="" width="570" height="570">
+      <div class="hero-flow" aria-label="Example: from problem to fix plan">
+        <div class="flow-card">
+          <div class="flow-row"><span class="tag tag-in">You</span><p>"Our repo has 40 vulnerable dependencies. What do we fix first?"</p></div>
+          <div class="flow-row"><span class="tag tag-route">Route</span><p>Problem <b>#01</b> → <code>continuous-vulnerability-management</code> + <code>aegissec-vuln-scan</code></p></div>
+          <div class="flow-row"><span class="tag tag-gate">Gate</span><p>Read-only scan: allowed. Upgrade PRs: <b>need your approval</b>.</p></div>
+          <div class="flow-row"><span class="tag tag-out">Out</span><p>A fix plan with one upgrade per package, ordered P0 → P4, each with a deadline and an owner. A re-scan verifies it.</p></div>
+        </div>
       </div>
     </section>
 
-    <section class="stats shell" aria-label="Project statistics">
-      <article><strong>115</strong><span>Native security skills</span><small>Curated AegisSec security layer</small></article>
-      <article><strong>64</strong><span>Senior all-in-one skills</span><small>Cross-domain expert routing</small></article>
-      <article><strong>818</strong><span>Guarded upstream skills</span><small>Optional third-party catalogue</small></article>
-      <article><strong>34</strong><span>Upstream domains</span><small>Security specialisations</small></article>
-    </section>
-
-    <section class="brand-banner shell" aria-label="AegisSec AI project banner">
-      <picture><source srcset="assets/brand/aegissec-hero.webp" type="image/webp"><img src="assets/brand/aegissec-hero.jpg" alt="AegisSec AI cybersecurity skills and operational control banner" loading="lazy"></picture>
-    </section>
-
-    <section id="capabilities" class="section shell">
-      <div class="section-head"><div><span class="kicker">Specialist coverage</span><h2>One governed workspace. Multiple expert teams.</h2></div><p>Route the task to the right specialist without allowing imported content, tool output or adversarial input to override AegisSec policy.</p></div>
-      <div class="cards">
-        <article class="card accent-red"><span class="card-icon">RT</span><h3>Red Team</h3><p>Authorised adversary emulation, attack-path validation and controlled assessment planning.</p></article>
-        <article class="card accent-blue"><span class="card-icon">BT</span><h3>Blue Team</h3><p>Detection, defensive engineering, security monitoring, triage and hardening workflows.</p></article>
-        <article class="card accent-green"><span class="card-icon">SOC</span><h3>SOC & Threat Hunting</h3><p>Evidence-led triage, telemetry analysis, hypothesis-driven hunts and detection improvement.</p></article>
-        <article class="card accent-purple"><span class="card-icon">IR</span><h3>DFIR</h3><p>Incident response, forensics, evidence integrity, investigation and cyber-recovery workflows.</p></article>
-        <article class="card accent-cyan"><span class="card-icon">DS</span><h3>DevSecOps & AppSec</h3><p>Secure SDLC, CI/CD, supply chain, SAST/SCA, container, Kubernetes and IaC security.</p></article>
-        <article class="card accent-sky"><span class="card-icon">CL</span><h3>Cloud & Identity</h3><p>AWS, Azure, GCP, IAM, workload identity, PAM/PIM, Zero Trust and exposure management.</p></article>
-        <article class="card accent-pink"><span class="card-icon">AI</span><h3>AI & Agent Security</h3><p>Prompt injection, RAG, MCP, agent identity, memory, runtime controls and AI supply-chain security.</p></article>
-        <article class="card accent-amber"><span class="card-icon">FDE</span><h3>Forward Deployed Engineering</h3><p>Customer discovery, integrations, production troubleshooting, observability, rollout and handover.</p></article>
+    <!-- REGISTRY -->
+    <section id="problems" class="section shell">
+      <div class="section-head">
+        <div><span class="kicker">Problem registry</span><h2>Start from the problem you actually have.</h2></div>
+        <p>Each card maps a real security problem to a playbook, skill or script that already exists in this repository, with the steps, the guardrail and the first command. You don't need to pick a persona or know the skill names.</p>
       </div>
+      <div class="registry-tools" role="search">
+        <label class="search"><span class="sr-only">Search problems</span>
+          <input id="q" type="search" placeholder="Search e.g. CVE, phishing, MCP, IAM, WordPress…" autocomplete="off">
+        </label>
+        <div id="filters" class="filters" aria-label="Filter by team"></div>
+      </div>
+      <p id="count" class="count" aria-live="polite"></p>
+      <div id="registry" class="registry"></div>
+      <noscript><p class="count">JavaScript is off. Read the full registry in <a href="problem-registry.md">docs/problem-registry.md</a>.</p></noscript>
+      <p class="registry-foot">The same registry, as Markdown for agents and reviewers: <a href="https://github.com/ymmiah/AegisSec/blob/main/docs/problem-registry.md">docs/problem-registry.md</a></p>
     </section>
 
-    <section id="workflow" class="section workflow-wrap">
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section workflow-wrap">
       <div class="shell">
-        <div class="section-head"><div><span class="kicker">Governed execution</span><h2>From intelligence to action.</h2></div><p>AegisSec uses an explicit state machine so the agent cannot silently escalate the target, privilege, scope or impact.</p></div>
-        <ol class="workflow">
-          <li><b>01</b><h3>Discover</h3><p>Understand context, assets, objectives and authority.</p></li>
-          <li><b>02</b><h3>Plan</h3><p>Select skills, tools, evidence requirements and safeguards.</p></li>
-          <li><b>03</b><h3>Approve</h3><p>Apply policy and require human approval where risk demands it.</p></li>
-          <li><b>04</b><h3>Execute</h3><p>Perform only scoped, permitted and traceable actions.</p></li>
-          <li><b>05</b><h3>Verify</h3><p>Correlate evidence, validate impact and check assumptions.</p></li>
-          <li><b>06</b><h3>Close</h3><p>Report findings, remediation, residual risk and next actions.</p></li>
+        <div class="section-head"><div><span class="kicker">How it works</span><h2>One journey for every job.</h2></div><p>Every problem card follows the same six steps. The AI agent does the legwork, and you stay the accountable human at the points that matter.</p></div>
+        <ol class="journey">
+          <li><b>01</b><h3>Discover</h3><p><strong>You:</strong> describe the problem and what's in scope.<br><strong>Agent:</strong> inventories assets, runs read-only scans, gathers evidence.</p></li>
+          <li><b>02</b><h3>Plan</h3><p><strong>Agent:</strong> picks the playbook and skills, then proposes exact steps, the evidence needed and a rollback.</p></li>
+          <li class="gate"><b>03</b><h3>Approve</h3><p><strong>You:</strong> approve, change or refuse. Active testing needs a passing <code>check-scope</code>. Production changes need explicit sign-off.</p></li>
+          <li><b>04</b><h3>Execute</h3><p><strong>Agent:</strong> does only the approved, scoped, logged actions. Destructive actions are denied outright.</p></li>
+          <li><b>05</b><h3>Verify</h3><p><strong>Agent:</strong> re-scans or retests and checks the evidence against its assumptions.<br><strong>You:</strong> confirm the result.</p></li>
+          <li><b>06</b><h3>Close</h3><p><strong>Out:</strong> findings, the fix plan, residual risk and the next action, written from <code>templates/</code>.</p></li>
         </ol>
       </div>
     </section>
 
-    <section id="architecture" class="section shell">
-      <div class="section-head"><div><span class="kicker">Architecture</span><h2>Security policy stays above skills and tools.</h2></div><p>The trust hierarchy is deliberate: legal authority and AegisSec policy outrank human operational state, curated skills, third-party content and arbitrary input.</p></div>
-      <div class="architecture">
-        <div class="layer layer-0"><span>T0</span><strong>Authority & policy</strong><small>Engagement scope · AegisSec policy · legal boundaries</small></div>
-        <div class="layer layer-1"><span>T1</span><strong>Human approval</strong><small>Approved state · change control · risk acceptance</small></div>
-        <div class="layer layer-2"><span>T2</span><strong>Native AegisSec knowledge</strong><small>115 curated security skills · roles · playbooks · schemas</small></div>
-        <div class="layer layer-3"><span>T3</span><strong>Third-party knowledge</strong><small>64 senior skills · 818 optional upstream security skills</small></div>
-        <div class="layer layer-4"><span>T4</span><strong>Untrusted input</strong><small>Web pages · email · RAG · MCP/tool output · arbitrary content</small></div>
+    <!-- WHAT YOU GET -->
+    <section id="get" class="section shell">
+      <div class="section-head"><div><span class="kicker">What you get</span><h2>Four pieces, one set of rules.</h2></div><p>Use one or all four. The same policy layer (<code>AGENTS.md</code>, <code>policy/</code>, <code>tools/action-risk.yaml</code>) governs every one.</p></div>
+      <div class="cards">
+        <article class="card accent-cyan"><span class="card-icon">VI</span><h3>Vulnerability intelligence</h3><p><code>scripts/vuln_intel.py</code> combines OSV with GitHub Advisory, NVD, CISA KEV and EPSS. Your asset context turns that into a P0–P4 fix plan, delivered as Markdown, JSON or SARIF.</p></article>
+        <article class="card accent-purple"><span class="card-icon">PB</span><h3>Playbooks + skills</h3><p>20 playbooks and 10 operational <a href="https://agentskills.io">Agent Skills</a> for Claude Code, Codex, Cursor, Gemini CLI and Copilot. Specialist skill packs are there when you need more depth.</p></article>
+        <article class="card accent-green"><span class="card-icon">RH</span><h3>Runtime harness</h3><p>A BYOK chatbot over Anthropic, OpenAI or NVIDIA NIM (<code>aegissec_agent/</code>). Every tool call clears the policy gate in code. The tools are read-only by design.</p></article>
+        <article class="card accent-amber"><span class="card-icon">CI</span><h3>CI workflow</h3><p>Add one workflow file to get a weekly scan, alerts in the GitHub Security tab, a fix-plan issue that keeps itself up to date and a PR gate on new findings.</p></article>
       </div>
+      <details class="evidence">
+        <summary>Supporting depth (not the headline)</summary>
+        <p>Behind the registry sit 115 curated security knowledge files across red, blue, purple, DFIR, AppSec, DevSecOps, cloud, identity and AI security. There are also 64 senior specialist skills and an optional, pinned and audited library of 818 upstream skills. Upstream skills are <strong>knowledge, not permission</strong>: they can never override AegisSec scope or approval rules. Baselines: MITRE ATT&amp;CK v19.2, D3FEND v1.6.0, NIST CSF 2.0, NIST SP 800-61r3, OWASP, CIS Controls.</p>
+      </details>
     </section>
 
-    <section class="section shell split">
-      <div>
-        <span class="kicker">Framework baselines</span><h2>Built around current security practice.</h2>
-        <div class="frameworks"><span>MITRE ATT&CK v19.2</span><span>MITRE D3FEND v1.6.0</span><span>NIST CSF 2.0</span><span>NIST SP 800-61r3</span><span>OWASP</span><span>CIS Controls</span></div>
-      </div>
-      <div class="principles">
-        <h3>Core operating rules</h3>
-        <p><strong>No target + no scope + no authorisation = no active testing.</strong></p>
-        <p>Third-party skills are knowledge, not permission.</p>
-        <p>Production changes require approval, verification and rollback planning.</p>
-        <p>High-risk offensive actions remain human-gated and scope-bound.</p>
-      </div>
-    </section>
-
+    <!-- QUICK START -->
     <section id="quickstart" class="section shell quickstart">
-      <div><span class="kicker">Quick start</span><h2>Point your AI agent at AegisSec.</h2><p>Start with <code>AGENTS.md</code>. The router selects the appropriate role, curated skills and playbook while the policy layer controls execution.</p></div>
-      <div class="terminal" role="region" aria-label="Quick start commands"><div class="terminal-bar"><i></i><i></i><i></i><span>terminal</span></div><pre><code>git clone https://github.com/&lt;owner&gt;/AegisSec-AI.git
-cd AegisSec-AI
+      <div>
+        <span class="kicker">Quick start</span><h2>Running in two minutes.</h2>
+        <p>Clone, validate, then run problem <b>#01</b> on the bundled example. To use it from your own coding agent, install the skills and ask it in plain English.</p>
+        <p>BYOK chatbot: <code>export NVIDIA_API_KEY=…</code> then <code>python scripts/aegissec_agent.py --provider nvidia</code>. Keys stay in your environment and are never committed.</p>
+      </div>
+      <div class="terminal" role="region" aria-label="Quick start commands"><div class="terminal-bar"><i></i><i></i><i></i><span>terminal</span></div><pre><code>git clone https://github.com/ymmiah/AegisSec.git
+cd AegisSec
 python -m pip install -r requirements.txt
 python scripts/aegissec.py validate
 
-# Optional upstream skill library
-npm run skills:install-upstream
-npm run skills:lock
-python scripts/aegissec.py upstream-status</code></pre></div>
+# Problem #01: dependency CVEs → fix plan
+python scripts/vuln_intel.py scan \
+  examples/vulnerability-intelligence/components.json \
+  --context examples/vulnerability-intelligence/context.yaml \
+  --format markdown
+
+# Use it from your coding agent
+npx skills add ymmiah/AegisSec -s aegissec -s aegissec-vuln-scan</code></pre></div>
     </section>
-  
-<section class="section" id="vulnerability-intelligence">
-  <div class="section-head"><span class="eyebrow">Vulnerability Intelligence</span><h2>From package inventory to context-aware priority</h2></div>
-  <p>OSV discovery with GitHub Advisory, NVD, CISA KEV and FIRST EPSS enrichment. AegisSec correlates identifiers, adds reachability/exposure/business context, then produces explainable P0–P4 priorities and a per-package fix plan with deadlines — published as a report, SARIF alerts, a self-updating GitHub issue or a pull-request gate — without granting automatic production-change authority.</p>
-</section>
-</main>
+
+    <!-- DEVELOPER -->
+    <section id="developer" class="section shell">
+      <div class="dev">
+        <div class="dev-id">
+          <div class="avatar" aria-hidden="true">YM</div>
+          <div>
+            <span class="kicker">Built by</span>
+            <h2>Yasin Mohammed Miah</h2>
+            <p class="dev-role">Student of BCU · BSc Computing Top-Up (Hons) · <b>@ymmiah</b></p>
+          </div>
+        </div>
+        <p class="dev-bio">I'm a computing student building AI-native security tooling. My focus is making AI agents useful for real defensive work, like vulnerability triage, secure code review and incident response, while keeping authorisation, evidence and human approval in charge. AegisSec is the governance layer. My other projects apply the same idea to OSINT and to CI/CD security gates.</p>
+        <div class="dev-links">
+          <a href="https://ymmiah.com" rel="noopener"><b>Website</b><span>ymmiah.com</span></a>
+          <a href="https://github.com/ymmiah" rel="noopener"><b>GitHub</b><span>github.com/ymmiah</span></a>
+          <a href="https://linkedin.com/in/ymmiah" rel="noopener"><b>LinkedIn</b><span>in/ymmiah</span></a>
+          <a href="https://kaggle.com/ymmiah" rel="noopener"><b>Kaggle</b><span>kaggle.com/ymmiah</span></a>
+        </div>
+        <h3 class="proj-head">Other projects</h3>
+        <div class="projects">
+          <article class="project">
+            <h4>GhostWires Mk.IV</h4>
+            <p>An OSINT recon console that only uses public data: DNS, TLS, security headers, tech fingerprints, CT subdomains and Wayback history. An optional BYOK AI debrief summarises what was collected.</p>
+            <div class="project-links"><a href="https://ghostwires.onrender.com/" rel="noopener">Live demo ↗</a><a href="https://github.com/ymmiah/GhostWires" rel="noopener">Source</a></div>
+          </article>
+          <article class="project">
+            <h4>OpenSecGate</h4>
+            <p>Research project on the design and evaluation of an open-source security gate for CI/CD pipelines, using context-aware vulnerability prioritisation.</p>
+            <div class="project-links"><a href="https://github.com/ymmiah/OpenSecGate" rel="noopener">Source</a></div>
+          </article>
+          <article class="project">
+            <h4>AegisSec AI</h4>
+            <p>This project: the problem registry, playbooks, vulnerability intelligence and a governed runtime harness for AI agents.</p>
+            <div class="project-links"><a href="https://github.com/ymmiah/AegisSec" rel="noopener">Source</a><a href="https://github.com/ymmiah/AegisSec/blob/main/docs/about.md">About</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer shell">
-    <a class="brand footer-brand" href="#top"><img src="assets/brand/icon-64.png" alt="" width="34" height="34"><span>AegisSec <b>AI</b></span></a>
-    <p>AI-powered cybersecurity skills, routing and safe operational control.</p>
-    <p class="legal">Authorised and lawful security use only.</p>
+    <a class="brand footer-brand" href="#top"><img src="assets/brand/icon-64.png" alt="" width="30" height="30"><span>AegisSec <b>AI</b></span></a>
+    <p>Authorised and lawful security use only. You are responsible for permission and compliance with applicable law and rules of engagement.</p>
+    <p class="legal">MIT licence · <a href="https://github.com/ymmiah/AegisSec">github.com/ymmiah/AegisSec</a> · Built by <a href="https://ymmiah.com">Yasin Mohammed Miah</a></p>
   </footer>
   <script src="app.js" defer></script>
 </body>

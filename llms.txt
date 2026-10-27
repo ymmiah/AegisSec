@@ -2,6 +2,8 @@
 > AI-agnostic cybersecurity skills, playbooks and runtime safety controls for authorised ethical security work.
 
 Primary instructions: AGENTS.md
+Problem registry (start here: maps real problems to playbooks and skills): docs/problem-registry.md
+Developer: docs/about.md (Yasin Mohammed Miah, @ymmiah)
 Policy precedence: policy/policy-precedence.md
 Runtime control: policy/runtime-control.md
 Curated skill catalogue: skills/index.yaml

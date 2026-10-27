@@ -1,15 +1,93 @@
 <p align="center">
   <picture>
     <source srcset="docs/assets/brand/aegissec-hero.webp" type="image/webp">
-    <img src="docs/assets/brand/aegissec-hero.jpg" alt="AegisSec AI — AI-Powered Cybersecurity Skills, Routing, and Safe Operational Control" width="100%">
+    <img src="docs/assets/brand/aegissec-hero.jpg" alt="AegisSec AI: governed security workflows for AI agents" width="100%">
   </picture>
 </p>
 
-<h1 align="center">AegisSec AI v1</h1>
-<p align="center"><strong>Governed cybersecurity intelligence and senior-agent skills for AI systems.</strong></p>
+<h1 align="center">AegisSec AI</h1>
+<p align="center"><strong>Tell it the security problem. Get a governed workflow, evidence and a fix plan.</strong></p>
 
 <p align="center">
+  <a href="https://ymmiah.github.io/AegisSec/">Website</a> ·
+  <a href="docs/problem-registry.md">Problem registry</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#built-by">Built by</a>
+</p>
+
+---
+
+## What it is
+
+**AegisSec AI is a governed cybersecurity workspace for AI agents.** It turns messy security work into repeatable workflows that start with authorisation:
+
+1. **You state a real problem**, such as a CVE backlog, a PR security review, phishing triage, a cloud IAM review, a purple-team plan or an AI-agent risk review.
+2. **AegisSec routes it to the right playbook and skills** under hard rules: **no target + no scope + no authorisation = no active testing.**
+3. **You get evidence plus a fix plan or report.** Consequential actions wait for human approval.
+4. **Optional:** run it as a **BYOK chatbot harness** (Anthropic, OpenAI or NVIDIA NIM) that enforces those gates in code, not just in the prompt.
+
+You don't need to pick a persona or learn skill names. Start from the problem.
+
+## Problem registry
+
+18 real-world problems, each mapped to files that exist in this repo. The full cards, with steps, guardrails and a **Start with** command for each, are in [`docs/problem-registry.md`](docs/problem-registry.md) and are searchable on the [website](https://ymmiah.github.io/AegisSec/#problems).
+
+| # | Problem | Who it hurts | Start in |
+| ---: | --- | --- | --- |
+| 01 | Our dependencies have a pile of CVEs and nobody knows what to fix first | Dev, AppSec, DevSecOps | `scripts/vuln_intel.py` |
+| 02 | A scary CVE is trending. Does it actually affect us? | AppSec, SOC, Dev | `playbooks/vulnerability-triage.md` |
+| 03 | Vulnerable code keeps getting merged. We need a PR / CI security gate | DevSecOps, Dev, Platform | `examples/github-actions/aegissec-dependency-scan.yml` |
+| 04 | We need a security review of an app or a risky pull request | AppSec, Dev | `playbooks/application-security-review.md` |
+| 05 | We've been asked to pentest a web app. How do we do it safely and legally? | Red Team, AppSec, Consultant | `playbooks/authorised-pentest.md` |
+| 06 | The SOC is drowning in alerts. Is this one real? | SOC, Blue Team | `playbooks/soc-triage.md` |
+| 07 | Someone reported a phishing email. Who clicked, and what do we do? | SOC, IT, DFIR | `playbooks/phishing-response.md` |
+| 08 | We think we have an active incident or ransomware | DFIR, IR Lead, Leadership | `playbooks/incident-response.md` |
+| 09 | Is our AWS / Azure / GCP account set up securely? | Cloud, Platform, GRC | `playbooks/cloud-security-review.md` |
+| 10 | Too many admins, stale accounts and unknown service principals | Identity, IT, GRC | `playbooks/identity-security-review.md` |
+| 11 | Our WordPress site / plugin needs hardening before it gets hacked | Dev, Agency, SMB | `playbooks/wordpress-security-review.md` |
+| 12 | We're shipping an AI agent / MCP server. What can go wrong? | AI Eng, AppSec, Platform | `playbooks/ai-agent-security-review.md` |
+| 13 | Can we trust this third-party agent skill / prompt pack? | AI Eng, AppSec, GRC | `playbooks/third-party-agent-skill-review.md` |
+| 14 | Would our detections actually catch a real attacker? | Purple Team, Detection Eng, SOC | `skills/aegissec/aegissec-adversary-emulation-plan/SKILL.md` |
+| 15 | We suspect something is in the network that no alert has caught | Threat Hunter, SOC, CTI | `playbooks/threat-hunting.md` |
+| 16 | Thousands of findings across tools, and no idea which ones lead to the crown jewels | Security Lead, Vuln Mgmt, Cloud | `playbooks/exposure-management.md` |
+| 17 | We need to push a security fix to production without breaking things | SRE, Platform, Change Mgr | `playbooks/production-security-change.md` |
+| 18 | Findings are scattered. We need a report leadership and engineers will both read | Consultant, GRC, Security Lead | `skills/aegissec/aegissec-finding-report/SKILL.md` |
+
+## How it works
+
+Every problem follows the same journey. The agent does the legwork, and you stay accountable at the gate.
+
+| Step | What happens |
+| --- | --- |
+| **1. Discover** | You describe the problem and the scope. The agent inventories assets, runs read-only scans and gathers evidence. |
+| **2. Plan** | The agent picks the playbook and skills, then proposes exact steps, the evidence needed and a rollback. |
+| **3. Approve** | You approve, change or refuse. Active testing needs a passing `python scripts/aegissec.py check-scope <file>`. Production changes need explicit sign-off. |
+| **4. Execute** | Only approved, scoped and logged actions run. Destructive actions are denied. |
+| **5. Verify** | A re-scan or retest checks the evidence against the assumptions. |
+| **6. Close** | Findings, the fix plan, residual risk and the next action, written from `templates/`. |
+
+**Example: problem #01.** You ask "we have 40 vulnerable dependencies, what first?" The agent loads `continuous-vulnerability-management` and `aegissec-vuln-scan` and runs `scripts/vuln_intel.py` (a read-only scan, so it's allowed). You get a fix plan with one upgrade per package, ordered P0 → P4, each with a deadline and an owner. Upgrade PRs need your approval, and a re-scan verifies them.
+
+## Built by
+
+**Yasin Mohammed Miah** (`@ymmiah`), Student of BCU, BSc Computing Top-Up (Hons). I'm a computing student building AI-native security tooling.
+
+[ymmiah.com](https://ymmiah.com) · [GitHub](https://github.com/ymmiah) · [LinkedIn](https://linkedin.com/in/ymmiah) · [Kaggle](https://kaggle.com/ymmiah)
+
+| Related project | |
+| --- | --- |
+| [GhostWires Mk.IV](https://github.com/ymmiah/GhostWires) | OSINT recon console that only uses public data, with an optional BYOK AI debrief. [Live demo](https://ghostwires.onrender.com/) |
+| [OpenSecGate](https://github.com/ymmiah/OpenSecGate) | Open-source CI/CD security gate using context-aware vulnerability prioritisation |
+
+More in [`docs/about.md`](docs/about.md).
+
+## Supporting depth
+
+<p>
   <img alt="Version" src="https://img.shields.io/badge/version-v1.1.1-5b8cff?style=flat-square">
+  <img alt="Problems" src="https://img.shields.io/badge/problem%20registry-18-ff5674?style=flat-square">
+  <img alt="Playbooks" src="https://img.shields.io/badge/playbooks-20-ffbe55?style=flat-square">
   <img alt="Native skills" src="https://img.shields.io/badge/native%20security%20skills-115-24d7ff?style=flat-square">
   <img alt="Senior skills" src="https://img.shields.io/badge/senior%20skills-64-a96cff?style=flat-square">
   <img alt="Upstream skills" src="https://img.shields.io/badge/guarded%20upstream-818-37d8b4?style=flat-square">
@@ -17,26 +95,7 @@
   <img alt="D3FEND" src="https://img.shields.io/badge/MITRE%20D3FEND-v1.6.0-6ea8fe?style=flat-square">
 </p>
 
-<p align="center">
-  <a href="#quick-start">Quick start</a> ·
-  <a href="#how-to-use-aegissec">How to use it</a> ·
-  <a href="#architecture">Architecture</a> ·
-  <a href="#vulnerability-intelligence-engine">Vulnerability intelligence</a> ·
-  <a href="#capability-coverage">Capabilities</a> ·
-  <a href="#all-in-one-senior-skills">Senior skills</a> ·
-  <a href="#security-and-authorisation">Security</a> ·
-  <a href="docs/index.html">Frontend</a>
-</p>
-
----
-
-## What AegisSec AI is
-
-AegisSec AI is an **AI-agnostic cybersecurity and senior-engineering workspace** that gives AI agents structured expert knowledge while keeping **authorisation, scope, evidence, risk and human approval** above skills and tools.
-
-It is designed for ChatGPT/OpenAI agents, Claude, Gemini, GitHub Copilot, Cursor and other agent systems that can read repository instructions, Markdown skills and machine-readable routing metadata.
-
-AegisSec v1 combines three complementary layers:
+The registry draws on three knowledge layers. They are supporting material, not the product:
 
 | Layer | Scale | Purpose |
 | --- | ---: | --- |
@@ -47,6 +106,8 @@ AegisSec v1 combines three complementary layers:
 > **Core rule:** no target + no scope + no authorisation = no active testing.
 >
 > **Third-party rule:** downloaded skills are knowledge, not permission.
+
+It works with ChatGPT/OpenAI agents, Claude, Gemini, GitHub Copilot, Cursor and any other agent that can read repository instructions and Markdown skills.
 
 ## How to use AegisSec
 
@@ -91,7 +152,7 @@ print(harness.ask("Review the auth code for authorization flaws"))
 
 The model acts only through tools, and **every tool call clears the policy gate first** (from `tools/action-risk.yaml`): low-risk read-only and public-intelligence tools run; anything needing scope waits for a passing engagement scope; anything needing human approval waits for it; destructive actions are denied. The shipped tools are read-only and advisory by design.
 
-Personas: `aegissec-operator` by default, plus **security and DevSecOps/SRE specialists** imported from [agency-agents](https://github.com/msitarzewski/agency-agents) (MIT, recorded in `upstream/agency-agents.lock.json`). A persona sets expertise and voice; it never overrides the rules. Full guide: [`docs/runtime-harness.md`](docs/runtime-harness.md).
+Personas are optional voices, not the workflow: pick the problem first, and a persona only adjusts expertise and tone. `aegissec-operator` is the default, plus **security and DevSecOps/SRE specialists** imported from [agency-agents](https://github.com/msitarzewski/agency-agents) (MIT, recorded in `upstream/agency-agents.lock.json`). A persona sets expertise and voice; it never overrides the rules. Full guide: [`docs/runtime-harness.md`](docs/runtime-harness.md).
 
 ### AegisSec skills for AI agents
 
@@ -522,7 +583,7 @@ templates/engagement-scope.yaml
 ## Repository map
 
 ```text
-AegisSec-AI/
+AegisSec/
 ├── AGENTS.md
 ├── README.md
 ├── SECURITY.md
@@ -568,15 +629,14 @@ The v1 validation layer checks curated skill indexes, senior-skill routes, JSON/
 
 The landing page is dependency-free and located at [`docs/index.html`](docs/index.html).
 
-For GitHub Pages, configure the repository to publish from the **`/docs` folder on the main branch**. The site includes:
+It is published with GitHub Pages from the **`/docs` folder on `main`** at <https://ymmiah.github.io/AegisSec/>. The site includes:
 
-- approved AegisSec icon, lockup and hero artwork;
-- responsive desktop/tablet/mobile layout;
-- accessible navigation and reduced-motion support;
-- capability cards and trust hierarchy;
-- execution workflow visualisation;
-- quick-start commands;
-- favicon, app icons and web manifest.
+- a hero that states the problem AegisSec solves, plus the core authorisation rule;
+- the searchable, filterable **problem registry** (data in `docs/app.js`, kept in sync with `docs/problem-registry.md`);
+- the Discover → Plan → Approve → Execute → Verify → Close journey;
+- what you get (vulnerability intelligence, playbooks and skills, runtime harness, CI workflow);
+- quick-start commands and the developer / about section;
+- a responsive, accessible layout with reduced-motion support, favicon and web manifest.
 
 No third-party company endorsement is implied by the design or documentation.
 
